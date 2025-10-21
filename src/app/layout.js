@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Head from "next/head"; // import Head nếu muốn thêm meta ngoài metadata
+import Head from "next/head";
 
 export const metadata = {
   title: "SMADS",
@@ -16,7 +16,6 @@ export default function RootLayout({ children }) {
       <head>
         {/* Favicon */}
         <link rel="icon" href="/images/logo/logo-favicon.png" />
-        {/* Bạn cũng có thể thêm các icon khác cho mobile/ios */}
         <meta name="description" content={metadata.description} />
         <title>{metadata.title}</title>
       </head>
