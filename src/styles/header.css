@@ -47,7 +47,7 @@
 
 /* ====== PAGE HEADER ====== */
 .navbar-top {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)) !important;
+    background: transparent;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     padding: 6px 0;
 }
@@ -196,7 +196,7 @@
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.25);
 }
 
-/* Thanh gạch */
+/* \ */
 .navbar-toggler-icon {
     position: relative;
     width: 22px;
@@ -228,7 +228,7 @@
     top: 7px;
 }
 
-/* Khi mở menu (hiệu ứng xoay thành dấu X) */
+/* OPEN MENU TOGGLE = X */
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background-color: transparent;
     transform: rotate(45deg);
@@ -244,7 +244,7 @@
     top: 0;
 }
 
-/* ===== MÀU TRẠNG THÁI ===== */
+/* ===== COLOR STATUS ===== */
 .navbar-top .navbar-toggler {
     color: #222;
 }

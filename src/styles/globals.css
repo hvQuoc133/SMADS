@@ -221,3 +221,21 @@ h6 {
     font-size: 1.5rem;
   }
 }
+
+/* Prev and next button Testimonials component */
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--color-primary) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  color: var(--color-primary) !important;
+}
+
+.swiper-button-prev svg,
+.swiper-button-next svg {
+  fill: var(--color-primary) !important;
+}
