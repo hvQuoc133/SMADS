@@ -1,0 +1,214 @@
+/* ABOUT PAGE STYLE */
+
+/* Content 1 */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--color-primary);
+}
+
+.text p {
+    margin-bottom: 18px;
+    color: var(--color-secondary);
+    line-height: 1.6;
+}
+
+.readMore {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.readMore:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.image {
+    flex: 1;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Content 2 */
+.bestMatchSection {
+    width: 100%;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    opacity: 0.9;
+    padding: 100px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.textBox {
+    flex: 1;
+}
+
+.textBox h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.textBox p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.featureList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.featureList li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.featureList i {
+    color: var(--color-primary);
+    background-color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.imageBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.imageBox img {
+    width: 100%;
+    height: auto;
+}
+
+/* ================= Responsive ================= */
+
+/* ---------- ≤2000px ---------- */
+
+/* ---------- ≤992px ---------- */
+@media (max-width: 992px) {
+
+    /* Content 1 */
+    .content {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 30px;
+    }
+
+    .text {
+        padding-right: 0;
+    }
+
+    .text h2 {
+        font-size: 30px;
+    }
+
+    .image {
+        margin-top: 40px;
+    }
+
+    /* Content 2 */
+    .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .textBox h2 {
+        font-size: 30px;
+    }
+
+    .featureList li {
+        justify-content: center;
+        text-align: left;
+    }
+}
+
+/* ---------- ≤768px ---------- */
+
+/* ---------- ≤576px ---------- */
+@media (max-width: 576px) {
+
+    /* Content 1 */
+    .content {
+        padding: 50px 20px;
+        gap: 30px;
+    }
+
+    .text h2 {
+        font-size: 26px;
+    }
+
+    .readMore {
+        padding: 10px 24px;
+        font-size: 15px;
+    }
+
+    .image img {
+        max-width: 90%;
+    }
+
+    /* Content 2 */
+    .bestMatchSection {
+        padding: 70px 20px;
+    }
+
+    .textBox h2 {
+        font-size: 26px;
+    }
+
+    .featureList li {
+        font-size: 15px;
+    }
+
+    .imageBox img {
+        max-width: 90%;
+    }
+}

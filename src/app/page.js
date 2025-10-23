@@ -3,19 +3,43 @@ import Image from "next/image";
 import styles from "../styles/HomeHero.module.css";
 import Testimonials from "@/components/Testimonials";
 import ScrollToTop from "@/components/ScrollToTop";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
+import Agency from "@/components/Agency";
 
 export default function HomeHero() {
+
+  // Initialize AOS
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // thời gian animation
-      once: true,     // chỉ animate 1 lần khi scroll
-    });
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 768) {
+        import("aos").then((AOS) => {
+          AOS.init({
+            duration: 1000,
+            once: true,
+          });
+        });
+      } else {
+        // Render all elements without AOS for smaller screens
+        document.querySelectorAll("[data-aos]").forEach((el) => {
+          el.removeAttribute("data-aos");
+        });
+      }
+    }
+
+    // Cleanup function: when out page or unmount component
+    return () => {
+      if (typeof window !== "undefined" && window.AOS) {
+        window.AOS.refreshHard(); // reset AOS 
+      }
+    };
   }, []);
+
+
+  // Component for individual statistic item
   function StatItem({ end, label }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -212,54 +236,7 @@ export default function HomeHero() {
       </section>
 
       {/* Content 7 */}
-      <section className={styles.agencySection}>
-        <div className={styles.agencyWrapper}>
-          <div className={styles.agencyContent}>
-            {/* LEFT TEXT */}
-            <div className={styles.agencyText} data-aos="fade-left">
-              <h2>
-                Creative Agency <br />
-                <span>From New York - USA</span>
-                <br /> in 30 years.
-              </h2>
-              <p>
-                There are many variations of passages of Lorem Ipsum available but
-                the majority have suffered alteration in that injected. There are
-                many variations of passages of Lorem Ipsum available.
-              </p>
-
-              <div className={styles.agencySkills}>
-                <div className={styles.agencySkill}>
-                  <div className={`${styles.agencyCircle} ${styles.purple}`}>69%</div>
-                  <span>WordPress Developer</span>
-                </div>
-                <div className={styles.agencySkill}>
-                  <div className={`${styles.agencyCircle} ${styles.red}`}>85%</div>
-                  <span>Apps Developer</span>
-                </div>
-                <div className={styles.agencySkill}>
-                  <div className={`${styles.agencyCircle} ${styles.green}`}>76%</div>
-                  <span>Android Apps</span>
-                </div>
-                <div className={styles.agencySkill}>
-                  <div className={`${styles.agencyCircle} ${styles.blue}`}>80%</div>
-                  <span>Apps Developer</span>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div className={styles.agencyImage} data-aos="fade-right">
-              <Image
-                src="/images/home/skill_img.png"
-                alt="Creative Agency Illustration"
-                width={500}
-                height={400}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <Agency />
 
       {/* Content 8 */}
       <section className={styles.ctaSection}>

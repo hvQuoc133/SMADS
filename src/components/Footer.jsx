@@ -11,7 +11,6 @@ const Footer = () => {
                     <div className="row mt-3">
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <h6 className="text-uppercase fw-bold mb-4">
-                                <i className="fas fa-gem me-3"></i>
                                 <img className="logo-header" src="/images/logo/logo-header.png" alt="Logo SMAds"></img>
                                 <span className="logo-text">SMADS</span>
                             </h6>

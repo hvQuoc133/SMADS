@@ -1,0 +1,51 @@
+.hero {
+  width: 100%;
+  height: 460px;
+  background-image: url('/images/about/breadcrumb-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.heroContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.heroText {
+  position: relative;
+  color: #fff;
+  padding-left: 20px;
+  top: 50px;
+}
+
+.heroText::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 75px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.heroText h1 {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.heroText p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heroText p span {
+  font-weight: 600;
+}

@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
+import AosInit from "./aos-init";
 
 export const metadata = {
   title: "SMADS",
@@ -19,7 +20,8 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
         <title>{metadata.title}</title>
       </head>
-      <body>
+      <body suppressHydrationWarning={true}>
+        <AosInit />
         <Header />
         {children}
         <Footer />

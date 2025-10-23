@@ -1,0 +1,202 @@
+.contactSection {
+    text-align: center;
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 100px;
+}
+
+.contactHeader {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+}
+
+.contactHeader h5 {
+    color: var(--color-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.contactHeader h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--color-primary);
+}
+
+.contactHeader p {
+    color: var(--color-secondary);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.contactContainer {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.contactInfo {
+    flex: 1;
+    text-align: left;
+}
+
+.contactInfo h3 {
+    font-size: 28px;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.contactInfo p {
+    font-size: 16px;
+    color: var(--color-secondary);
+    line-height: 1.4;
+}
+
+.contactInfo ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.contactInfo li {
+    margin: 8px 0;
+    font-size: 15px;
+    color: #444;
+}
+
+.socialIcons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.socialIcons a {
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Facebook */
+.socialFb {
+    background-color: #1877f2;
+}
+
+.socialFb:hover {
+    background-color: #0d5fd3;
+    transform: scale(1.1);
+}
+
+/* X (Twitter) */
+.socialX {
+    background-color: #000000;
+}
+
+.socialX:hover {
+    background-color: #333333;
+    transform: scale(1.1);
+}
+
+/* Telegram */
+.socialTele {
+    background-color: #0088cc;
+}
+
+.socialTele:hover {
+    background-color: #007ab8;
+    transform: scale(1.1);
+}
+
+/* Instagram */
+.socialIg {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+.socialIg:hover {
+    filter: brightness(1.1);
+    transform: scale(1.1);
+}
+
+.contactForm {
+    flex: 1;
+}
+
+.contactForm form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.contactForm input,
+.contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contactForm button {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.contactForm button:hover {
+    background: var(--color-secondary);
+}
+
+.mapContainer {
+    width: 100%;
+    height: 600px;
+    margin-top: -150px;
+    z-index: 1;
+    position: relative;
+}
+
+.mapContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ================= Responsive ================= */
+/* ---------- ≤900px ---------- */
+@media (max-width: 900px) {
+    .contactContainer {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}

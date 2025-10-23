@@ -186,6 +186,14 @@
     z-index: 1001;
 }
 
+.navbar-top .navbar-toggler {
+    color: #fff !important;
+}
+
+.navbar-scrolled .navbar-toggler {
+    color: var(--color-primary) !important;
+}
+
 .navbar-toggler:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: rotate(4deg) scale(1.05);
