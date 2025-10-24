@@ -6,7 +6,7 @@ import ScrollToTop from '../../components/ScrollToTop';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
-export default function Service() {
+export default function Activities() {
     
     // Initialize AOS
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function Service() {
     return (
         <>
             {/* Hero section with background */}
-            <BgAllPage title="Service" parent="SMADS" />
+            <BgAllPage title="Activities" parent="SMADS" />
 
             <ScrollToTop />
         </>

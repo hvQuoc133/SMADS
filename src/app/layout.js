@@ -3,8 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Head from "next/head";
 import AosInit from "./aos-init";
+import ClientWrapper from "./ClientWrapper";
 
 export const metadata = {
   title: "SMADS",
@@ -15,7 +15,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="vi">
       <head>
-        {/* Favicon */}
         <link rel="icon" href="/images/logo/logo-favicon.png" />
         <meta name="description" content={metadata.description} />
         <title>{metadata.title}</title>
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning={true}>
         <AosInit />
         <Header />
-        {children}
+        <ClientWrapper>{children}</ClientWrapper>
         <Footer />
       </body>
     </html>

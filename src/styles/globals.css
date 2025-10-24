@@ -18,6 +18,10 @@ body {
   font-size: var(--fs-base);
 }
 
+html, body, button, input, textarea, select {
+  font-family: var(--font-sans);
+}
+
 /* 2️⃣ ROOT VARIABLES */
 :root {
   /* ==== Font ==== */

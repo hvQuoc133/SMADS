@@ -23,7 +23,7 @@
 
 .text p {
     margin-bottom: 18px;
-    color: var(--color-secondary);
+    color: var(--color-text-muted);
     line-height: 1.6;
 }
 

@@ -156,7 +156,7 @@
 .startupDescription {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
 }
 
 .startupButton {
@@ -203,7 +203,7 @@
 
 .featureDesc {
   font-size: 18px;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
   line-height: 1.6;
 }
 
@@ -420,7 +420,7 @@
 .descOptimization {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
 }
 
 .textContent {
@@ -604,7 +604,7 @@
 
 .newsHeader .newsDesc {
   font-size: 18px;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
   max-width: 700px;
   margin: 0 auto 50px;
   line-height: 1.6;
@@ -645,13 +645,13 @@
 
 .newsCard p {
   font-size: 14px;
-  color: var(--color-secondary);
+  color: var(--color-text-muted);
   margin-bottom: 15px;
 }
 
 .newsCard .newsInfo {
   font-size: 12px;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
 
 .newsCard:hover {
