@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
-import BgAllPage from "../../components/BgAllPage";
-import ScrollToTop from "../../components/ScrollToTop";
-import styles from "../../styles/Career.module.css";
+import BgAllPage from "../../../components/BgAllPage";
+import ScrollToTop from "../../../components/ScrollToTop";
+import styles from "../../../styles/Career.module.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { toast } from "react-toastify";
 
-export default function Career() {
+export default function Career({ dict }) {
+    const c = dict.career;
+    const t = c.toast;
+
     const [selectedJob, setSelectedJob] = useState(null);
     const [showForm, setShowForm] = useState(false);
 
@@ -21,7 +24,6 @@ export default function Career() {
                 job_requirements: "Tối thiểu 1 năm kinh nghiệm marketing, có kỹ năng phân tích và sử dụng Meta Ads, Google Ads.",
                 benefit: "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
                 deadline: "30/11/2025",
-
             },
         },
         {
@@ -81,23 +83,20 @@ export default function Career() {
 
     return (
         <>
-            <BgAllPage title="Career" parent="SMADS" />
+            <BgAllPage title={c.pageTitle} parent="SMADS" />
 
             {/* Intro */}
             <section className={styles.introSection}>
                 <div className={styles.container}>
-                    <h2 data-aos="fade-up">Cùng SMADS phát triển sự nghiệp của bạn</h2>
-                    <p data-aos="fade-up" data-aos-delay="100">
-                        Chúng tôi luôn tìm kiếm những cá nhân sáng tạo, đam mê và sẵn sàng
-                        bứt phá trong lĩnh vực truyền thông & marketing.
-                    </p>
+                    <h2 data-aos="fade-up">{c.introTitle}</h2>
+                    <p data-aos="fade-up" data-aos-delay="100">{c.introDesc}</p>
                 </div>
             </section>
 
             {/* Job list */}
             <section className={styles.jobSection}>
                 <div className={styles.container}>
-                    <h3 data-aos="fade-up">Vị trí đang tuyển</h3>
+                    <h3 data-aos="fade-up">{c.positionsTitle}</h3>
                     <div className={styles.jobList}>
                         {jobs.map((job) => (
                             <div key={job.id} className={styles.jobCard} data-aos="fade-right">
@@ -106,15 +105,15 @@ export default function Career() {
 
                                 {selectedJob === job.id && (
                                     <div className={styles.jobDetails}>
-                                        <p><strong>Mô tả công việc:</strong> {job.details.job_description}</p>
-                                        <p><strong>Yêu cầu kinh nghiệm:</strong> {job.details.job_requirements}</p>
-                                        <p><strong>Hạn nộp hồ sơ:</strong> {job.details.deadline}</p>
-                                        <p><strong>Quyền lợi:</strong> {job.details.benefit}</p>
+                                        <p><strong>{c.details.desc}:</strong> {job.details.job_description}</p>
+                                        <p><strong>{c.details.require}:</strong> {job.details.job_requirements}</p>
+                                        <p><strong>{c.details.deadline}:</strong> {job.details.deadline}</p>
+                                        <p><strong>{c.details.benefit}:</strong> {job.details.benefit}</p>
                                         <button
                                             className={styles.applyBtn}
                                             onClick={handleApplyClick}
                                         >
-                                            Ứng tuyển ngay
+                                            {c.actions.applyNow}
                                         </button>
                                     </div>
                                 )}
@@ -123,7 +122,7 @@ export default function Career() {
                                     className={styles.detailBtn}
                                     onClick={() => handleToggleDetails(job.id)}
                                 >
-                                    {selectedJob === job.id ? "Thu gọn" : "Xem chi tiết"}
+                                    {selectedJob === job.id ? c.actions.hide : c.actions.view}
                                 </button>
                             </div>
                         ))}
@@ -135,12 +134,11 @@ export default function Career() {
             {showForm && (
                 <section className={styles.applySection}>
                     <div className={styles.container}>
-                        <h3>Gửi hồ sơ ứng tuyển</h3>
+                        <h3>{c.actions.applyFormTitle}</h3>
                         <form
                             className={styles.applyForm}
                             onSubmit={async (e) => {
                                 e.preventDefault();
-
                                 const form = e.target;
                                 const formData = new FormData(form);
 
@@ -149,14 +147,12 @@ export default function Career() {
                                 const phone = formData.get("phone").trim();
                                 const file = formData.get("cv");
 
-                                // Check character mail
                                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                                 if (!emailRegex.test(email)) {
-                                    toast.error("Vui lòng nhập đúng định dạng email!");
+                                    toast.error(t.invalidEmail);
                                     return;
                                 }
 
-                                // Check mail exists
                                 try {
                                     const verify = await fetch("/api/verify-email", {
                                         method: "POST",
@@ -165,29 +161,26 @@ export default function Career() {
                                     });
                                     const verifyResult = await verify.json();
                                     if (!verifyResult.valid) {
-                                        toast.error("Email không tồn tại hoặc không hợp lệ!");
+                                        toast.error(t.emailNotFound);
                                         return;
                                     }
                                 } catch (err) {
                                     console.error(err);
-                                    toast.error("Không thể kiểm tra email, vui lòng thử lại!");
+                                    toast.error(t.checkFail);
                                     return;
                                 }
 
-                                // Check phone
                                 const phoneRegex = /^[0-9]{8,15}$/;
                                 if (!phoneRegex.test(phone)) {
-                                    toast.error("Số điện thoại không hợp lệ (chỉ nhập số, từ 8-15 ký tự).");
+                                    toast.error(t.invalidPhone);
                                     return;
                                 }
 
-                                // Limit file >5mb
                                 if (file && file.size > 5 * 1024 * 1024) {
-                                    toast.error("Tệp tải lên quá lớn! Giới hạn 5MB.");
+                                    toast.error(t.fileTooLarge);
                                     return;
                                 }
 
-                                // 5️⃣ Send form to mail
                                 try {
                                     const res = await fetch("/api/send-mail", {
                                         method: "POST",
@@ -197,59 +190,58 @@ export default function Career() {
                                     const result = await res.json();
 
                                     if (result.success) {
-                                        toast.success("✅ Hồ sơ của bạn đã được gửi thành công!");
+                                        toast.success(t.success);
                                         form.reset();
                                     } else {
-                                        toast.error("❌ Gửi thất bại: " + result.error);
+                                        toast.error(t.fail + result.error);
                                     }
                                 } catch (err) {
                                     console.error(err);
-                                    toast.error("⚠️ Lỗi khi gửi mail, vui lòng thử lại sau!");
+                                    toast.error(t.sendError);
                                 }
                             }}
                         >
                             <div className={styles.formGroup}>
-                                <label>Họ và tên - Vị trí ứng tuyển</label>
+                                <label>{c.form.name}</label>
                                 <input
                                     type="text"
                                     name="name"
                                     required
-                                    placeholder="Nhập họ tên - vị trí ứng tuyển"
+                                    placeholder={c.form.name}
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label>Email</label>
-                                <input type="email" name="email" required placeholder="Nhập email" />
+                                <label>{c.form.email}</label>
+                                <input type="email" name="email" required placeholder={c.form.email} />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label>Số điện thoại</label>
+                                <label>{c.form.phone}</label>
                                 <input
                                     type="tel"
                                     name="phone"
                                     required
-                                    placeholder="Nhập số điện thoại"
+                                    placeholder={c.form.phone}
                                     pattern="[0-9]*"
                                     inputMode="numeric"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label>Tải lên CV (PDF hoặc DOCX)</label>
+                                <label>{c.form.cv}</label>
                                 <input type="file" name="cv" accept=".pdf,.doc,.docx" required />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label>Ghi chú</label>
-                                <textarea name="note" rows="4" placeholder="Thêm thông tin nếu có..."></textarea>
+                                <label>{c.form.note}</label>
+                                <textarea name="note" rows="4" placeholder={c.form.notePlaceholder}></textarea>
                             </div>
 
                             <button type="submit" className={styles.submitBtn}>
-                                Gửi hồ sơ
+                                {c.actions.submit}
                             </button>
                         </form>
-
                     </div>
                 </section>
             )}

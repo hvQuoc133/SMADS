@@ -1,12 +1,12 @@
 
 "use client";
 import { useEffect, useState } from "react";
-import BgAllPage from '../../components/BgAllPage';
-import ScrollToTop from '../../components/ScrollToTop';
+import BgAllPage from '../../../components/BgAllPage';
+import ScrollToTop from '../../../components/ScrollToTop';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
-export default function Activities() {
+export default function Service() {
     
     // Initialize AOS
     useEffect(() => {
@@ -37,7 +37,7 @@ export default function Activities() {
     return (
         <>
             {/* Hero section with background */}
-            <BgAllPage title="Activities" parent="SMADS" />
+            <BgAllPage title="Service" parent="SMADS" />
 
             <ScrollToTop />
         </>

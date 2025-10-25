@@ -1,10 +1,10 @@
 "use client";
 import React from 'react';
-import styles from '../../styles/About.module.css';
-import BgAllPage from '../../components/BgAllPage';
-import ScrollToTop from '../../components/ScrollToTop';
+import styles from '../../../styles/About.module.css';
+import BgAllPage from '../../../components/BgAllPage';
+import ScrollToTop from '../../../components/ScrollToTop';
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Agency from '../../components/Agency';
+import Agency from '../../../components/Agency';
 import { useEffect } from "react";
 import AOS from "aos";
 import 'aos/dist/aos.css';

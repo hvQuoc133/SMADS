@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import styles from "../styles/HomeHero.module.css";
+import styles from "../../styles/HomeHero.module.css";
 import Testimonials from "@/components/Testimonials";
 import ScrollToTop from "@/components/ScrollToTop";
 import { useEffect, useRef, useState } from "react";

@@ -125,6 +125,7 @@
     padding: 8px 14px;
     display: inline-block;
     transition: var(--transition-fast);
+    text-decoration: none;
 }
 
 .navbar-nav .nav-link span::after {

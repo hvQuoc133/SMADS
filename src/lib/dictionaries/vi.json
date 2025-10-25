@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "activities": "Activities",
+    "career": "Career",
+    "contact": "Contact"
+  },
+   "career": {
+    "pageTitle": "Tuyển dụng",
+    "introTitle": "Cùng SMADS phát triển sự nghiệp của bạn",
+    "introDesc": "Chúng tôi luôn tìm kiếm những cá nhân sáng tạo, đam mê và sẵn sàng bứt phá trong lĩnh vực truyền thông & marketing.",
+    "positionsTitle": "Vị trí đang tuyển",
+    "details": {
+      "desc": "Mô tả công việc",
+      "require": "Yêu cầu kinh nghiệm",
+      "benefit": "Quyền lợi",
+      "deadline": "Hạn nộp hồ sơ"
+    },
+    "actions": {
+      "view": "Xem chi tiết",
+      "hide": "Thu gọn",
+      "applyNow": "Ứng tuyển ngay",
+      "applyFormTitle": "Gửi hồ sơ ứng tuyển",
+      "submit": "Gửi hồ sơ"
+    },
+    "form": {
+      "name": "Họ và tên - Vị trí ứng tuyển",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "cv": "Tải lên CV (PDF hoặc DOCX)",
+      "note": "Ghi chú",
+      "notePlaceholder": "Thêm thông tin nếu có..."
+    },
+    "toast": {
+      "invalidEmail": "Vui lòng nhập đúng định dạng email!",
+      "emailNotFound": "Email không tồn tại hoặc không hợp lệ!",
+      "checkFail": "Không thể kiểm tra email, vui lòng thử lại!",
+      "invalidPhone": "Số điện thoại không hợp lệ (chỉ nhập số, từ 8-15 ký tự).",
+      "fileTooLarge": "Tệp tải lên quá lớn! Giới hạn 5MB.",
+      "success": "✅ Hồ sơ của bạn đã được gửi thành công!",
+      "fail": "❌ Gửi thất bại: ",
+      "sendError": "⚠️ Lỗi khi gửi mail, vui lòng thử lại sau!"
+    }
+  },
+  "contact": {
+    "pageTitle": "Contact",
+    "getInTouch": "Get in touch",
+    "subTitle": "We're always ready to help you.",
+    "description": "If you have any questions, feel free to send your message below.",
+    "address": "77 Nguyen Sinh Sac, Lien Chieu, Da Nang",
+    "email": "contact@smads.com.vn",
+    "phone": "+84 123 456 789",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message"
+    },
+    "toast": {
+      "fillAll": "Please fill all required fields!",
+      "invalidEmail": "Invalid email address!",
+      "emailNotFound": "Email not found!",
+      "checkFail": "Error checking email!",
+      "success": "Message sent successfully!",
+      "fail": "Failed to send!",
+      "sendError": "An error occurred, please try again later!"
+    }
+  }
+}
