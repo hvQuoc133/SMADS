@@ -39,34 +39,59 @@
       "checkFail": "Unable to verify email, please try again!",
       "invalidPhone": "Invalid phone number (numbers only, 8-15 digits).",
       "fileTooLarge": "Uploaded file is too large! Limit is 5MB.",
-      "success": "✅ Your application has been submitted successfully!",
-      "fail": "❌ Failed to send: ",
-      "sendError": "⚠️ Error sending email, please try again later!"
+      "success": "Your application has been submitted successfully!",
+      "fail": "Failed to send: ",
+      "sendError": "Error sending email, please try again later!"
     }
   },
   "contact": {
     "pageTitle": "Contact",
     "getInTouch": "Get in Touch",
-    "subTitle": "Contact Us Now",
-    "description": "We’re always ready to help you.",
-    "address": "77 Nguyễn Sinh Sắc, Liên Chiểu, Đà Nẵng",
-    "email": "info@smads.com.vn",
-    "phone": "(+84) 775 779 266",
+    "subTitle": "Contact us now",
+    "titleForm": "Contact Information",
+    "description": "Please fill out the form, and we will respond as soon as possible.",
+    "address": "77 Nguyen Sinh Sac, Lien Chieu, Da Nang",
+    "email": "contact@smads.com.vn",
+    "phone": "+84 123 456 789",
     "form": {
-      "name": "Name *",
-      "email": "Email *",
-      "subject": "Subject *",
-      "message": "Message...",
-      "submit": "Send a message"
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
     },
     "toast": {
       "fillAll": "Please fill all required fields!",
       "invalidEmail": "Invalid email address!",
-      "emailNotFound": "Email does not exist or is invalid!",
-      "checkFail": "Unable to verify email, please try again!",
-      "success": "✅ Message sent successfully! We'll contact you soon.",
-      "fail": "❌ Failed to send: ",
-      "sendError": "⚠️ Error sending email, please try again later!"
+      "emailNotFound": "Email not found!",
+      "checkFail": "Error checking email!",
+      "success": "Message sent successfully!",
+      "fail": "Failed to send!",
+      "sendError": "An error occurred, please try again later!"
     }
+  },
+  "footer": {
+    "company_description": "We provide creative marketing solutions that make your brand stand out, connect with the right customers, and effectively increase your revenue.",
+    "services_title": "Services",
+    "services": {
+      "invoice": "Google Invoice Rental",
+      "ads": "Google Ads & Facebook Ads",
+      "web_design": "Website Design",
+      "seo": "SEO Website"
+    },
+    "links_title": "Links",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "blog": "Blog",
+      "career": "Career"
+    },
+    "contact_title": "Contact",
+    "address": "177 Nguyen Sinh Sac, Lien Chieu, Da Nang",
+    "phone": "0775.779.266",
+    "email": "Info@smads.com.vn",
+    "work_days": "Monday - Saturday",
+    "copyright": "© 2025 SMADS. All rights reserved."
   }
 }

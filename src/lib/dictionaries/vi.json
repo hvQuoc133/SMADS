@@ -1,13 +1,13 @@
 {
-  "nav": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "activities": "Activities",
-    "career": "Career",
-    "contact": "Contact"
+  "Header": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "activities": "Hoạt động",
+    "career": "Tuyển dụng",
+    "contact": "Liên hệ"
   },
-   "career": {
+  "career": {
     "pageTitle": "Tuyển dụng",
     "introTitle": "Cùng SMADS phát triển sự nghiệp của bạn",
     "introDesc": "Chúng tôi luôn tìm kiếm những cá nhân sáng tạo, đam mê và sẵn sàng bứt phá trong lĩnh vực truyền thông & marketing.",
@@ -39,34 +39,59 @@
       "checkFail": "Không thể kiểm tra email, vui lòng thử lại!",
       "invalidPhone": "Số điện thoại không hợp lệ (chỉ nhập số, từ 8-15 ký tự).",
       "fileTooLarge": "Tệp tải lên quá lớn! Giới hạn 5MB.",
-      "success": "✅ Hồ sơ của bạn đã được gửi thành công!",
-      "fail": "❌ Gửi thất bại: ",
-      "sendError": "⚠️ Lỗi khi gửi mail, vui lòng thử lại sau!"
+      "success": "Hồ sơ của bạn đã được gửi thành công!",
+      "fail": "Gửi thất bại: ",
+      "sendError": "Lỗi khi gửi mail, vui lòng thử lại sau!"
     }
   },
   "contact": {
-    "pageTitle": "Contact",
-    "getInTouch": "Get in touch",
-    "subTitle": "We're always ready to help you.",
-    "description": "If you have any questions, feel free to send your message below.",
-    "address": "77 Nguyen Sinh Sac, Lien Chieu, Da Nang",
+    "pageTitle": "Liên hệ",
+    "getInTouch": "Liên hệ",
+    "subTitle": "Liên hệ ngay với chúng tôi",
+    "titleForm": "Thông tin liên hệ",
+    "description": "Vui lòng nhập thông tin vào mẫu, chúng tôi sẽ trả lời sớm nhất có thể.",
+    "address": "77 Nguyễn Sinh Sắc, Liên Chiểu, Đà Nẵng",
     "email": "contact@smads.com.vn",
     "phone": "+84 123 456 789",
     "form": {
-      "name": "Name",
+      "name": "Tên",
       "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send message"
+      "subject": "Tiêu đề",
+      "message": "Tin nhắn",
+      "submit": "Gửi tin nhắn"
     },
     "toast": {
-      "fillAll": "Please fill all required fields!",
-      "invalidEmail": "Invalid email address!",
-      "emailNotFound": "Email not found!",
-      "checkFail": "Error checking email!",
-      "success": "Message sent successfully!",
-      "fail": "Failed to send!",
-      "sendError": "An error occurred, please try again later!"
+      "fillAll": "Vui lòng điền tất cả các trường bắt buộc!",
+      "invalidEmail": "Địa chỉ email không hợp lệ!",
+      "emailNotFound": "Không tìm thấy email!",
+      "checkFail": "Lỗi khi kiểm tra email!",
+      "success": "Gửi tin nhắn thành công!",
+      "fail": "Gửi thất bại!",
+      "sendError": "Đã xảy ra lỗi, vui lòng thử lại sau!"
     }
+  },
+  "footer": {
+    "company_description": "Chúng tôi mang đến các giải pháp Marketing sáng tạo, giúp thương hiệu của bạn nổi bật, kết nối đúng khách hàng và gia tăng doanh thu hiệu quả.",
+    "services_title": "Dịch vụ",
+    "services": {
+      "invoice": "Cho thuê Invoice Google",
+      "ads": "Google Ads & Facebook Ads",
+      "web_design": "Thiết kế Website",
+      "seo": "Seo Website"
+    },
+    "links_title": "Liên kết",
+    "links": {
+      "home": "Trang chủ",
+      "about": "Giới thiệu",
+      "services": "Dịch vụ",
+      "blog": "Cẩm nang",
+      "career": "Tuyển dụng"
+    },
+    "contact_title": "Liên hệ",
+    "address": "177 Nguyễn Sinh Sắc, Liên Chiểu, Đà Nẵng",
+    "phone": "0775.779.266",
+    "email": "Info@smads.com.vn",
+    "work_days": "Thứ hai - Thứ bảy",
+    "copyright": "© 2025 SMADS. All rights reserved."
   }
 }

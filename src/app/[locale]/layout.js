@@ -21,7 +21,7 @@ export default async function LocaleLayout({ children, params }) {
       <AosInit />
       <Header dict={dict} locale={locale} />
       <main>{children}</main>
-      <Footer locale={locale} />
+      <Footer dict={dict} locale={locale} />
     </>
   );
 }

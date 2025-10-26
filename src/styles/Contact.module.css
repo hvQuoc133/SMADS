@@ -27,12 +27,6 @@
     color: var(--color-primary);
 }
 
-.contactHeader p {
-    color: var(--color-text-muted);
-    font-size: 18px;
-    line-height: 1.6;
-}
-
 .contactContainer {
     background: #fff;
     display: flex;

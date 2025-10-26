@@ -82,11 +82,6 @@ export default function HomeHero() {
             />
           </div>
         </div>
-        <div className={styles.heroWave} aria-hidden="true">
-          <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C220,120 420,0 720,40 C1020,80 1220,20 1440,80 L1440 150 L0 150 Z" fill="#ffffff" />
-          </svg>
-        </div>
       </section>
 
       {/* Content 2 */}

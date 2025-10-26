@@ -101,7 +101,6 @@ export default function Contact({ dict }) {
         >
           <h5>{c.getInTouch}</h5>
           <h2>{c.subTitle}</h2>
-          <p>{c.description}</p>
         </div>
 
         <div className={styles.contactContainer}>
@@ -110,7 +109,7 @@ export default function Contact({ dict }) {
             data-aos="fade-up"
             data-aos-duration="3000"
           >
-            <h3>{c.getInTouch}</h3>
+            <h3>{c.titleForm}</h3>
             <p>{c.description}</p>
 
             <ul>
@@ -126,11 +125,11 @@ export default function Contact({ dict }) {
               <a href="#" className={styles.socialX}>
                 <FaXTwitter />
               </a>
-              <a href="#" className={styles.socialTele}>
-                <FaTelegramPlane />
-              </a>
               <a href="#" className={styles.socialIg}>
                 <FaInstagram />
+              </a>
+              <a href="#" className={styles.socialTele}>
+                <FaTelegramPlane />
               </a>
             </div>
           </div>

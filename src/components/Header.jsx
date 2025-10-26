@@ -12,9 +12,9 @@ export default function Header({ locale = "vi", dict }) {
   const pathname = usePathname();
   const navRef = useRef(null);
 
-  // 🧠 Theo dõi cuộn trang & click ngoài nav
+  // 🧠 Follow scroll page & click outside nav
   useEffect(() => {
-    import("bootstrap/dist/js/bootstrap.bundle.min.js").catch(() => {});
+    import("bootstrap/dist/js/bootstrap.bundle.min.js").catch(() => { });
 
     const handleScroll = () => setScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll);
@@ -37,18 +37,18 @@ export default function Header({ locale = "vi", dict }) {
     };
   }, []);
 
-  // Đóng toggle menu khi chuyển route
+  // Close toggle menu when transferring route
   useEffect(() => {
     setIsCollapsed(true);
   }, [pathname]);
 
   const toggleNavbar = () => setIsCollapsed(!isCollapsed);
 
-  // 🧭 Hàm xác định link đang active
+  // Link  active
   const isActive = (href) => pathname === href;
 
-  // 🧾 Các item menu (sẽ tự động đổi text theo dict)
-   const menuItems = [
+  // Menu item
+  const menuItems = [
     { href: `/${locale}`, label: dict?.nav?.home || "Trang chủ" },
     { href: `/${locale}/about`, label: dict?.nav?.about || "Giới thiệu" },
     { href: `/${locale}/services`, label: dict?.nav?.services || "Dịch vụ" },
@@ -60,9 +60,8 @@ export default function Header({ locale = "vi", dict }) {
   return (
     <nav
       ref={navRef}
-      className={`navbar navbar-expand-lg fixed-top ${
-        scrolled ? "navbar-scrolled" : "navbar-top"
-      }`}
+      className={`navbar navbar-expand-lg fixed-top ${scrolled ? "navbar-scrolled" : "navbar-top"
+        }`}
     >
       <div className="container navbar-container">
         {/* Logo */}
@@ -104,7 +103,7 @@ export default function Header({ locale = "vi", dict }) {
               </li>
             ))}
 
-            {/* Cờ đổi ngôn ngữ */}
+            {/* Flag change language */}
             <li className="nav-item d-flex align-items-center ms-lg-3">
               <LanguageSwitcher currentLocale={locale} />
             </li>

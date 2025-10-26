@@ -48,6 +48,28 @@ export default function Career({ dict }) {
                 deadline: "20/12/2025",
             },
         },
+        {
+            id: 4,
+            title: "Nhân viên ADS facebook",
+            desc: "Viết bài quảng cáo, xây dựng nội dung hấp dẫn cho fanpage và các kênh truyền thông.",
+            details: {
+                job_description: "Lên ý tưởng, sáng tạo nội dung phù hợp cho từng nền tảng mạng xã hội.",
+                job_requirements: "Có khả năng viết tốt, ưu tiên có kinh nghiệm trong lĩnh vực marketing hoặc truyền thông.",
+                benefit: "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
+                deadline: "20/12/2025",
+            },
+        },
+        {
+            id: 5,
+            title: "Nhân viên ADS facebook",
+            desc: "Viết bài quảng cáo, xây dựng nội dung hấp dẫn cho fanpage và các kênh truyền thông.",
+            details: {
+                job_description: "Lên ý tưởng, sáng tạo nội dung phù hợp cho từng nền tảng mạng xã hội.",
+                job_requirements: "Có khả năng viết tốt, ưu tiên có kinh nghiệm trong lĩnh vực marketing hoặc truyền thông.",
+                benefit: "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
+                deadline: "20/12/2025",
+            },
+        },
     ];
 
     useEffect(() => {
