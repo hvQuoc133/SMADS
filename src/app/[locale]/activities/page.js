@@ -1,45 +1,18 @@
+import { getDictionary } from "../../../lib/dictionaries";
+import Activities from "./Activities";
 
-"use client";
-import { useEffect, useState } from "react";
-import BgAllPage from '../../../components/BgAllPage';
-import ScrollToTop from '../../../components/ScrollToTop';
-import AOS from "aos";
-import 'aos/dist/aos.css';
+export default async function Page({ params }) {
+  const { locale } = params; 
+  const dict = await getDictionary(locale);
 
-export default function Activities() {
-    
-    // Initialize AOS
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            if (window.innerWidth >= 768) {
-                import("aos").then((AOS) => {
-                    AOS.init({
-                        duration: 1000,
-                        once: true,
-                    });
-                });
-            } else {
-                // Render all elements without AOS for smaller screens
-                document.querySelectorAll("[data-aos]").forEach((el) => {
-                    el.removeAttribute("data-aos");
-                });
-            }
-        }
+  const activities = dict.activities.list.map((item, index) => ({
+    id: index + 1,
+    slug: item.slug,
+    title: item.title,
+    desc: item.desc,
+    image: `/images/activities/activity${(index % 3) + 1}.jpg`,
+  }));
 
-        // Cleanup function: when out page or unmount component
-        return () => {
-            if (typeof window !== "undefined" && window.AOS) {
-                window.AOS.refreshHard(); // reset AOS 
-            }
-        };
-    }, []);
-
-    return (
-        <>
-            {/* Hero section with background */}
-            <BgAllPage title="Activities" parent="SMADS" />
-
-            <ScrollToTop />
-        </>
-    );
+  return <Activities dict={dict} activities={activities} locale={locale} />;
 }
+

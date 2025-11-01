@@ -9,8 +9,22 @@ import 'aos/dist/aos.css';
 import CountUp from "react-countup";
 import { useInView } from "framer-motion";
 import Agency from "@/components/Agency";
+import ActivitiesSection from "@/components/ActivitiesSection";
+import viDict from "@/lib/dictionaries/vi.json";
+import enDict from "@/lib/dictionaries/en.json";
 
-export default function HomeHero() {
+export default function HomeHero({ locale }) {
+
+  const dict = locale === "vi" ? viDict : enDict;
+
+  const activities = (dict.activities?.list || []).map((item, idx) => ({
+    ...item,
+    id: idx + 1,
+    image: item.image
+      ? (item.image.startsWith("/") ? item.image : "/" + item.image)
+      : `/images/activities/activity${idx + 1}.jpg`,
+    slug: item.slug || `activity-${idx + 1}`,
+  }));
 
   // Initialize AOS
   useEffect(() => {
@@ -251,8 +265,8 @@ export default function HomeHero() {
         </div>
       </section>
 
-      {/* Content 9 */}
-      <section className={styles.newsSection}>
+
+      {/* <section className={styles.newsSection}>
         <div className={styles.newsHeader}>
           <p className={styles.newsSubtitle}>Read Our</p>
           <h2 className={styles.newsTitle}>Latest News</h2>
@@ -289,7 +303,10 @@ export default function HomeHero() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* Content 9 */}
+      <ActivitiesSection dict={dict} activities={activities} locale={locale} />
       <ScrollToTop />
     </>
   );

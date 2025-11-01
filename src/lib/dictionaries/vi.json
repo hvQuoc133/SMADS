@@ -1,11 +1,42 @@
 {
-  "Header": {
+  "header": {
     "home": "Trang chủ",
     "about": "Giới thiệu",
     "services": "Dịch vụ",
     "activities": "Hoạt động",
     "career": "Tuyển dụng",
     "contact": "Liên hệ"
+  },
+  "activities": {
+    "title": "Hoạt động nổi bật",
+    "viewDetail": "Xem chi tiết →",
+    "notFound": "Không tìm thấy hoạt động này.",
+    "list": [
+      {
+        "slug": "workshop-marketing-2025",
+        "slug_vi": "workshop-marketing-2025",
+        "slug_en": "marketing-workshop-2025",
+        "title": "Workshop Marketing 2025",
+        "desc": "Buổi chia sẻ kiến thức và kỹ năng Marketing hiện đại cho doanh nghiệp vừa và nhỏ.",
+        "content": "Trong Workshop Marketing 2025, SMADS mang đến các xu hướng Marketing mới nhất, từ chiến lược nội dung, social media đến công nghệ AI trong quảng cáo. Sự kiện thu hút đông đảo doanh nghiệp trẻ tham dự và nhận được phản hồi tích cực."
+      },
+      {
+        "slug": "team-building-da-nang-2025",
+        "slug_vi": "team-building-da-nang-2025",
+        "slug_en": "team-building-da-nang-2025",
+        "title": "Team Building Đà Nẵng 2025",
+        "desc": "Hành trình gắn kết tập thể SMADS với những hoạt động ngoài trời sôi nổi và sáng tạo.",
+        "content": "Chuyến đi Team Building Đà Nẵng là dịp để các thành viên SMADS kết nối và cùng nhau tạo nên kỷ niệm đáng nhớ. Chương trình được tổ chức tại bãi biển Mỹ Khê với nhiều trò chơi gắn kết, khơi dậy tinh thần đồng đội và sáng tạo."
+      },
+      {
+        "slug": "chien-dich-quang-ba-thuong-hieu-mua-he",
+        "slug_vi": "chien-dich-quang-ba-thuong-hieu-mua-he",
+        "slug_en": "summer-brand-campaign",
+        "title": "Chiến dịch quảng bá thương hiệu mùa hè",
+        "desc": "SMADS đồng hành cùng các đối tác triển khai chiến dịch quảng bá sáng tạo trên đa nền tảng.",
+        "content": "Chiến dịch quảng bá thương hiệu mùa hè giúp khách hàng của SMADS tiếp cận hàng triệu người tiêu dùng trên các nền tảng mạng xã hội, góp phần nâng cao độ nhận diện thương hiệu."
+      }
+    ]
   },
   "career": {
     "pageTitle": "Tuyển dụng",

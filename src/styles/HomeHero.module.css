@@ -580,7 +580,7 @@
   animation: bounceTop 3s ease-in-out infinite;
 }
 
-/* Content 9 */
+/* Content 9 
 .newsSection {
   padding: 80px 20px;
   text-align: center;
@@ -657,7 +657,7 @@
 .newsCard:hover {
   transform: translateY(-5px);
 }
-
+*/
 
 /* ================= Responsive ================= */
 
@@ -803,11 +803,12 @@
     width: auto;
   }
 
-  /* Content 9 */
+  /* Content 9 
   .newsCards {
     flex-direction: column;
     align-items: center;
   }
+    */
 }
 
 /* ---------- (769px - 992px) ---------- */

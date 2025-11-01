@@ -1,0 +1,220 @@
+.activitiesSection {
+    background-color: #f9f9f9;
+    padding: 80px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.sectionTitle::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    display: block;
+    margin: 14px auto 0;
+    border-radius: 2px;
+}
+
+.activitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.activityCard {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 370px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 460px;
+}
+
+.activityCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.activityImg {
+    width: 100%;
+    min-width: 260px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.activityCard:hover .image {
+    transform: scale(1.05);
+}
+
+.activityContent {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.activityTitle {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 52px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.activityDesc {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
+    min-height: 60px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.activityLink {
+    display: inline-block;
+    align-self: start;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+.activityLink:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.detailSection {
+    padding: 100px 20px;
+    background-color: #fff;
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.detailImage {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.detailImage:hover {
+    transform: scale(1.02);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.detailContent {
+    margin-top: 50px;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+}
+
+.detailTitle {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.detailDesc {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.detailText {
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+    margin-bottom: 30px;
+    background: linear-gradient(180deg, rgba(255, 247, 234, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
+    padding: 30px;
+    border-left: 4px solid var(--color-primary);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.detailText::first-letter {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-right: 6px;
+    float: left;
+    line-height: 1;
+}
+
+.notFound {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-top: 100px;
+}
+
+.activitiesSection a {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.activitiesSection a:hover {
+    text-decoration: none !important;
+}
+
+/* ================= Responsive ================= */
+
+/* ---------- ≥768px ---------- */
+@media (min-width: 768px) {
+    .activitiesSection {
+        margin-bottom: 100px;
+    }
+}

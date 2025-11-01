@@ -45,16 +45,21 @@ export default function Header({ locale = "vi", dict }) {
   const toggleNavbar = () => setIsCollapsed(!isCollapsed);
 
   // Link  active
-  const isActive = (href) => pathname === href;
+const isActive = (href) => {
+  if (href.includes("/activities")) {
+    return pathname.includes("/activities"); // active cả trang con
+  }
+  return pathname === href; // các menu khác vẫn exact match
+};
 
   // Menu item
   const menuItems = [
-    { href: `/${locale}`, label: dict?.nav?.home || "Trang chủ" },
-    { href: `/${locale}/about`, label: dict?.nav?.about || "Giới thiệu" },
-    { href: `/${locale}/services`, label: dict?.nav?.services || "Dịch vụ" },
-    { href: `/${locale}/activities`, label: dict?.nav?.activities || "Hoạt động" },
-    { href: `/${locale}/career`, label: dict?.nav?.career || "Tuyển dụng" },
-    { href: `/${locale}/contact`, label: dict?.nav?.contact || "Liên hệ" },
+    { href: `/${locale}`, label: dict?.header?.home || "Trang chủ" },
+    { href: `/${locale}/about`, label: dict?.header?.about || "Giới thiệu" },
+    { href: `/${locale}/services`, label: dict?.header?.services || "Dịch vụ" },
+    { href: `/${locale}/activities`, label: dict?.header?.activities || "Hoạt động" },
+    { href: `/${locale}/career`, label: dict?.header?.career || "Tuyển dụng" },
+    { href: `/${locale}/contact`, label: dict?.header?.contact || "Liên hệ" },
   ];
 
   return (
