@@ -35,6 +35,30 @@
         "title": "Summer Brand Campaign",
         "desc": "SMADS partners with clients to launch creative brand campaigns across platforms.",
         "content": "The Summer Brand Campaign helped SMADS’ partners reach millions of customers across social media platforms, increasing brand awareness effectively and creatively."
+      },
+      {
+        "slug": "marketing-workshop-2025",
+        "slug_vi": "workshop-marketing-2025",
+        "slug_en": "marketing-workshop-2025",
+        "title": "Marketing Workshop 2025",
+        "desc": "A sharing session on modern marketing skills for small and medium businesses.",
+        "content": "In the Marketing Workshop 2025, SMADS introduced the latest marketing trends — from content strategy and social media management to the application of AI in advertising. The event attracted many young entrepreneurs and received positive feedback."
+      },
+      {
+        "slug": "team-building-da-nang-2025",
+        "slug_vi": "team-building-da-nang-2025",
+        "slug_en": "team-building-da-nang-2025",
+        "title": "Team Building Da Nang 2025",
+        "desc": "A bonding journey for SMADS with exciting and creative outdoor activities.",
+        "content": "The Team Building Da Nang trip was a wonderful opportunity for SMADS members to connect and create memorable moments together. The program featured beach games at My Khe that fostered teamwork and creativity."
+      },
+      {
+        "slug": "summer-brand-campaign",
+        "slug_vi": "chien-dich-quang-ba-thuong-hieu-mua-he",
+        "slug_en": "summer-brand-campaign",
+        "title": "Summer Brand Campaign",
+        "desc": "SMADS partners with clients to launch creative brand campaigns across platforms.",
+        "content": "The Summer Brand Campaign helped SMADS’ partners reach millions of customers across social media platforms, increasing brand awareness effectively and creatively."
       }
     ]
   },
@@ -89,7 +113,8 @@
       "email": "Email",
       "subject": "Subject",
       "message": "Message",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "sending": "Sending..."
     },
     "toast": {
       "fillAll": "Please fill all required fields!",

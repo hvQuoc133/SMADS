@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import BgAllPage from "../../../components/BgAllPage";
 import ScrollToTop from "../../../components/ScrollToTop";
 import AOS from "aos";
@@ -34,6 +34,8 @@ export default function Contact({ dict }) {
   const c = dict.contact;
   const t = c.toast;
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -54,6 +56,9 @@ export default function Contact({ dict }) {
       return;
     }
 
+    setIsLoading(true); // Enable the loading spinner
+
+    // Verify email existence
     try {
       const verify = await fetch("/api/verify-email", {
         method: "POST",
@@ -63,10 +68,12 @@ export default function Contact({ dict }) {
       const verifyResult = await verify.json();
       if (!verifyResult.valid) {
         toast.error(t.emailNotFound);
+        setIsLoading(false);
         return;
       }
     } catch (err) {
       toast.error(t.checkFail);
+      setIsLoading(false);
       return;
     }
 
@@ -87,6 +94,8 @@ export default function Contact({ dict }) {
       }
     } catch (err) {
       toast.error(t.sendError);
+    } finally {
+      setIsLoading(false); // Disable the loading spinner
     }
   };
 
@@ -162,7 +171,21 @@ export default function Contact({ dict }) {
                 rows="5"
                 required
               ></textarea>
-              <button type="submit">{c.form.submit}</button>
+              <button
+                type="submit"
+                disabled={isLoading}
+                className={styles.submitBtn}
+              >
+                {isLoading ? (
+                  <>
+                    <span className={styles.loader}></span>
+                    {c.form.sending || "Đang gửi..."}
+                  </>
+                ) : (
+                  c.form.submit
+                )}
+              </button>
+
             </form>
           </div>
         </div>

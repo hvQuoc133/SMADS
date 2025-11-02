@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import AosInit from "../aos-init";
 import { getDictionary } from "../../lib/dictionaries";
+import ToastProvider from "../../components/ToastProvider";
 
 export const metadata = {
   title: "SMADS - Truyền thông sáng tạo",
@@ -22,6 +23,7 @@ export default async function LocaleLayout({ children, params }) {
       <Header dict={dict} locale={locale} />
       <main>{children}</main>
       <Footer dict={dict} locale={locale} />
+      <ToastProvider />
     </>
   );
 }
