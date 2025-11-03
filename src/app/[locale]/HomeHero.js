@@ -15,6 +15,7 @@ import enDict from "@/lib/dictionaries/en.json";
 
 export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
   const dict = locale === "vi" ? viDict : enDict;
+  const t = dict.home;
 
   const activities = (dict.activities?.list || []).map((item, idx) => ({
     ...item,
@@ -48,12 +49,12 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
     };
   }, []);
 
-  function StatItem({ end, label }) {
+  function StartItem({ end, label }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
 
     return (
-      <div className={styles.statItem}>
+      <div className={styles.StartItem}>
         <h2 ref={ref}>
           {isInView ? <CountUp end={end} duration={2} /> : 0}
         </h2>
@@ -70,16 +71,14 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
         <div className={styles.container}>
           <div className={styles.left} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
             <h1 className={styles.title}>
-              Digital Agency behind  <br />
-              <span className={styles.highlight}>Startup Business</span>
+              {t.hero.title1}   <br />
+              <span className={styles.highlight}>{t.hero.highlight}</span>
             </h1>
             <p className={styles.description}>
-              There are many variations of passages of Lorem Ipsum available but at the
-              majority have suffered alteration in that some form by injected humour that
-              randomised words.
+              {t.hero.desc}
             </p>
             <div className={styles.buttons}>
-              <button className={styles.primaryButton}>Read More</button>
+              <button className={styles.primaryButton}>{t.hero.readMore}</button>
             </div>
           </div>
           <div className={styles.right} data-aos="fade-left">
@@ -125,20 +124,13 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
         </div>
         <div className={styles.startupRight} data-aos="fade-down-left">
           <h1 className={styles.startupTitle}>
-            Start to end <br />
-            app development agency
+            {t.startup.title}
           </h1>
           <p className={styles.startupDescription}>
-            There are many variations of passages of Lorem Ipsum available but the majority have and suffered alteration in that
-            some form by injected humour or randomised words which the don’t look even slightly believable. If you are going a to
-            use a passage of Lorem Ipsum you need to be sure there isn’t anything embarrassing.
-            <br />
-            <br />
-            There are many variations of passages of Lorem Ipsum available but the majority have very suffered alteration in that some
-            form by injected humour or randomised words which the don’t look even slightly believable.
+            {t.startup.desc}
           </p>
           <div className={styles.startupBtn}>
-            <button className={styles.startupButton}>More About Us</button>
+            <button className={styles.startupButton}>{t.startup.button}</button>
           </div>
         </div>
       </section>
@@ -146,32 +138,26 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
       {/* Content 4  */}
       <section className={styles.featuresSection}>
         <div className={styles.featuresHeader} data-aos="fade-up" data-aos-duration="3000">
-          <p className={styles.featureSubtitle}>Features</p>
-          <h2 className={styles.featureTitle}>Some Of The Best Features</h2>
-          <p className={styles.featureDesc}>
-            There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration
-            in some form by injected humour or randomised words which don't look even slightly believable.
-          </p>
+          <p className={styles.featureSubtitle}>{t.features.subtitle}</p>
+          <h2 className={styles.featureTitle}>{t.features.title}</h2>
+          <p className={styles.featureDesc}>{t.features.desc}</p>
         </div>
 
         <div className={styles.featuresGrid}>
           {[
-            { icon: "/images/home/features_icon01.png", title: "Expand Your Reach" },
-            { icon: "/images/home/features_icon02.png", title: "Higher Growth Rate" },
-            { icon: "/images/home/features_icon03.png", title: "Manage Your Customer" },
-            { icon: "/images/home/features_icon04.png", title: "Book Your Provider" },
-            { icon: "/images/home/features_icon05.png", title: "Market Analysis" },
-            { icon: "/images/home/features_icon06.png", title: "Creative Web Solution" },
+            { icon: "/images/home/features_icon01.png", title: t.features.items[0].title },
+            { icon: "/images/home/features_icon02.png", title: t.features.items[1].title },
+            { icon: "/images/home/features_icon03.png", title: t.features.items[2].title },
+            { icon: "/images/home/features_icon04.png", title: t.features.items[3].title },
+            { icon: "/images/home/features_icon05.png", title: t.features.items[4].title },
+            { icon: "/images/home/features_icon06.png", title: t.features.items[5].title },
           ].map((item, index) => (
             <div key={index} className={styles.featureCard}>
               <div className={styles.iconWrap}>
                 <img src={item.icon} alt={item.title} />
               </div>
               <h3>{item.title}</h3>
-              <p>
-                There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration
-                in that injected.
-              </p>
+              <p>{t.features.desc}</p>
             </div>
           ))}
         </div>
@@ -187,9 +173,9 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
           </div>
 
           <div className={styles.statsBox}>
-            <StatItem end={248} label="Happy Customer" />
-            <StatItem end={39} label="Award Win" />
-            <StatItem end={575} label="Project Complete" />
+            <StartItem end={248} label={t.stats.happyCustomer} />
+            <StartItem end={39} label={t.stats.awardWin} />
+            <StartItem end={575} label={t.stats.projectComplete} />
           </div>
         </div>
       </section>
@@ -200,44 +186,44 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
         <div className={styles.backgroundImage}>
           <img src="/images/home/area_bg.png" alt="Background" />
         </div>
-        {/* Main content*/}
+
+        {/* Main content */}
         <div className={styles.contentWrapper}>
-          {/* Left content*/}
+          {/* Left content */}
           <div className={styles.leftContenttitleOptimization} data-aos="fade-down">
             <img src="/images/home/optimize_img.png" alt="Left Visual" />
           </div>
-          {/* Right content*/}
+
+          {/* Right content */}
           <div className={styles.rightContenttitleOptimization} data-aos="fade-up">
-            <div className={styles.titleOptimization}>Spend Optimization Our Software easily</div>
-            <div className={styles.descOptimization}>There are many variations of passages of Lorem Ipsum
-              available but the majority have suffered alteration in that injected. There are many that
-              variations of passages.There are many variations of passages of Lorem Ipsum available but
-              the majority have suffered.</div>
-            <div className={styles.textContent}>
-              <div className={styles.textContent_1}>
-                <img src="/images/home/optimize_icon01.png" alt="Left Visual" />
-                <h4>Get insight only our app</h4>
+            <div className={styles.titleOptimization}>{t.optimization.title}</div>
+            <div className={styles.descOptimization}>{t.optimization.desc}</div>
+
+            {t.optimization.items.map((item, index) => (
+              <div key={index} className={styles.textContent}>
+                <div className={styles.textContent_1}>
+                  <img
+                    src={`/images/home/optimize_icon0${index + 1}.png`}
+                    alt={item.title}
+                  />
+                  <h4>{item.title}</h4>
+                </div>
+                <p>{item.text}</p>
               </div>
-              <p>There are many variations of passages of Lorem Ipsum available but at the majority have suffered alteration in that injected.</p>
-            </div>
-            <div className={styles.textContent}>
-              <div className={styles.textContent_1}>
-                <img src="/images/home/optimize_icon02.png" alt="Left Visual" />
-                <h4>Get insight only our app</h4>
-              </div>
-              <p>There are many variations of passages of Lorem Ipsum available but at the majority have suffered alteration in that injected.</p>
-            </div>
+            ))}
           </div>
         </div>
+
         {/* Bottom content */}
         <div className={styles.bottomContent}>
           <div className={styles.featuresHeader}>
-            <p className={styles.featureSubtitle}>Our Clients</p>
-            <h2 className={styles.featureTitle}>Testimonials</h2>
-            < Testimonials />
+            <p className={styles.featureSubtitle}>{t.optimization.clientsSubtitle}</p>
+            <h2 className={styles.featureTitle}>{t.optimization.clientsTitle}</h2>
+            <Testimonials />
           </div>
         </div>
       </section>
+
 
       {/* Content 7 */}
       <Agency />
@@ -249,13 +235,13 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
         <img src="/images/home/cta_shape03.png" alt="Shape Right" className={styles.ctaShapeRight} />
         <div className={styles.ctaContent}>
           <div className={styles.ctaText}>
-            <h2>We help to grow creativity<br />that Break rules</h2>
+            <h2>{t.cta.title}</h2>
             <p>
-              There are many variations of passages of Lorem Ipsum available but the our majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available.
+              {t.cta.desc}
             </p>
           </div>
           <div className={styles.ctaButton}>
-            <button>Get Started</button>
+            <button>{t.cta.button}</button>
           </div>
         </div>
       </section>

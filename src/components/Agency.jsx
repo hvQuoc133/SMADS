@@ -1,7 +1,11 @@
-import React from 'react';
-import styles from '../styles/Agency.module.css';
+"use client";
+import React from "react";
+import styles from "../styles/Agency.module.css";
 
-export default function Agency({ title, parent }) {
+export default function Agency({ dict }) {
+    if (!dict?.agency) return null;
+    const a = dict.agency;
+
     return (
         <section className={styles.agencySection}>
             <div className={styles.agencyWrapper}>
@@ -9,33 +13,23 @@ export default function Agency({ title, parent }) {
                     {/* LEFT TEXT */}
                     <div className={styles.agencyText} data-aos="fade-left">
                         <h2>
-                            Creative Agency <br />
-                            <span>From New York - USA</span>
-                            <br /> in 30 years.
+                            {a.titleLine1} <br />
+                            <span>{a.titleLine2}</span>
+                            <br /> {a.titleLine3}
                         </h2>
-                        <p>
-                            There are many variations of passages of Lorem Ipsum available but
-                            the majority have suffered alteration in that injected. There are
-                            many variations of passages of Lorem Ipsum available.
-                        </p>
+                        <p>{a.description}</p>
 
                         <div className={styles.agencySkills}>
-                            <div className={styles.agencySkill}>
-                                <div className={`${styles.agencyCircle} ${styles.purple}`}>69%</div>
-                                <span>WordPress Developer</span>
-                            </div>
-                            <div className={styles.agencySkill}>
-                                <div className={`${styles.agencyCircle} ${styles.red}`}>85%</div>
-                                <span>Apps Developer</span>
-                            </div>
-                            <div className={styles.agencySkill}>
-                                <div className={`${styles.agencyCircle} ${styles.green}`}>76%</div>
-                                <span>Android Apps</span>
-                            </div>
-                            <div className={styles.agencySkill}>
-                                <div className={`${styles.agencyCircle} ${styles.blue}`}>80%</div>
-                                <span>Apps Developer</span>
-                            </div>
+                            {a.skills.map((skill, idx) => (
+                                <div key={idx} className={styles.agencySkill}>
+                                    <div
+                                        className={`${styles.agencyCircle} ${styles[skill.color]}`}
+                                    >
+                                        {skill.percent}%
+                                    </div>
+                                    <span>{skill.label}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
 
@@ -43,7 +37,7 @@ export default function Agency({ title, parent }) {
                     <div className={styles.agencyImage} data-aos="fade-right">
                         <img
                             src="/images/home/skill_img.png"
-                            alt="Creative Agency Illustration"
+                            alt={a.imageAlt}
                             width={500}
                             height={400}
                         />

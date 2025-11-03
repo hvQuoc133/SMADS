@@ -7,6 +7,117 @@
     "career": "Tuyển dụng",
     "contact": "Liên hệ"
   },
+  "home": {
+    "hero": {
+      "title1": "Công ty Digital Agency đứng sau",
+      "highlight": "Doanh nghiệp khởi nghiệp",
+      "desc": "Có rất nhiều biến thể của văn bản Lorem Ipsum, nhưng hầu hết đã bị thay đổi bởi các yếu tố ngẫu nhiên hoặc thêm yếu tố hài hước.",
+      "readMore": "Đọc thêm"
+    },
+    "startup": {
+      "title": "Từ khởi đầu đến kết thúc – Agency phát triển ứng dụng trọn gói",
+      "desc": "Có rất nhiều biến thể của Lorem Ipsum, nhưng hầu hết đã bị thay đổi theo thời gian bởi các yếu tố ngẫu nhiên hoặc chèn thêm nội dung.",
+      "button": "Tìm hiểu thêm"
+    },
+    "features": {
+      "subtitle": "Tính năng",
+      "title": "Một số tính năng nổi bật nhất",
+      "desc": "Có rất nhiều biến thể của Lorem Ipsum, nhưng hầu hết đã bị thay đổi trong quá trình sử dụng thực tế.",
+      "items": [
+        {
+          "title": "Mở rộng phạm vi tiếp cận"
+        },
+        {
+          "title": "Tăng trưởng vượt bậc"
+        },
+        {
+          "title": "Quản lý khách hàng dễ dàng"
+        },
+        {
+          "title": "Đặt lịch dịch vụ nhanh chóng"
+        },
+        {
+          "title": "Phân tích thị trường"
+        },
+        {
+          "title": "Giải pháp web sáng tạo"
+        }
+      ]
+    },
+    "optimization": {
+      "title": "Tối ưu chi phí với phần mềm của chúng tôi",
+      "desc": "Có nhiều biến thể của đoạn Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chèn vào. Nền tảng của chúng tôi giúp doanh nghiệp tiết kiệm và vận hành hiệu quả hơn.",
+      "items": [
+        {
+          "title": "Nhận thông tin chuyên sâu chỉ có trong ứng dụng của chúng tôi",
+          "text": "Có nhiều biến thể của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chèn vào nội dung thực tế."
+        },
+        {
+          "title": "Tăng hiệu suất vận hành của bạn",
+          "text": "Giải pháp của chúng tôi giúp bạn quản lý chi tiêu và tối ưu nguồn lực một cách thông minh và hiệu quả."
+        }
+      ],
+      "clientsSubtitle": "Khách hàng của chúng tôi",
+      "clientsTitle": "Đánh giá từ khách hàng"
+    },
+    "stats": {
+      "happyCustomer": "Khách hàng hài lòng",
+      "awardWin": "Giải thưởng đạt được",
+      "projectComplete": "Dự án hoàn thành"
+    },
+    "cta": {
+      "title": "Chúng tôi giúp phát triển sáng tạo phá vỡ giới hạn",
+      "desc": "Có rất nhiều biến thể của Lorem Ipsum, nhưng phần lớn đã bị thay đổi theo thời gian bởi các yếu tố ngẫu nhiên.",
+      "button": "Bắt đầu ngay"
+    }
+  },
+  "about": {
+    "pageTitle": "Về Chúng Tôi",
+    "section1": {
+      "title": "Tại Sao Chúng Tôi Là Agency Khác Biệt",
+      "p1": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa.",
+      "p2": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa. Có rất nhiều phiên bản khác nhau nhưng hầu hết đều đã bị thay đổi đáng kể.",
+      "readMore": "Xem Thêm"
+    },
+    "section2": {
+      "title": "Tại Sao Chúng Tôi Là Sự Lựa Chọn Tốt Nhất Cho Doanh Nghiệp Của Bạn!!",
+      "desc": "Có nhiều biến thể của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị chỉnh sửa theo nhiều cách khác nhau.",
+      "list": [
+        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi.",
+        "Nếu bạn sử dụng Lorem Ipsum, hãy chắc rằng không có nội dung nào gây nhầm lẫn.",
+        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi."
+      ]
+    }
+  },
+  "agency": {
+    "titleLine1": "Agency Sáng Tạo",
+    "titleLine2": "Đến Từ New York - USA",
+    "titleLine3": "với 30 năm kinh nghiệm.",
+    "description": "Có nhiều phiên bản khác nhau của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được sử dụng. Đây chỉ là nội dung mô phỏng tạm thời.",
+    "imageAlt": "Hình minh họa Agency sáng tạo",
+    "skills": [
+      {
+        "label": "Nhà phát triển WordPress",
+        "percent": 69,
+        "color": "purple"
+      },
+      {
+        "label": "Nhà phát triển ứng dụng",
+        "percent": 85,
+        "color": "red"
+      },
+      {
+        "label": "Ứng dụng Android",
+        "percent": 76,
+        "color": "green"
+      },
+      {
+        "label": "Nhà phát triển ứng dụng",
+        "percent": 80,
+        "color": "blue"
+      }
+    ]
+  },
   "activities": {
     "title": "Hoạt động nổi bật",
     "viewDetail": "Xem chi tiết →",

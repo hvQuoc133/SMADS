@@ -7,6 +7,117 @@
     "career": "Career",
     "contact": "Contact"
   },
+  "home": {
+    "hero": {
+      "title1": "Digital Agency behind",
+      "highlight": "Startup Business",
+      "desc": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that some form by injected humour that randomised words.",
+      "readMore": "Read More"
+    },
+    "startup": {
+      "title": "Start to end app development agency",
+      "desc": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration...",
+      "button": "More About Us"
+    },
+    "features": {
+      "subtitle": "Features",
+      "title": "Some Of The Best Features",
+      "desc": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration...",
+      "items": [
+        {
+          "title": "Expand Your Reach"
+        },
+        {
+          "title": "Higher Growth Rate"
+        },
+        {
+          "title": "Manage Your Customer"
+        },
+        {
+          "title": "Book Your Provider"
+        },
+        {
+          "title": "Market Analysis"
+        },
+        {
+          "title": "Creative Web Solution"
+        }
+      ]
+    },
+    "optimization": {
+      "title": "Spend Optimization Made Easy with Our Software",
+      "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in injected forms. Our platform helps businesses save costs and operate more efficiently.",
+      "items": [
+        {
+          "title": "Get insight only from our app",
+          "text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in injected forms."
+        },
+        {
+          "title": "Boost your operational performance",
+          "text": "Our solution helps you manage spending and optimize resources smartly and effectively."
+        }
+      ],
+      "clientsSubtitle": "Our Clients",
+      "clientsTitle": "Testimonials"
+    },
+    "stats": {
+      "happyCustomer": "Happy Customer",
+      "awardWin": "Award Win",
+      "projectComplete": "Project Complete"
+    },
+    "cta": {
+      "title": "We help to grow creativity that Break rules",
+      "desc": "There are many variations of passages of Lorem Ipsum available but the our majority have suffered alteration...",
+      "button": "Get Started"
+    }
+  },
+  "about": {
+    "pageTitle": "About Us",
+    "section1": {
+      "title": "Why We Are Different Digital Agency",
+      "p1": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected.",
+      "p2": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available but the majority have the at suffered alteration in that injected.",
+      "readMore": "Read More"
+    },
+    "section2": {
+      "title": "Why We’re The Best Match For Your Business!!",
+      "desc": "There are many variations of passages of Lorem Ipsum available the majority to have suffered some form by injected.",
+      "list": [
+        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration.",
+        "If you are going to use a passage of Lorem Ipsum you need to be sure there isn't anything embarrassing.",
+        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration."
+      ]
+    }
+  },
+  "agency": {
+    "titleLine1": "Creative Agency",
+    "titleLine2": "From New York - USA",
+    "titleLine3": "in 30 years.",
+    "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available.",
+    "imageAlt": "Creative Agency Illustration",
+    "skills": [
+      {
+        "label": "WordPress Developer",
+        "percent": 69,
+        "color": "purple"
+      },
+      {
+        "label": "Apps Developer",
+        "percent": 85,
+        "color": "red"
+      },
+      {
+        "label": "Android Apps",
+        "percent": 76,
+        "color": "green"
+      },
+      {
+        "label": "Apps Developer",
+        "percent": 80,
+        "color": "blue"
+      }
+    ]
+  },
   "activities": {
     "title": "Featured Activities",
     "viewDetail": "View details →",
