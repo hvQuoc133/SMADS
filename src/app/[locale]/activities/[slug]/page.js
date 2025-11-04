@@ -9,7 +9,7 @@ export default async function Page({ params }) {
   const { locale, slug } = params;
   const dict = await getDictionary(locale);
 
-  // Danh sách tất cả hoạt động trong locale hiện tại
+  // List of all activities in the current locale
   const activities = dict.activities.list.map((item, index) => ({
     id: index + 1,
     slug: item.slug,
@@ -19,10 +19,10 @@ export default async function Page({ params }) {
     content: item.content || "",
   }));
 
-  // Tìm bài hiện tại
+  // Find the activity by slug
   let activity = activities.find((a) => a.slug === slug);
 
-  // Nếu không tìm thấy trong locale hiện tại, thử tìm fallback
+  // If not found, try to fallback to the other locale
   if (!activity) {
     const fallbackList = locale === "vi" ? enDict.activities.list : viDict.activities.list;
     const fallback = fallbackList.find((a) => a.slug === slug);
@@ -31,7 +31,7 @@ export default async function Page({ params }) {
     }
   }
 
-  // Lọc ra các bài viết khác để hiển thị ở cột bên phải
+  // Get related activities (excluding the current one)
   const relatedActivities = activities.filter((a) => a.slug !== slug).slice(0, 4);
 
   return (

@@ -1,6 +1,6 @@
 import HomeHero from "./HomeHero";
 
-export default function Page({ params }) {
+export default async function Page({ params }) {
   const locale = params?.locale || "vi";
-  return <HomeHero locale={locale} />;  
+  return <HomeHero locale={locale} />;
 }

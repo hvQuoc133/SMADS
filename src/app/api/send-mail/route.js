@@ -33,7 +33,7 @@ export async function POST(req) {
     // Content mail
     const mailOptions = {
       from: `"SMADS Website" <${process.env.EMAIL_USER}>`,
-      to: process.env.EMAIL_TO, 
+      to: process.env.EMAIL_TO,
       subject: "📩 Hồ sơ ứng tuyển mới từ website SMADS",
       html: `
         <h3>Thông tin ứng viên</h3>

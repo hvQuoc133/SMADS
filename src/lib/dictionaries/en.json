@@ -197,7 +197,8 @@
       "phone": "Phone Number",
       "cv": "Upload CV (PDF or DOCX)",
       "note": "Note",
-      "notePlaceholder": "Add any additional info..."
+      "notePlaceholder": "Add any additional info...",
+      "sending": "Sending..."
     },
     "toast": {
       "invalidEmail": "Please enter a valid email address!",
@@ -251,7 +252,7 @@
       "home": "Home",
       "about": "About",
       "services": "Services",
-      "blog": "Blog",
+      "activities": "Activities",
       "career": "Career"
     },
     "contact_title": "Contact",

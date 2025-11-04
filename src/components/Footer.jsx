@@ -12,7 +12,8 @@ export default function Footer({ locale = "vi", dict }) {
       <section>
         <div className="container text-center text-md-start mt-5">
           <div className="row mt-3">
-            {/* 🏢 Giới thiệu công ty */}
+
+            {/* Company about */}
             <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 <img
@@ -31,7 +32,7 @@ export default function Footer({ locale = "vi", dict }) {
               </div>
             </div>
 
-            {/* 🧩 Dịch vụ */}
+            {/* Services */}
             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 {dict?.footer?.services_title}
@@ -42,19 +43,39 @@ export default function Footer({ locale = "vi", dict }) {
               <p><a href="#!" className="text-reset">{dict?.footer?.services?.seo}</a></p>
             </div>
 
-            {/* 🔗 Liên kết */}
+            {/* Link */}
             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 {dict?.footer?.links_title}
               </h6>
-              <p><a href="#!" className="text-reset">{dict?.footer?.links?.home}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.links?.about}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.links?.services}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.links?.blog}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.links?.career}</a></p>
+              <p>
+                <a href={`/${locale}`} className="text-reset">
+                  {dict?.footer?.links?.home}
+                </a>
+              </p>
+              <p>
+                <a href={`/${locale}/about`} className="text-reset">
+                  {dict?.footer?.links?.about}
+                </a>
+              </p>
+              <p>
+                <a href={`/${locale}/services`} className="text-reset">
+                  {dict?.footer?.links?.services}
+                </a>
+              </p>
+              <p>
+                <a href={`/${locale}/activities`} className="text-reset">
+                  {dict?.footer?.links?.activities}
+                </a>
+              </p>
+              <p>
+                <a href={`/${locale}/career`} className="text-reset">
+                  {dict?.footer?.links?.career}
+                </a>
+              </p>
             </div>
 
-            {/* 📞 Liên hệ */}
+            {/* Contact */}
             <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
               <h6 className="text-uppercase fw-bold mb-4">
                 {dict?.footer?.contact_title}

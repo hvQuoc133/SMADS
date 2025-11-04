@@ -3,8 +3,6 @@
 import { useEffect } from "react";
 import BgAllPage from "../../../components/BgAllPage";
 import ScrollToTop from "../../../components/ScrollToTop";
-import Link from "next/link";
-import Image from "next/image";
 import "aos/dist/aos.css";
 import ActivitiesSection from "../../../components/ActivitiesSection";
 

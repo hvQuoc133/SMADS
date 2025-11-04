@@ -18,7 +18,12 @@ body {
   font-size: var(--fs-base);
 }
 
-html, body, button, input, textarea, select {
+html,
+body,
+button,
+input,
+textarea,
+select {
   font-family: var(--font-sans);
 }
 
@@ -242,4 +247,30 @@ h6 {
 .swiper-button-prev svg,
 .swiper-button-next svg {
   fill: var(--color-primary) !important;
+}
+
+/* ===== Scrollbar  ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) #f1f1f1;
 }

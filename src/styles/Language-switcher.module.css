@@ -23,8 +23,7 @@
 }
 
 .active {
-  border: 2px solid #fff;
-  background: rgba(247, 167, 52, 0.15);
+  border: 2px solid var(--color-secondary);
   transform: scale(1.08);
 }
 

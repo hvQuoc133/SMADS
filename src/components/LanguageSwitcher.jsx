@@ -16,7 +16,7 @@ export default function LanguageSwitcher() {
   const handleChange = (locale) => {
     const parts = pathname.split("/").filter(Boolean);
 
-    // xử lý trang activities
+    // Processing page activities
     if (parts[1] === "activities" && parts[2]) {
       const slug = decodeURIComponent(parts[2]);
 
@@ -33,7 +33,7 @@ export default function LanguageSwitcher() {
       }
     }
 
-    // các trang khác → chỉ đổi locale
+    // Other pages → just change locale
     router.push(pathname.replace(`/${currentLocale}`, `/${locale}`));
   };
 
@@ -43,9 +43,8 @@ export default function LanguageSwitcher() {
         <button
           key={locale}
           onClick={() => handleChange(locale)}
-          className={`${styles.langBtn} ${
-            currentLocale === locale ? styles.active : ""
-          }`}
+          className={`${styles.langBtn} ${currentLocale === locale ? styles.active : ""
+            }`}
         >
           <Image
             src={`/images/icon/${locale}.png`}

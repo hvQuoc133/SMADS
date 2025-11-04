@@ -13,7 +13,7 @@ import ActivitiesSection from "@/components/ActivitiesSection";
 import viDict from "@/lib/dictionaries/vi.json";
 import enDict from "@/lib/dictionaries/en.json";
 
-export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
+export default function HomeHero({ locale }) {  // Just pass locale as a prop
   const dict = locale === "vi" ? viDict : enDict;
   const t = dict.home;
 
@@ -245,46 +245,6 @@ export default function HomeHero({ locale }) {  // <-- chỉ nhận locale
           </div>
         </div>
       </section>
-
-
-      {/* <section className={styles.newsSection}>
-        <div className={styles.newsHeader}>
-          <p className={styles.newsSubtitle}>Read Our</p>
-          <h2 className={styles.newsTitle}>Latest News</h2>
-          <p className={styles.newsDesc}>
-            There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration some randomised words which don't look even slightly believable.
-          </p>
-        </div>
-
-        <div className={styles.newsCards}>
-          <div className={styles.newsCard}>
-            <img src="/images/home/news01.jpg" alt="News 1" />
-            <h3>How to more productive using sticky notes</h3>
-            <p>There are many variations of passages of at Lorem Ipsum available but the majority the have suffered dummy is</p>
-            <div className={styles.newsInfo}>
-              <span>Digee</span> | <span>March 28, 2019</span>
-            </div>
-          </div>
-
-          <div className={styles.newsCard}>
-            <img src="/images/home/news02.jpg" alt="News 2" />
-            <h3>How to become a best sale marketer in a years</h3>
-            <p>There are many variations of passages of at Lorem Ipsum available but the majority the have suffered dummy is</p>
-            <div className={styles.newsInfo}>
-              <span>Digee</span> | <span>April 18, 2019</span>
-            </div>
-          </div>
-
-          <div className={styles.newsCard}>
-            <img src="/images/home/news03.jpg" alt="News 3" />
-            <h3>We are nominated to Agency of the year.</h3>
-            <p>There are many variations of passages of at Lorem Ipsum available but the majority the have suffered dummy is</p>
-            <div className={styles.newsInfo}>
-              <span>Digee</span> | <span>April 28, 2019</span>
-            </div>
-          </div>
-        </div>
-      </section> */}
 
       {/* Content 9 */}
       <ActivitiesSection dict={dict} activities={activities} locale={locale} />

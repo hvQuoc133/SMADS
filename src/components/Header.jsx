@@ -9,10 +9,11 @@ import LanguageSwitcher from "./LanguageSwitcher";
 export default function Header({ locale = "vi", dict }) {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [scrolled, setScrolled] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
   const navRef = useRef(null);
 
-  // 🧠 Follow scroll page & click outside nav
+  // Follow scroll page & click outside nav
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js").catch(() => { });
 
@@ -27,6 +28,7 @@ export default function Header({ locale = "vi", dict }) {
         !e.target.closest(".navbar-toggler")
       ) {
         setIsCollapsed(true);
+        setDropdownOpen(false);
       }
     };
     document.addEventListener("click", handleClickOutside);
@@ -40,17 +42,18 @@ export default function Header({ locale = "vi", dict }) {
   // Close toggle menu when transferring route
   useEffect(() => {
     setIsCollapsed(true);
+    setDropdownOpen(false);
   }, [pathname]);
 
   const toggleNavbar = () => setIsCollapsed(!isCollapsed);
 
-  // Link  active
-const isActive = (href) => {
-  if (href.includes("/activities")) {
-    return pathname.includes("/activities"); // active cả trang con
-  }
-  return pathname === href; // các menu khác vẫn exact match
-};
+  // Link active
+  const isActive = (href) => {
+    if (href.includes("/activities")) {
+      return pathname.includes("/activities");
+    }
+    return pathname === href;
+  };
 
   // Menu item
   const menuItems = [
@@ -60,6 +63,14 @@ const isActive = (href) => {
     { href: `/${locale}/activities`, label: dict?.header?.activities || "Hoạt động" },
     { href: `/${locale}/career`, label: dict?.header?.career || "Tuyển dụng" },
     { href: `/${locale}/contact`, label: dict?.header?.contact || "Liên hệ" },
+  ];
+
+  const servicesSubmenu = [
+    { href: `/${locale}/services/web-design`, label: "Web Design" },
+    { href: `/${locale}/services/seo`, label: "SEO" },
+    { href: `/${locale}/services/marketing`, label: "Marketing" },
+    { href: `/${locale}/services/branding`, label: "Branding" },
+    { href: `/${locale}/services/social-media`, label: "Social Media" },
   ];
 
   return (
@@ -97,16 +108,47 @@ const isActive = (href) => {
           id="navbarNav"
         >
           <ul className="navbar-nav mx-auto">
-            {menuItems.map((item, idx) => (
-              <li key={idx} className="nav-item">
-                <Link
-                  href={item.href}
-                  className={`nav-link ${isActive(item.href) ? "active" : ""}`}
-                >
-                  <span>{item.label}</span>
-                </Link>
-              </li>
-            ))}
+            {menuItems.map((item, idx) => {
+              if (item.href.includes("/services")) {
+                return (
+                  <li
+                    key={idx}
+                    className="nav-item dropdown"
+                    onMouseEnter={() => setDropdownOpen(true)}
+                    onMouseLeave={() => setDropdownOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+                      onClick={(e) => e.preventDefault()}
+                    >
+                      <span>{item.label}</span>
+                    </Link>
+
+                    <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
+                      {servicesSubmenu.map((sub, subIdx) => (
+                        <li key={subIdx}>
+                          <Link href={sub.href} className="dropdown-item">
+                            {sub.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                );
+              }
+
+              return (
+                <li key={idx} className="nav-item">
+                  <Link
+                    href={item.href}
+                    className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+                  >
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              );
+            })}
 
             {/* Flag change language */}
             <li className="nav-item d-flex align-items-center ms-lg-3">

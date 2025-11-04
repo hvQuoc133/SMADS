@@ -197,7 +197,8 @@
       "phone": "Số điện thoại",
       "cv": "Tải lên CV (PDF hoặc DOCX)",
       "note": "Ghi chú",
-      "notePlaceholder": "Thêm thông tin nếu có..."
+      "notePlaceholder": "Thêm thông tin nếu có...",
+      "sending": "Đang gửi..."
     },
     "toast": {
       "invalidEmail": "Vui lòng nhập đúng định dạng email!",
@@ -251,7 +252,7 @@
       "home": "Trang chủ",
       "about": "Giới thiệu",
       "services": "Dịch vụ",
-      "blog": "Cẩm nang",
+      "activities": "Hoạt động",
       "career": "Tuyển dụng"
     },
     "contact_title": "Liên hệ",

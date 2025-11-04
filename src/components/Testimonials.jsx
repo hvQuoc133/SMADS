@@ -62,7 +62,6 @@ export default function Testimonials() {
                         <h4 className={styles.name}>{item.name}</h4>
                         <p className={styles.role}>{item.role}</p>
 
-                        {/* Avatars hiển thị kiểu Digee */}
                         <div className={styles.avatars}>
                             <img
                                 src={testimonials[(activeIndex - 1 + testimonials.length) % testimonials.length].avatar}

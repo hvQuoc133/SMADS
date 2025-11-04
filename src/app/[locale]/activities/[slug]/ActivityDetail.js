@@ -17,7 +17,7 @@ export default function ActivityDetail({ dict, locale, activity, relatedActiviti
   if (!activity) {
     return (
       <p className={style.notFound}>
-        {dict.activities.notFound || "Không tìm thấy hoạt động này."}
+        {dict.activities.notFound || "Page not found!."}
       </p>
     );
   }
@@ -50,7 +50,7 @@ export default function ActivityDetail({ dict, locale, activity, relatedActiviti
         {/* Right Content - Related Articles */}
         <aside className={style.rightContent}>
           <h3>Bài viết khác</h3>
-          
+
           <div className={style.relatedList}>
             {relatedActivities && relatedActivities.length > 0 ? (
               relatedActivities.map((item) => (

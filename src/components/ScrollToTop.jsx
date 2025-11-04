@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import { useState, useEffect } from "react";
 import styles from "../styles/ScrollToTop.module.css";
 
@@ -18,7 +18,7 @@ export default function ScrollToTop() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
 

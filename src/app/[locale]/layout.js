@@ -11,10 +11,10 @@ export const metadata = {
 };
 
 export default async function LocaleLayout({ children, params }) {
-  // ✅ Phải await params theo chuẩn Next.js 15+
+  // Await Next.js 15+
   const { locale } = await params;
 
-  // 🔥 Lấy dữ liệu ngôn ngữ tương ứng
+  // Get data language 
   const dict = await getDictionary(locale);
 
   return (
