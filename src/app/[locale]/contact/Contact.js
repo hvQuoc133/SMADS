@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import styles from "../../../styles/Contact.module.css";
 import { FaFacebookF, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 export default function Contact({ dict }) {
@@ -122,9 +122,18 @@ export default function Contact({ dict }) {
             <p>{c.description}</p>
 
             <ul>
-              <li>{c.address}</li>
-              <li>{c.email}</li>
-              <li>{c.phone}</li>
+              <li>
+                <FaMapMarkerAlt className={styles.infoIcon} />
+                {c.address}
+              </li>
+              <li>
+                <FaEnvelope className={styles.infoIcon} />
+                {c.email}
+              </li>
+              <li>
+                <FaPhone className={styles.infoIcon} />
+                {c.phone}
+              </li>
             </ul>
 
             <div className={styles.socialIcons}>

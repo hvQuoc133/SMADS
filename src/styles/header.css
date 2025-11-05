@@ -328,3 +328,42 @@
         animation: none !important;
     }
 }
+
+/* ===== MOBILE DROPDOWN (hiển thị đẩy menu xuống thay vì nổi lên) ===== */
+@media (max-width: 991px) {
+
+    /* Cho dropdown nằm trong luồng layout, đẩy các menu khác xuống */
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        transform: none !important;
+        float: none !important;
+        margin: 0.4rem 0 0.6rem 0 !important;
+        background-color: var(--color-primary);
+        border-radius: 8px;
+        box-shadow: none;
+    }
+
+    /* Giữ chữ Dịch vụ thẳng hàng */
+    .navbar-nav .nav-item.dropdown>.nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 12px;
+    }
+
+    /* Khi dropdown mở, không dịch trái chữ Dịch vụ */
+    .navbar-nav .nav-item.dropdown.show>.nav-link {
+        margin-left: 0 !important;
+        transform: none !important;
+    }
+
+    /* Giữ chữ trong dropdown-item gọn gàng */
+    .navbar-nav .dropdown-item {
+        color: #fff;
+        padding: 10px 20px;
+    }
+
+    .navbar-nav .dropdown-item:hover {
+        background-color: var(--color-secondary);
+    }
+}

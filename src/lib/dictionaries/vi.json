@@ -15,13 +15,13 @@
       "readMore": "Đọc thêm"
     },
     "startup": {
-      "title": "Từ khởi đầu đến kết thúc – Agency phát triển ứng dụng trọn gói",
+      "title": "Từ Khởi Đầu Đến Kết Thúc – Agency Phát Triển Ứng Dụng Trọn Gói",
       "desc": "Có rất nhiều biến thể của Lorem Ipsum, nhưng hầu hết đã bị thay đổi theo thời gian bởi các yếu tố ngẫu nhiên hoặc chèn thêm nội dung.",
       "button": "Tìm hiểu thêm"
     },
     "features": {
       "subtitle": "Tính năng",
-      "title": "Một số tính năng nổi bật nhất",
+      "title": "Một Số Tính Năng Nổi Bật Nhất",
       "desc": "Có rất nhiều biến thể của Lorem Ipsum, nhưng hầu hết đã bị thay đổi trong quá trình sử dụng thực tế.",
       "items": [
         {
@@ -45,7 +45,7 @@
       ]
     },
     "optimization": {
-      "title": "Tối ưu chi phí với phần mềm của chúng tôi",
+      "title": "Tối Ưu Chi Phí Với Phần Mềm Của Chúng Tôi",
       "desc": "Có nhiều biến thể của đoạn Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chèn vào. Nền tảng của chúng tôi giúp doanh nghiệp tiết kiệm và vận hành hiệu quả hơn.",
       "items": [
         {
@@ -58,7 +58,7 @@
         }
       ],
       "clientsSubtitle": "Khách hàng của chúng tôi",
-      "clientsTitle": "Đánh giá từ khách hàng"
+      "clientsTitle": "Đánh Giá Từ Khách Hàng"
     },
     "stats": {
       "happyCustomer": "Khách hàng hài lòng",
@@ -72,7 +72,7 @@
     }
   },
   "about": {
-    "pageTitle": "Về Chúng Tôi",
+    "pageTitle": "Giới thiệu",
     "section1": {
       "title": "Tại Sao Chúng Tôi Là Agency Khác Biệt",
       "p1": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa.",
@@ -80,7 +80,7 @@
       "readMore": "Xem Thêm"
     },
     "section2": {
-      "title": "Tại Sao Chúng Tôi Là Sự Lựa Chọn Tốt Nhất Cho Doanh Nghiệp Của Bạn!!",
+      "title": "Tại Sao Chúng Tôi Là Sự Lựa Chọn Tốt Nhất Cho Doanh Nghiệp Của Bạn",
       "desc": "Có nhiều biến thể của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị chỉnh sửa theo nhiều cách khác nhau.",
       "list": [
         "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi.",
@@ -90,9 +90,8 @@
     }
   },
   "agency": {
-    "titleLine1": "Agency Sáng Tạo",
-    "titleLine2": "Đến Từ New York - USA",
-    "titleLine3": "với 30 năm kinh nghiệm.",
+    "titleLine1": "Agency Sáng Tạo Đến Từ New York",
+    "titleLine2": "với 30 năm kinh nghiệm.",
     "description": "Có nhiều phiên bản khác nhau của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được sử dụng. Đây chỉ là nội dung mô phỏng tạm thời.",
     "imageAlt": "Hình minh họa Agency sáng tạo",
     "skills": [
@@ -119,7 +118,8 @@
     ]
   },
   "activities": {
-    "title": "Hoạt động nổi bật",
+    "titleHero": "Hoạt động",
+    "title": "Hoạt Động Nổi Bật",
     "viewDetail": "Xem chi tiết →",
     "notFound": "Không tìm thấy hoạt động này.",
     "list": [
@@ -144,38 +144,14 @@
         "slug_vi": "chien-dich-quang-ba-thuong-hieu-mua-he",
         "slug_en": "summer-brand-campaign",
         "title": "Chiến dịch quảng bá thương hiệu mùa hè",
-        "desc": "SMADS đồng hành cùng các đối tác triển khai chiến dịch quảng bá sáng tạo trên đa nền tảng.",
-        "content": "Chiến dịch quảng bá thương hiệu mùa hè giúp khách hàng của SMADS tiếp cận hàng triệu người tiêu dùng trên các nền tảng mạng xã hội, góp phần nâng cao độ nhận diện thương hiệu."
-      },
-      {
-        "slug": "workshop-marketing-2025",
-        "slug_vi": "workshop-marketing-2025",
-        "slug_en": "marketing-workshop-2025",
-        "title": "Workshop Marketing 2025",
-        "desc": "Buổi chia sẻ kiến thức và kỹ năng Marketing hiện đại cho doanh nghiệp vừa và nhỏ.",
-        "content": "Trong Workshop Marketing 2025, SMADS mang đến các xu hướng Marketing mới nhất, từ chiến lược nội dung, social media đến công nghệ AI trong quảng cáo. Sự kiện thu hút đông đảo doanh nghiệp trẻ tham dự và nhận được phản hồi tích cực."
-      },
-      {
-        "slug": "team-building-da-nang-2025",
-        "slug_vi": "team-building-da-nang-2025",
-        "slug_en": "team-building-da-nang-2025",
-        "title": "Team Building Đà Nẵng 2025",
-        "desc": "Hành trình gắn kết tập thể SMADS với những hoạt động ngoài trời sôi nổi và sáng tạo.",
-        "content": "Chuyến đi Team Building Đà Nẵng là dịp để các thành viên SMADS kết nối và cùng nhau tạo nên kỷ niệm đáng nhớ. Chương trình được tổ chức tại bãi biển Mỹ Khê với nhiều trò chơi gắn kết, khơi dậy tinh thần đồng đội và sáng tạo."
-      },
-      {
-        "slug": "chien-dich-quang-ba-thuong-hieu-mua-he",
-        "slug_vi": "chien-dich-quang-ba-thuong-hieu-mua-he",
-        "slug_en": "summer-brand-campaign",
-        "title": "Chiến dịch quảng bá thương hiệu mùa hè",
-        "desc": "SMADS đồng hành cùng các đối tác triển khai chiến dịch quảng bá sáng tạo trên đa nền tảng.",
+        "desc": "SMADS đồng hành cùng các đối tác triển khai chiến dịch quảng bá sáng tạo đa nền tảng.",
         "content": "Chiến dịch quảng bá thương hiệu mùa hè giúp khách hàng của SMADS tiếp cận hàng triệu người tiêu dùng trên các nền tảng mạng xã hội, góp phần nâng cao độ nhận diện thương hiệu."
       }
     ]
   },
   "career": {
     "pageTitle": "Tuyển dụng",
-    "introTitle": "Cùng SMADS phát triển sự nghiệp của bạn",
+    "introTitle": "Cùng SMADS Phát Triển Sự Nghiệp Của Bạn",
     "introDesc": "Chúng tôi luôn tìm kiếm những cá nhân sáng tạo, đam mê và sẵn sàng bứt phá trong lĩnh vực truyền thông & marketing.",
     "positionsTitle": "Vị trí đang tuyển",
     "details": {
@@ -214,12 +190,12 @@
   "contact": {
     "pageTitle": "Liên hệ",
     "getInTouch": "Liên hệ",
-    "subTitle": "Liên hệ ngay với chúng tôi",
+    "subTitle": "Liên Hệ Ngay Với Chúng Tôi",
     "titleForm": "Thông tin liên hệ",
     "description": "Vui lòng nhập thông tin vào mẫu, chúng tôi sẽ trả lời sớm nhất có thể.",
     "address": "77 Nguyễn Sinh Sắc, Liên Chiểu, Đà Nẵng",
-    "email": "contact@smads.com.vn",
-    "phone": "+84 123 456 789",
+    "email": "hr@smads.com.vn",
+    "phone": "+84 775.779.266",
     "form": {
       "name": "Tên",
       "email": "Email",

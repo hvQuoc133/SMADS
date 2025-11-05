@@ -66,11 +66,10 @@ export default function Header({ locale = "vi", dict }) {
   ];
 
   const servicesSubmenu = [
-    { href: `/${locale}/services/web-design`, label: "Web Design" },
+    { href: `/${locale}/services/ads`, label: "Google Ads" },
+    { href: `/${locale}/services/invoiceGg`, label: "Invoice Google" },
     { href: `/${locale}/services/seo`, label: "SEO" },
-    { href: `/${locale}/services/marketing`, label: "Marketing" },
-    { href: `/${locale}/services/branding`, label: "Branding" },
-    { href: `/${locale}/services/social-media`, label: "Social Media" },
+    { href: `/${locale}/services/web-design`, label: "Web Design" },
   ];
 
   return (

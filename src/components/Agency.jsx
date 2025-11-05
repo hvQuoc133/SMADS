@@ -15,7 +15,6 @@ export default function Agency({ dict }) {
                         <h2>
                             {a.titleLine1} <br />
                             <span>{a.titleLine2}</span>
-                            <br /> {a.titleLine3}
                         </h2>
                         <p>{a.description}</p>
 

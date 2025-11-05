@@ -24,15 +24,16 @@
 }
 
 .agencyText h2 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: var(--color-primary);
   line-height: 1.3;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 .agencyText p {
-  color: var(--color-text-muted);
+  color: var(--text-dark);
   line-height: 1.6;
   font-size: 18px;
   max-width: 550px;

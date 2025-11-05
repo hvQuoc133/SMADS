@@ -26,7 +26,7 @@ export default function Career({ dict }) {
                 job_requirements:
                     "Tối thiểu 1 năm kinh nghiệm marketing, có kỹ năng phân tích và sử dụng Meta Ads, Google Ads.",
                 benefit:
-                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
+                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại.",
                 deadline: "30/11/2025",
             },
         },
@@ -40,7 +40,7 @@ export default function Career({ dict }) {
                 job_requirements:
                     "Thành thạo Photoshop, Illustrator; có tư duy sáng tạo, cập nhật xu hướng thiết kế.",
                 benefit:
-                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
+                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại.",
                 deadline: "15/12/2025",
             },
         },
@@ -54,7 +54,7 @@ export default function Career({ dict }) {
                 job_requirements:
                     "Có khả năng viết tốt, ưu tiên có kinh nghiệm trong lĩnh vực marketing hoặc truyền thông.",
                 benefit:
-                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại",
+                    "Mức lương thoả thuận, tham gia bhyt bhxh đầy đủ, thưởng các ngày lễ - tết, phụ cấp ăn uống đi lại.",
                 deadline: "20/12/2025",
             },
         },

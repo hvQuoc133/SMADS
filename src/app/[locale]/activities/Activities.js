@@ -15,7 +15,7 @@ export default function Activities({ dict, activities, locale }) {
 
   return (
     <>
-      <BgAllPage title={dict.activities.title} parent="SMADS" />
+      <BgAllPage title={dict.activities.titleHero} parent="SMADS" />
 
       <ActivitiesSection dict={dict} activities={activities} locale={locale} />
 

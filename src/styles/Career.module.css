@@ -17,7 +17,7 @@
   margin: 0 auto;
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-secondary);
 }
 
 /* Job Section */
@@ -32,6 +32,7 @@
   margin-bottom: 40px;
   color: var(--color-primary);
   text-transform: uppercase;
+  font-weight: 700;
 }
 
 .jobList {
@@ -43,7 +44,7 @@
 .jobCard {
   background: #fff;
   padding: 30px 25px;
-  border-radius: 14px;
+  border-radius: 15px;
   border-top: 6px solid var(--color-secondary);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
@@ -63,20 +64,21 @@
 }
 
 .jobCard p {
-  color: var(--color-text-muted);
-  font-size: 15px;
+  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
 .detailBtn {
-  background: none;
-  border: 2px solid var(--color-primary);
-  color: var(--color-primary);
-  padding: 8px 20px;
-  border-radius: 30px;
-  cursor: pointer;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 1px solid var(--color-primary);
+  border-radius: 15px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  color: var(--color-primary);
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .detailBtn:hover {
@@ -92,6 +94,10 @@
   text-align: left;
   font-size: 15px;
   color: #333;
+}
+
+.jobDetails strong {
+  color: var(--color-dark);
 }
 
 .applyBtn {
@@ -133,7 +139,7 @@
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
-  border-radius: 14px;
+  border-radius: 15px;
   backdrop-filter: blur(8px);
 }
 
@@ -146,33 +152,29 @@
 .formGroup label {
   margin-bottom: 8px;
   font-weight: 600;
+  font-size: 18px;
 }
 
 .formGroup input,
 .formGroup textarea {
   padding: 10px;
   border: none;
-  border-radius: 8px;
-  font-size: 15px;
+  border-radius: 10px;
+  font-size: 16px;
   outline: none;
 }
 
 .submitBtn {
-  background: #fff;
-  color: var(--color-primary);
-  border: none;
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-weight: 700;
-  cursor: pointer;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background-color: transparent;
   display: block;
   margin: 0 auto;
   transition: all 0.3s ease;
-}
-
-.submitBtn:hover {
-  background: var(--color-secondary);
-  color: #fff;
 }
 
 /* Container */

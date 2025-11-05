@@ -1,13 +1,13 @@
 
 "use client";
 import { useEffect, useState } from "react";
-import BgAllPage from '../../../components/BgAllPage';
-import ScrollToTop from '../../../components/ScrollToTop';
+import BgAllPage from '../../../../components/BgAllPage';
+import ScrollToTop from '../../../../components/ScrollToTop';
 import AOS from "aos";
 import 'aos/dist/aos.css';
 
 export default function Service() {
-    
+
     // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {

@@ -150,13 +150,14 @@
 .startupTitle {
   color: var(--color-primary);
   font-size: 36px;
+  font-weight: 700;
   text-align: left;
 }
 
 .startupDescription {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-dark);
 }
 
 .startupButton {
@@ -187,8 +188,9 @@
 }
 
 .featureSubtitle {
-  color: var(--color-primary);
+  color: var(--color-secondary);
   font-weight: 600;
+  font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -203,7 +205,7 @@
 
 .featureDesc {
   font-size: 18px;
-  color: var(--color-text-muted);
+  color: var(--color-dark);
   line-height: 1.6;
 }
 
@@ -438,12 +440,14 @@
 
 .textContent h4 {
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-secondary);
   margin: 0;
 }
 
 .textContent p {
-  color: var(--color-secondary);
+  color: var(--color-dark);
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 /* Bottom content */

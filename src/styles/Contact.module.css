@@ -2,7 +2,6 @@
     text-align: center;
     position: relative;
     padding-bottom: 0;
-    margin-bottom: 100px;
 }
 
 .contactHeader {
@@ -23,7 +22,6 @@
 .contactHeader h2 {
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 15px;
     color: var(--color-primary);
 }
 
@@ -38,7 +36,7 @@
     position: relative;
     z-index: 2;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 .contactInfo {
@@ -53,9 +51,9 @@
 }
 
 .contactInfo p {
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 1.6;
     color: var(--color-text-muted);
-    line-height: 1.4;
 }
 
 .contactInfo ul {
@@ -64,9 +62,15 @@
     margin: 20px 0;
 }
 
+.infoIcon {
+    margin-right: 10px;
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
 .contactInfo li {
     margin: 8px 0;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--color-secondary);
 }
 
@@ -148,23 +152,23 @@
     width: 100%;
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
 }
 
 .contactForm button {
-    background: var(--color-primary);
-    color: #fff;
-    padding: 14px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+    padding: 12px 30px;
+    border: 1px solid var(--color-primary);
+    border-radius: 10px;
     font-weight: 600;
+    color: var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .contactForm button:hover {
-    background: var(--color-secondary);
+    background: var(--color-primary);
+    color: #fff;
 }
 
 .mapContainer {
@@ -209,6 +213,14 @@
 }
 
 /* ================= Responsive ================= */
+
+/* ---------- ≥768px ---------- */
+@media (min-width: 768px) {
+    .contactSection {
+        margin-bottom: 100px;
+    }
+}
+
 /* ---------- ≤900px ---------- */
 @media (max-width: 900px) {
     .contactContainer {

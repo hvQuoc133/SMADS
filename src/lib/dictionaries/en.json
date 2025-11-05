@@ -15,7 +15,7 @@
       "readMore": "Read More"
     },
     "startup": {
-      "title": "Start to end app development agency",
+      "title": "Start To End App Development Agency",
       "desc": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration...",
       "button": "More About Us"
     },
@@ -72,7 +72,7 @@
     }
   },
   "about": {
-    "pageTitle": "About Us",
+    "pageTitle": "About us",
     "section1": {
       "title": "Why We Are Different Digital Agency",
       "p1": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected.",
@@ -90,9 +90,8 @@
     }
   },
   "agency": {
-    "titleLine1": "Creative Agency",
-    "titleLine2": "From New York - USA",
-    "titleLine3": "in 30 years.",
+    "titleLine1": "Creative agency From New York ",
+    "titleLine2": "in 30 years.",
     "description": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available.",
     "imageAlt": "Creative Agency Illustration",
     "skills": [
@@ -119,34 +118,11 @@
     ]
   },
   "activities": {
+    "titleHero": "Activities",
     "title": "Featured Activities",
     "viewDetail": "View details →",
     "notFound": "Activity not found.",
     "list": [
-      {
-        "slug": "marketing-workshop-2025",
-        "slug_vi": "workshop-marketing-2025",
-        "slug_en": "marketing-workshop-2025",
-        "title": "Marketing Workshop 2025",
-        "desc": "A sharing session on modern marketing skills for small and medium businesses.",
-        "content": "In the Marketing Workshop 2025, SMADS introduced the latest marketing trends — from content strategy and social media management to the application of AI in advertising. The event attracted many young entrepreneurs and received positive feedback."
-      },
-      {
-        "slug": "team-building-da-nang-2025",
-        "slug_vi": "team-building-da-nang-2025",
-        "slug_en": "team-building-da-nang-2025",
-        "title": "Team Building Da Nang 2025",
-        "desc": "A bonding journey for SMADS with exciting and creative outdoor activities.",
-        "content": "The Team Building Da Nang trip was a wonderful opportunity for SMADS members to connect and create memorable moments together. The program featured beach games at My Khe that fostered teamwork and creativity."
-      },
-      {
-        "slug": "summer-brand-campaign",
-        "slug_vi": "chien-dich-quang-ba-thuong-hieu-mua-he",
-        "slug_en": "summer-brand-campaign",
-        "title": "Summer Brand Campaign",
-        "desc": "SMADS partners with clients to launch creative brand campaigns across platforms.",
-        "content": "The Summer Brand Campaign helped SMADS’ partners reach millions of customers across social media platforms, increasing brand awareness effectively and creatively."
-      },
       {
         "slug": "marketing-workshop-2025",
         "slug_vi": "workshop-marketing-2025",
@@ -175,7 +151,7 @@
   },
   "career": {
     "pageTitle": "Career",
-    "introTitle": "Grow your career with SMADS",
+    "introTitle": "Grow Your Career with SMADS",
     "introDesc": "We’re always looking for creative, passionate, and driven individuals in the field of media & marketing.",
     "positionsTitle": "Open Positions",
     "details": {
@@ -214,12 +190,12 @@
   "contact": {
     "pageTitle": "Contact",
     "getInTouch": "Get in Touch",
-    "subTitle": "Contact us now",
+    "subTitle": "Contact Us Now",
     "titleForm": "Contact Information",
     "description": "Please fill out the form, and we will respond as soon as possible.",
     "address": "77 Nguyen Sinh Sac, Lien Chieu, Da Nang",
-    "email": "contact@smads.com.vn",
-    "phone": "+84 123 456 789",
+    "email": "hr@smads.com.vn",
+    "phone": "+84 775.779.266",
     "form": {
       "name": "Name",
       "email": "Email",
