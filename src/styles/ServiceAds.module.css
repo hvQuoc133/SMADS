@@ -43,8 +43,10 @@
 
 .text h2 {
     color: var(--color-primary);
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
 }
 
 .text p {
@@ -104,18 +106,21 @@
     background: #fafafa;
     color: #fff;
     text-align: center;
-    padding: 120px 20px;
+    height: 400px;
 }
 
 .hero h1 {
-    font-size: 40px;
+    font-size: 36px;
+    font-weight: 700;
     margin-bottom: 16px;
+    text-transform: capitalize;
 }
 
 .hero p {
     font-size: 18px;
     max-width: 700px;
     margin: 0 auto 32px;
+    color: var(--color-secondary);
 }
 
 .cta {
@@ -141,8 +146,10 @@
 }
 
 .overview h2 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
     color: var(--color-primary);
 }
 
@@ -157,6 +164,9 @@
 }
 
 .benefits h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
     color: var(--color-primary);
     margin-bottom: 50px;
 }
@@ -193,9 +203,9 @@
 
 .steps h2 {
     color: var(--color-primary);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 80px;
     letter-spacing: 1px;
 }
@@ -313,9 +323,10 @@
 
 .steps h2 {
     color: var(--color-primary);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 60px;
+    font-weight: 700;
 }
 
 .stepRow {
@@ -439,6 +450,9 @@
 }
 
 .packages h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: capitalize;
     color: var(--color-primary) !important;
     margin-bottom: 50px;
 }

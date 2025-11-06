@@ -5,7 +5,13 @@
     "services": "Dịch vụ",
     "activities": "Hoạt động",
     "career": "Tuyển dụng",
-    "contact": "Liên hệ"
+    "contact": "Liên hệ",
+    "servicesMenu": {
+      "ads": "Google Ads",
+      "invoice": "Hóa đơn Google",
+      "seo": "Tối ưu SEO",
+      "webDesign": "Thiết kế Website"
+    }
   },
   "home": {
     "hero": {
@@ -71,24 +77,6 @@
       "button": "Bắt đầu ngay"
     }
   },
-  "about": {
-    "pageTitle": "Giới thiệu",
-    "section1": {
-      "title": "Tại Sao Chúng Tôi Là Agency Khác Biệt",
-      "p1": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa.",
-      "p2": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa. Có rất nhiều phiên bản khác nhau nhưng hầu hết đều đã bị thay đổi đáng kể.",
-      "readMore": "Xem Thêm"
-    },
-    "section2": {
-      "title": "Tại Sao Chúng Tôi Là Sự Lựa Chọn Tốt Nhất Cho Doanh Nghiệp Của Bạn",
-      "desc": "Có nhiều biến thể của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị chỉnh sửa theo nhiều cách khác nhau.",
-      "list": [
-        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi.",
-        "Nếu bạn sử dụng Lorem Ipsum, hãy chắc rằng không có nội dung nào gây nhầm lẫn.",
-        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi."
-      ]
-    }
-  },
   "agency": {
     "titleLine1": "Agency Sáng Tạo Đến Từ New York",
     "titleLine2": "với 30 năm kinh nghiệm.",
@@ -114,6 +102,104 @@
         "label": "Nhà phát triển ứng dụng",
         "percent": 80,
         "color": "blue"
+      }
+    ]
+  },
+  "about": {
+    "pageTitle": "Giới thiệu",
+    "section1": {
+      "title": "Tại Sao Chúng Tôi Là Agency Khác Biệt",
+      "p1": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa.",
+      "p2": "Có rất nhiều phiên bản của Lorem Ipsum, nhưng phần lớn đã bị thay đổi khi được chỉnh sửa. Có rất nhiều phiên bản khác nhau nhưng hầu hết đều đã bị thay đổi đáng kể.",
+      "readMore": "Xem Thêm"
+    },
+    "section2": {
+      "title": "Tại Sao Chúng Tôi Là Sự Lựa Chọn Tốt Nhất Cho Doanh Nghiệp Của Bạn",
+      "desc": "Có nhiều biến thể của đoạn văn Lorem Ipsum, nhưng phần lớn đã bị chỉnh sửa theo nhiều cách khác nhau.",
+      "list": [
+        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi.",
+        "Nếu bạn sử dụng Lorem Ipsum, hãy chắc rằng không có nội dung nào gây nhầm lẫn.",
+        "Có nhiều biến thể của đoạn văn Lorem Ipsum nhưng phần lớn đã bị thay đổi."
+      ]
+    }
+  },
+  "serviceAds": {
+    "title": "Dịch vụ chạy quảng cáo Google Ads",
+    "desc": "Tối ưu chi phí – Tăng doanh thu – Dẫn đầu kết quả tìm kiếm với chiến lược quảng cáo Google hiệu quả.",
+    "cta": "Nhận tư vấn miễn phí",
+    "overviewTitle": "Tổng quan dịch vụ",
+    "overviewDesc": "Dịch vụ Google Ads giúp doanh nghiệp nhanh chóng tiếp cận khách hàng tiềm năng thông qua công cụ tìm kiếm Google...",
+    "overviewList": [
+      "Hiển thị đúng khách hàng đang có nhu cầu tìm kiếm",
+      "Đo lường và tối ưu chiến dịch theo thời gian thực",
+      "Cam kết hiệu quả – minh bạch chi phí"
+    ],
+    "benefitsTitle": "Lợi ích khi sử dụng dịch vụ Google Ads",
+    "benefits": [
+      {
+        "icon": "/images/services/online.png",
+        "title": "Tiếp cận đúng khách hàng mục tiêu",
+        "desc": "Google Ads giúp doanh nghiệp của bạn hiển thị trước đúng người đang tìm kiếm sản phẩm hoặc dịch vụ tương tự."
+      },
+      {
+        "icon": "/images/services/marketing.png",
+        "title": "Tối ưu chi phí quảng cáo",
+        "desc": "Chi tiêu hiệu quả nhờ khả năng kiểm soát ngân sách linh hoạt và đo lường hiệu suất chi tiết."
+      },
+      {
+        "icon": "/images/services/increase.png",
+        "title": "Tăng doanh thu nhanh chóng",
+        "desc": "Chuyển đổi cao hơn nhờ nhắm đúng nhu cầu, thúc đẩy lượng khách hàng tiềm năng và doanh số."
+      }
+    ],
+    "stepsTitle": "Quy trình triển khai",
+    "steps": [
+      {
+        "title": "Phân tích thị trường & đối thủ",
+        "desc": "Chúng tôi bắt đầu bằng việc nghiên cứu thị trường, phân tích đối thủ và hành vi người dùng."
+      },
+      {
+        "title": "Xây dựng chiến lược quảng cáo",
+        "desc": "Lên kế hoạch chi tiết với từ khóa, ngân sách, mẫu quảng cáo và thông điệp truyền thông."
+      },
+      {
+        "title": "Triển khai chiến dịch & theo dõi",
+        "desc": "Bắt đầu chạy quảng cáo, theo dõi hiệu quả và điều chỉnh theo thời gian thực."
+      },
+      {
+        "title": "Báo cáo, đánh giá & tối ưu",
+        "desc": "Tổng hợp kết quả, gửi báo cáo định kỳ và đề xuất giải pháp tối ưu tiếp theo."
+      }
+    ],
+    "packagesTitle": "Các gói dịch vụ Google Ads",
+    "packages": [
+      {
+        "name": "Gói Cơ Bản",
+        "price": "3.000.000đ / tháng",
+        "features": [
+          "Ngân sách quảng cáo < 10 triệu",
+          "Báo cáo định kỳ hàng tuần",
+          "Tối ưu từ khóa cơ bản"
+        ]
+      },
+      {
+        "name": "Gói Nâng Cao",
+        "price": "5.000.000đ / tháng",
+        "features": [
+          "Ngân sách quảng cáo 10–30 triệu",
+          "Báo cáo & tư vấn chuyên sâu",
+          "Tối ưu chuyển đổi nâng cao"
+        ],
+        "highlight": true
+      },
+      {
+        "name": "Gói Doanh Nghiệp",
+        "price": "8.000.000đ / tháng",
+        "features": [
+          "Ngân sách quảng cáo > 30 triệu",
+          "Quản lý tài khoản chuyên biệt",
+          "Báo cáo chi tiết, đề xuất tăng trưởng"
+        ]
       }
     ]
   },

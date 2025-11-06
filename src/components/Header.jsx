@@ -66,12 +66,23 @@ export default function Header({ locale = "vi", dict }) {
   ];
 
   const servicesSubmenu = [
-    { href: `/${locale}/services/ads`, label: "Google Ads" },
-    { href: `/${locale}/services/invoiceGg`, label: "Invoice Google" },
-    { href: `/${locale}/services/seo`, label: "SEO" },
-    { href: `/${locale}/services/web-design`, label: "Web Design" },
+    {
+      href: `/${locale}/services/ads`,
+      label: dict?.header?.servicesMenu?.ads || "Google Ads",
+    },
+    {
+      href: `/${locale}/services/invoiceGg`,
+      label: dict?.header?.servicesMenu?.invoice || "Invoice Google",
+    },
+    {
+      href: `/${locale}/services/seo`,
+      label: dict?.header?.servicesMenu?.seo || "SEO",
+    },
+    {
+      href: `/${locale}/services/web-design`,
+      label: dict?.header?.servicesMenu?.webDesign || "Web Design",
+    },
   ];
-
   return (
     <nav
       ref={navRef}
@@ -127,7 +138,14 @@ export default function Header({ locale = "vi", dict }) {
                     <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                       {servicesSubmenu.map((sub, subIdx) => (
                         <li key={subIdx}>
-                          <Link href={sub.href} className="dropdown-item">
+                          <Link
+                            href={sub.href}
+                            className="dropdown-item"
+                            onClick={() => {
+                              setDropdownOpen(false);
+                              setIsCollapsed(true);
+                            }}
+                          >
                             {sub.label}
                           </Link>
                         </li>

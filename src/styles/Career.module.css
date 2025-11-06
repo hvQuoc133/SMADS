@@ -31,7 +31,7 @@
   font-size: 28px;
   margin-bottom: 40px;
   color: var(--color-primary);
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-weight: 700;
 }
 
@@ -131,7 +131,7 @@
   font-size: 28px;
   font-weight: 700;
   color: #fff;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .applyForm {

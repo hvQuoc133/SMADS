@@ -5,7 +5,13 @@
     "services": "Services",
     "activities": "Activities",
     "career": "Career",
-    "contact": "Contact"
+    "contact": "Contact",
+    "servicesMenu": {
+      "ads": "Google Ads",
+      "invoice": "Google Invoice",
+      "seo": "SEO Optimization",
+      "webDesign": "Web Design"
+    }
   },
   "home": {
     "hero": {
@@ -71,24 +77,6 @@
       "button": "Get Started"
     }
   },
-  "about": {
-    "pageTitle": "About us",
-    "section1": {
-      "title": "Why We Are Different Digital Agency",
-      "p1": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected.",
-      "p2": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available but the majority have the at suffered alteration in that injected.",
-      "readMore": "Read More"
-    },
-    "section2": {
-      "title": "Why We’re The Best Match For Your Business!!",
-      "desc": "There are many variations of passages of Lorem Ipsum available the majority to have suffered some form by injected.",
-      "list": [
-        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration.",
-        "If you are going to use a passage of Lorem Ipsum you need to be sure there isn't anything embarrassing.",
-        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration."
-      ]
-    }
-  },
   "agency": {
     "titleLine1": "Creative agency From New York ",
     "titleLine2": "in 30 years.",
@@ -114,6 +102,104 @@
         "label": "Apps Developer",
         "percent": 80,
         "color": "blue"
+      }
+    ]
+  },
+  "about": {
+    "pageTitle": "About us",
+    "section1": {
+      "title": "Why We Are Different Digital Agency",
+      "p1": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected.",
+      "p2": "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in that injected. There are many variations of passages of Lorem Ipsum available but the majority have the at suffered alteration in that injected.",
+      "readMore": "Read More"
+    },
+    "section2": {
+      "title": "Why We’re The Best Match For Your Business!!",
+      "desc": "There are many variations of passages of Lorem Ipsum available the majority to have suffered some form by injected.",
+      "list": [
+        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration.",
+        "If you are going to use a passage of Lorem Ipsum you need to be sure there isn't anything embarrassing.",
+        "There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration."
+      ]
+    }
+  },
+  "serviceAds": {
+    "title": "Google Ads Management Service",
+    "desc": "Optimize your budget – Increase revenue – Dominate search results with an effective Google Ads strategy.",
+    "cta": "Get Free Consultation",
+    "overviewTitle": "Service Overview",
+    "overviewDesc": "Our Google Ads service helps businesses quickly reach potential customers through Google Search. With an experienced team, we ensure your ads achieve maximum effectiveness, attract the right audience, and deliver the highest ROI.",
+    "overviewList": [
+      "Reach customers who are actively searching for your products or services",
+      "Track and optimize campaigns in real time",
+      "Guaranteed results – Transparent costs"
+    ],
+    "benefitsTitle": "Benefits of Using Google Ads Service",
+    "benefits": [
+      {
+        "icon": "/images/services/online.png",
+        "title": "Reach the Right Target Audience",
+        "desc": "Google Ads ensures your business appears in front of users actively searching for your products or services."
+      },
+      {
+        "icon": "/images/services/marketing.png",
+        "title": "Optimize Advertising Costs",
+        "desc": "Spend smarter with flexible budget control and detailed performance tracking."
+      },
+      {
+        "icon": "/images/services/increase.png",
+        "title": "Boost Revenue Quickly",
+        "desc": "Increase conversions by targeting user intent, driving more potential customers and sales."
+      }
+    ],
+    "stepsTitle": "Our Implementation Process",
+    "steps": [
+      {
+        "title": "Market & Competitor Analysis",
+        "desc": "We start by researching your market, analyzing competitors, and understanding customer behavior."
+      },
+      {
+        "title": "Ad Strategy Development",
+        "desc": "Create a detailed plan with keywords, budget, ad creatives, and communication messages."
+      },
+      {
+        "title": "Campaign Launch & Optimization",
+        "desc": "Run ads, monitor performance, and make real-time adjustments to maximize results."
+      },
+      {
+        "title": "Reporting & Continuous Improvement",
+        "desc": "Summarize performance, provide regular reports, and recommend optimization strategies."
+      }
+    ],
+    "packagesTitle": "Google Ads Service Packages",
+    "packages": [
+      {
+        "name": "Basic Package",
+        "price": "3,000,000 VND / month",
+        "features": [
+          "Ad budget under 10 million VND",
+          "Weekly performance reports",
+          "Basic keyword optimization"
+        ]
+      },
+      {
+        "name": "Advanced Package",
+        "price": "5,000,000 VND / month",
+        "features": [
+          "Ad budget from 10–30 million VND",
+          "In-depth reports and consultation",
+          "Advanced conversion optimization"
+        ],
+        "highlight": true
+      },
+      {
+        "name": "Enterprise Package",
+        "price": "8,000,000 VND / month",
+        "features": [
+          "Ad budget over 30 million VND",
+          "Dedicated account management",
+          "Detailed reporting and growth suggestions"
+        ]
       }
     ]
   },
