@@ -12,6 +12,9 @@ export async function POST(req) {
       });
     }
 
+    console.log("ENV CHECK:", process.env.EMAIL_USER, process.env.EMAIL_TO);
+
+
     // Config transporter Gmail
     const transporter = nodemailer.createTransport({
       service: "gmail",
