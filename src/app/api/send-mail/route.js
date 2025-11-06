@@ -23,10 +23,12 @@ export async function POST(req) {
 
     // Config transporter Gmail
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465, // cổng bảo mật SSL
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS, // App Password Gmail
+        pass: process.env.EMAIL_PASS,
       },
     });
 
