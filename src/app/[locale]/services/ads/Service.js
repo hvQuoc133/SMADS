@@ -28,6 +28,8 @@ export default function Service({ dict, locale }) {
             }
         };
     }, []);
+    console.log("t.btn_signup =", t.btn_signup);
+    console.log("dict keys:", Object.keys(dict));
 
 
     return (
@@ -111,7 +113,7 @@ export default function Service({ dict, locale }) {
                                             <li key={idx}>{f}</li>
                                         ))}
                                     </ul>
-                                    <button className={styles.btn}>Đăng ký ngay</button>
+                                    <button className={styles.btn}>{t.btnSignup}</button>
                                 </div>
                             ))}
                         </div>
