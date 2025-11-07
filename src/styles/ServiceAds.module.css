@@ -14,6 +14,10 @@
     color: var(--color-dark);
 }
 
+.container span {
+    color: var(--color-primary);
+}
+
 .container h1 b {
     color: var(--color-primary);
     font-weight: 700;
@@ -35,10 +39,8 @@
     gap: 60px;
 }
 
-/* Cột chữ */
 .text {
     flex: 1.2;
-    /* chiếm 55-60% chiều rộng */
 }
 
 .text h2 {
@@ -63,10 +65,8 @@
     line-height: 1.7;
 }
 
-/* Cột ảnh */
 .image {
     flex: 1;
-    /* chiếm khoảng 40-45% */
     display: flex;
     justify-content: center;
 }
@@ -76,37 +76,16 @@
     width: 100%;
     height: auto;
     max-width: 520px;
-    /* tránh ảnh to quá */
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .containerFlex {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .text {
-        flex: none;
-        width: 100%;
-    }
-
-    .image {
-        width: 100%;
-    }
-
-    .image img {
-        max-width: 100%;
-    }
-}
 
 /* HERO */
 .hero {
     background: #fafafa;
     color: #fff;
     text-align: center;
-    height: 400px;
+    height: 350px;
 }
 
 .hero h1 {
@@ -121,6 +100,7 @@
     max-width: 700px;
     margin: 0 auto 32px;
     color: var(--color-secondary);
+    line-height: 1.6;
 }
 
 .cta {
@@ -153,8 +133,14 @@
     color: var(--color-primary);
 }
 
+.overview ul {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
 .overview p {
-    line-height: 1.7;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 /* BENEFITS */
@@ -192,6 +178,14 @@
 .card h3 {
     margin-top: 20px;
     color: var(--color-primary);
+    font-size: 21px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 10px;
 }
 
 /* STEPS */
@@ -220,7 +214,6 @@
     flex-wrap: nowrap;
 }
 
-/* line ngang chạy qua các circle */
 .timeline::before {
     content: "";
     position: absolute;
@@ -239,7 +232,6 @@
     z-index: 2;
 }
 
-/* vòng tròn */
 .circle {
     width: 56px;
     height: 56px;
@@ -256,14 +248,13 @@
     box-shadow: 0 4px 12px rgba(239, 87, 58, 0.3);
 }
 
-/* khối nội dung */
 .content {
     background: #fff;
     padding: 25px 20px;
     border-radius: 10px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 200px;
+    min-height: 230px;
 }
 
 .content h3 {
@@ -275,8 +266,8 @@
 
 .content p {
     color: #555;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 /* hover */
@@ -290,35 +281,10 @@
     box-shadow: 0 6px 25px rgba(239, 87, 58, 0.15);
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .timeline {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .timeline::before {
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 100%;
-    }
-
-    .step {
-        width: 80%;
-        margin-bottom: 60px;
-    }
-
-    .circle {
-        margin-bottom: 15px;
-    }
-}
-
 .steps {
     background: #fff;
     text-align: center;
-    padding: 80px 0;
+    padding: 0;
 }
 
 .steps h2 {
@@ -340,7 +306,6 @@
     padding-bottom: 20px;
 }
 
-/* Đường line ngang */
 .stepRow::before {
     content: "";
     position: absolute;
@@ -361,7 +326,6 @@
     padding: 40px 30px 30px;
     text-align: center;
     width: 340px;
-    /* tăng từ 260–280 lên cho thoáng */
     flex-shrink: 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     z-index: 1;
@@ -372,7 +336,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Vòng tròn số */
 .number {
     position: absolute;
     top: -25px;
@@ -389,7 +352,6 @@
     box-shadow: 0 4px 12px rgba(239, 87, 58, 0.4);
 }
 
-/* Nội dung */
 .stepItem h3 {
     font-size: 18px;
     font-weight: 600;
@@ -403,35 +365,13 @@
     color: #444;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .stepRow {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .stepRow::before {
-        display: none;
-    }
-
-    .stepItem {
-        width: 90%;
-        margin-bottom: 30px;
-    }
-}
-
-/* PACKAGES */
-.packages {
-    background: #fafafa;
-    text-align: center;
-    margin-bottom: 80px;
-}
-
 .packageGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
+
+
 
 .package {
     background: #fff;
@@ -459,7 +399,20 @@
 
 .package h3 {
     color: var(--color-primary);
+    font-size: 24px;
 }
+
+.package ul {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* PACKAGES */
+.packages {
+    background: #fafafa;
+    text-align: center;
+}
+
 
 .price {
     font-size: 20px;
@@ -474,18 +427,86 @@
 }
 
 .btn {
-    background: var(--color-primary);
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
     color: #fff;
     border: none;
     padding: 12px 30px;
-    border-radius: 6px;
+    border-radius: 15px;
     margin-top: 20px;
     cursor: pointer;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background: var(--color-secondary);
+    filter: brightness(1.1);
 }
 
-/* TESTIMONIALS */
+
+/* ================= Responsive ================= */
+/* ---------- ≤900px ---------- */
+@media (max-width: 900px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timeline::before {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+    }
+
+    .step {
+        width: 80%;
+        margin-bottom: 60px;
+    }
+
+    .circle {
+        margin-bottom: 15px;
+    }
+}
+
+/* ---------- ≤992px ---------- */
+@media (max-width: 992px) {
+    .stepRow {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stepRow::before {
+        display: none;
+    }
+
+    .stepItem {
+        width: 90%;
+        margin-bottom: 30px;
+    }
+
+    .containerFlex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text {
+        flex: none;
+        width: 100%;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .image img {
+        max-width: 100%;
+    }
+}
+
+/* ---------- ≥768px ---------- */
+@media (min-width: 768px) {
+    .packages {
+        margin-bottom: 100px;
+    }
+}

@@ -52,6 +52,9 @@ export default function Header({ locale = "vi", dict }) {
     if (href.includes("/activities")) {
       return pathname.includes("/activities");
     }
+    if (href.includes("/services")) {
+      return pathname.startsWith(`/${locale}/services`);
+    }
     return pathname === href;
   };
 
@@ -71,7 +74,7 @@ export default function Header({ locale = "vi", dict }) {
       label: dict?.header?.servicesMenu?.ads || "Google Ads",
     },
     {
-      href: `/${locale}/services/invoiceGg`,
+      href: `/${locale}/services/invoice-google`,
       label: dict?.header?.servicesMenu?.invoice || "Invoice Google",
     },
     {

@@ -9,7 +9,6 @@ import styles from "../../../../styles/ServiceAds.module.css";
 export default function Service({ dict, locale }) {
     const t = dict.serviceAds;
 
-
     // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -31,7 +30,6 @@ export default function Service({ dict, locale }) {
     }, []);
 
 
-
     return (
         <>
             <BgAllPage title="Service" parent="SMADS" />
@@ -40,7 +38,7 @@ export default function Service({ dict, locale }) {
                 {/* HERO */}
                 <div className={styles.hero}>
                     <div className={styles.container}>
-                        <h1>{t.title}</h1>
+                        <h1>{t.title1} <span>{t.title2}</span></h1>
                         <p>{t.desc}</p>
                         <button className={styles.cta}>{t.cta}</button>
                     </div>

@@ -1,0 +1,515 @@
+/* GLOBAL CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.left {
+    flex: 1 1 520px;
+}
+
+.right {
+    flex: 1 1 480px;
+    text-align: center;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+}
+
+.title span {
+    color: var(--color-primary);
+}
+
+.lead {
+    font-size: 18px;
+    color: var(--color-secondary);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btnPrimary,
+.btnGhost {
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnPrimary {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 15px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnPrimary:hover {
+    filter: brightness(1.1);
+}
+
+.btnGhost {
+    padding: 12px 30px;
+    border: 1px solid var(--color-primary);
+    border-radius: 15px;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btnGhost:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.meta {
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-top: 10px;
+}
+
+/* OVERVIEW SECTION */
+.overview {
+    background: #fafafa;
+    padding: 10px 20px;
+}
+
+.h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+    font-size: 28px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: var(--color-primary);
+}
+
+.h2::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.text {
+    text-align: center;
+    color: var(--text-dark);
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+}
+
+/* BENEFITS GRID */
+.benefitsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+    justify-items: center;
+}
+
+.benefitCard {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 30px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 200px;
+    width: 100%;
+    max-width: 340px;
+    position: relative;
+}
+
+.benefitCard h4 {
+    color: var(--color-primary);
+    font-size: 21px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.benefitCard p {
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.4;
+    flex: 1;
+}
+
+/* ADVANTAGES SECTION */
+.advantages {
+    padding: 60px 0;
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.advHeader {
+    flex: 1 1 40%;
+}
+
+.advHeader h2 {
+    font-size: 28px;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.advHeader em {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 28px;
+    font-style: normal;
+}
+
+.advHeader p {
+    color: var(--text-dark);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.advList {
+    flex: 1 1 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.advList li {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 16px;
+    color: var(--text-dark);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+}
+
+.advList li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-primary);
+}
+
+/* PRICING SECTION */
+.pricing {
+    background: #fafafa;
+    padding: 10px 20px;
+}
+
+.feeList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.feeCard {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.feeCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.feeLabel {
+    font-size: 21px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.feeRate {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.note {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: 25px;
+}
+
+.ctaRow {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.btnPricing {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnPricing:hover {
+    filter: brightness(1.1);
+}
+
+/* ================= Responsive ================= */
+
+/* ---------- ≤1300px ---------- */
+@media (max-width: 1300px) {
+    .wrap {
+        width: 92%;
+        gap: 40px;
+    }
+}
+
+/* ---------- 1300px–1031px ---------- */
+@media (max-width: 1300px) and (min-width: 1031px) {
+    .hero .container {
+        max-width: 85%;
+        margin: 0 auto;
+        gap: 40px;
+    }
+
+    .left {
+        flex: 1 1 50%;
+    }
+
+    .right {
+        flex: 1 1 45%;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .lead {
+        font-size: 17px;
+    }
+
+    .actions {
+        gap: 12px;
+    }
+
+    .btnPrimary,
+    .btnGhost {
+        font-size: 16px;
+    }
+}
+
+/* ---------- ≤1024px ---------- */
+@media (max-width: 1024px) {
+    .hero .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .left,
+    .right {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .lead {
+        font-size: 17px;
+        max-width: 700px;
+        margin: 0 auto 20px;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .btnPrimary,
+    .btnGhost {
+        font-size: 16px;
+    }
+
+    .right img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .wrap {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .advHeader,
+    .advList {
+        flex: 1 1 100%;
+    }
+
+    .advList {
+        justify-content: center;
+    }
+
+    .advHeader h2 {
+        font-size: 26px;
+    }
+
+    .advHeader p {
+        font-size: 16px;
+    }
+}
+
+/* ---------- ≤992px ---------- */
+@media (max-width: 992px) {
+    .benefitsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- ≥768px ---------- */
+@media (min-width: 768px) {
+    .pricing {
+        margin-bottom: 100px;
+    }
+}
+
+/* ---------- ≤768px ---------- */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.9rem;
+    }
+
+    .container {
+        padding: 50px 20px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 40px 0;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        align-items: center;
+        max-width: 92%;
+        margin: 0 auto;
+    }
+
+    .title {
+        font-size: 26px;
+        line-height: 1.3;
+    }
+
+    .lead {
+        font-size: 15.5px;
+        line-height: 1.5;
+        max-width: 95%;
+        margin: 0 auto 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .btnPrimary,
+    .btnGhost {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+    }
+
+    .right img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+}
+
+/* ---------- ≤600px ---------- */
+@media (max-width: 600px) {
+    .benefitsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .advList li {
+        font-size: 15px;
+        padding: 9px 15px;
+    }
+
+    .advHeader h2 {
+        font-size: 22px;
+    }
+
+    .advHeader p {
+        font-size: 15px;
+    }
+}

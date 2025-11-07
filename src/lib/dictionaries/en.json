@@ -124,7 +124,8 @@
     }
   },
   "serviceAds": {
-    "title": "Google Ads Management Service",
+    "title1": "Management Service",
+    "title2": "Google Ads",
     "desc": "Optimize your budget – Increase revenue – Dominate search results with an effective Google Ads strategy.",
     "cta": "Get Free Consultation",
     "overviewTitle": "Service Overview",
@@ -138,17 +139,17 @@
     "benefits": [
       {
         "icon": "/images/services/online.png",
-        "title": "Reach the Right Target Audience",
+        "title": "Reach the right target audience",
         "desc": "Google Ads ensures your business appears in front of users actively searching for your products or services."
       },
       {
         "icon": "/images/services/marketing.png",
-        "title": "Optimize Advertising Costs",
+        "title": "Optimize advertising costs",
         "desc": "Spend smarter with flexible budget control and detailed performance tracking."
       },
       {
         "icon": "/images/services/increase.png",
-        "title": "Boost Revenue Quickly",
+        "title": "Boost revenue quickly",
         "desc": "Increase conversions by targeting user intent, driving more potential customers and sales."
       }
     ],
@@ -174,7 +175,7 @@
     "packagesTitle": "Google Ads Service Packages",
     "packages": [
       {
-        "name": "Basic Package",
+        "name": "Basic package",
         "price": "3,000,000 VND / month",
         "features": [
           "Ad budget under 10 million VND",
@@ -183,7 +184,7 @@
         ]
       },
       {
-        "name": "Advanced Package",
+        "name": "Advanced package",
         "price": "5,000,000 VND / month",
         "features": [
           "Ad budget from 10–30 million VND",
@@ -193,7 +194,7 @@
         "highlight": true
       },
       {
-        "name": "Enterprise Package",
+        "name": "Enterprise package",
         "price": "8,000,000 VND / month",
         "features": [
           "Ad budget over 30 million VND",
@@ -203,11 +204,86 @@
       }
     ]
   },
+  "serviceInvoice": {
+    "title": "Google Ads Invoice",
+    "hero": {
+      "title1": "Invoice Account Rental Service",
+      "title2": "Google Ads",
+      "desc": "Rent a Google Ads Invoice account — a solution for stable campaigns, high spending limits, and transparent invoiced payments.",
+      "btn1": "Get Consultation",
+      "btn2": "View Pricing",
+      "metaStrong": "Free",
+      "metaText": "Free account setup • Full VAT invoice support",
+      "image": "/images/activities/activity1.jpg"
+    },
+    "overviewTitle": "Overview of Google Ads Invoice Accounts",
+    "overviewText": "Google Ads Invoice accounts are issued to trusted businesses/partners, saving verification time and reducing payment suspension risk.",
+    "benefits": [
+      {
+        "title": "Fast approval, high limits",
+        "desc": "Invoice accounts often have higher limits and faster approval for businesses."
+      },
+      {
+        "title": "Stable operation",
+        "desc": "Verified accounts reduce payment issues and interruptions."
+      },
+      {
+        "title": "VAT invoicing",
+        "desc": "Support for full VAT invoices and transparent billing."
+      },
+      {
+        "title": "No personal card required",
+        "desc": "Centralized invoice payments — secure & professional."
+      },
+      {
+        "title": "24/7 technical support",
+        "desc": "SMADS team supports campaigns anytime."
+      },
+      {
+        "title": "Fit for all sizes",
+        "desc": "Flexible plans for SMEs to large enterprises."
+      }
+    ],
+    "advantagesTitle": "Advantages of Google Ads Invoice Accounts",
+    "advantagesDesc": "With automation, invoices are created and sent quickly, reducing manual processing time and errors.",
+    "advantages": [
+      "Stable, verified accounts",
+      "Transparent billing and costs",
+      "Flexible budget control",
+      "Advertiser-verified accounts",
+      "Fast technical support"
+    ],
+    "pricingTitle": "Google Ads Account Rental Pricing",
+    "pricingDesc": "Service fees are calculated as a percentage of ad spend (market standard). SMADS keeps pricing transparent for all budgets.",
+    "feeTiers": [
+      {
+        "label": "Under 200M VND",
+        "rate": "5%"
+      },
+      {
+        "label": "200 - 500M VND",
+        "rate": "4%"
+      },
+      {
+        "label": "500M - 1B VND",
+        "rate": "3%"
+      },
+      {
+        "label": "Over 1B VND",
+        "rate": "2%"
+      }
+    ],
+    "noteTitle": "Note:",
+    "noteText": "Rates can be negotiated depending on budget & partnership duration. Full VAT invoices supported.",
+    "ctaBtn": "Request a Quote"
+  },
   "activities": {
     "titleHero": "Activities",
     "title": "Featured Activities",
     "viewDetail": "View details →",
     "notFound": "Activity not found.",
+    "btn_back": "Back",
+    "list_of_articles": "Other articles",
     "list": [
       {
         "slug": "marketing-workshop-2025",
@@ -304,8 +380,8 @@
     "company_description": "We provide creative marketing solutions that make your brand stand out, connect with the right customers, and effectively increase your revenue.",
     "services_title": "Services",
     "services": {
-      "invoice": "Google Invoice Rental",
-      "ads": "Google Ads & Facebook Ads",
+      "ads": "Google Ads - Facebook Ads",
+      "invoice": "Invoice Google",
       "web_design": "Website Design",
       "seo": "SEO Website"
     },

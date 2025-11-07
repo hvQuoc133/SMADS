@@ -124,7 +124,8 @@
     }
   },
   "serviceAds": {
-    "title": "Dịch vụ chạy quảng cáo Google Ads",
+    "title1": "Dịch vụ chạy quảng cáo",
+    "title2": "Google Ads",
     "desc": "Tối ưu chi phí – Tăng doanh thu – Dẫn đầu kết quả tìm kiếm với chiến lược quảng cáo Google hiệu quả.",
     "cta": "Nhận tư vấn miễn phí",
     "overviewTitle": "Tổng quan dịch vụ",
@@ -174,7 +175,7 @@
     "packagesTitle": "Các gói dịch vụ Google Ads",
     "packages": [
       {
-        "name": "Gói Cơ Bản",
+        "name": "Gói cơ bản",
         "price": "3.000.000đ / tháng",
         "features": [
           "Ngân sách quảng cáo < 10 triệu",
@@ -183,7 +184,7 @@
         ]
       },
       {
-        "name": "Gói Nâng Cao",
+        "name": "Gói nâng cao",
         "price": "5.000.000đ / tháng",
         "features": [
           "Ngân sách quảng cáo 10–30 triệu",
@@ -193,7 +194,7 @@
         "highlight": true
       },
       {
-        "name": "Gói Doanh Nghiệp",
+        "name": "Gói doanh nghiệp",
         "price": "8.000.000đ / tháng",
         "features": [
           "Ngân sách quảng cáo > 30 triệu",
@@ -203,11 +204,86 @@
       }
     ]
   },
+  "serviceInvoice": {
+    "title": "Hoá Đơn Google Ads",
+    "hero": {
+      "title1": "Dịch Vụ Thuê Tài Khoản",
+      "title2": "Google Ads Invoice",
+      "desc": "Thuê tài khoản Google Ads Invoice — giải pháp giúp chiến dịch chạy ổn định, hạn mức chi tiêu cao, thanh toán minh bạch qua hóa đơn.",
+      "btn1": "Nhận tư vấn",
+      "btn2": "Xem bảng giá",
+      "metaStrong": "Free",
+      "metaText": "phí mở tài khoản • Xuất hóa đơn VAT đầy đủ",
+      "image": "/images/activities/activity1.jpg"
+    },
+    "overviewTitle": "Tổng quan tài khoản Google Ads invoice",
+    "overviewText": "Tài khoản Google Ads invoice là tài khoản cấp cho doanh nghiệp/đối tác uy tín — có trust cao, tiết kiệm thời gian xác minh và giảm thiểu rủi ro bị tạm ngưng do lỗi thanh toán.",
+    "benefits": [
+      {
+        "title": "Duyệt nhanh, hạn mức cao",
+        "desc": "Tài khoản Google Ads Invoice đã được Google xét duyệt và cấp hạn mức lớn, phù hợp với doanh nghiệp."
+      },
+      {
+        "title": "Chạy ổn định, hạn chế khóa",
+        "desc": "Tài khoản có độ trust cao, giúp chiến dịch hoạt động mượt và ít gặp lỗi thanh toán."
+      },
+      {
+        "title": "Thanh toán qua hóa đơn VAT",
+        "desc": "Hỗ trợ xuất hóa đơn VAT đầy đủ, minh bạch chi phí cho doanh nghiệp."
+      },
+      {
+        "title": "Không cần thẻ cá nhân",
+        "desc": "Thanh toán tập trung qua hình thức invoice – an toàn, tiện lợi và chuyên nghiệp."
+      },
+      {
+        "title": "Hỗ trợ kỹ thuật 24/7",
+        "desc": "Đội ngũ SMADS sẵn sàng hỗ trợ trong suốt quá trình chạy chiến dịch."
+      },
+      {
+        "title": "Phù hợp mọi quy mô",
+        "desc": "Từ doanh nghiệp nhỏ đến tập đoàn lớn đều có gói thuê linh hoạt và chi phí tối ưu."
+      }
+    ],
+    "advantagesTitle": "Ưu Điểm Của Tài Khoản Google Ads Invoice",
+    "advantagesDesc": "Với hệ thống tự động hóa, hóa đơn được tạo và gửi nhanh chóng, giảm thời gian xử lý thủ công và sai sót.",
+    "advantages": [
+      "Tài khoản cứng, chạy ổn định",
+      "Chi phí rõ ràng, minh bạch",
+      "Chủ động ngân sách",
+      "Đã xác minh nhà quảng cáo",
+      "Hỗ trợ kỹ thuật nhanh chóng"
+    ],
+    "pricingTitle": "Bảng Giá Dịch Vụ Thuê Tài Khoản Google Ads",
+    "pricingDesc": "Phí dịch vụ được tính theo tỷ lệ phần trăm trên ngân sách (tương tự thông lệ trên thị trường). SMADS minh bạch mức phí – phù hợp với mọi quy mô.",
+    "feeTiers": [
+      {
+        "label": "Dưới 200 triệu",
+        "rate": "5%"
+      },
+      {
+        "label": "Từ 200 - 500 triệu",
+        "rate": "4%"
+      },
+      {
+        "label": "Từ 500 triệu - 1 tỷ",
+        "rate": "3%"
+      },
+      {
+        "label": "Trên 1 tỷ",
+        "rate": "2%"
+      }
+    ],
+    "noteTitle": "Ghi chú:",
+    "noteText": "Mức phí chi tiết có thể thương lượng theo ngân sách & thời gian hợp tác. Hỗ trợ xuất hóa đơn VAT đầy đủ.",
+    "ctaBtn": "Nhận báo giá"
+  },
   "activities": {
     "titleHero": "Hoạt động",
     "title": "Hoạt Động Nổi Bật",
     "viewDetail": "Xem chi tiết →",
+    "btn_back": "Trở lại",
     "notFound": "Không tìm thấy hoạt động này.",
+    "list_of_articles": "Các bài viết khác",
     "list": [
       {
         "slug": "workshop-marketing-2025",
@@ -304,10 +380,10 @@
     "company_description": "Chúng tôi mang đến các giải pháp Marketing sáng tạo, giúp thương hiệu của bạn nổi bật, kết nối đúng khách hàng và gia tăng doanh thu hiệu quả.",
     "services_title": "Dịch vụ",
     "services": {
-      "invoice": "Cho thuê Invoice Google",
-      "ads": "Google Ads & Facebook Ads",
+      "ads": "Quảng cáo Google - Facebook",
+      "invoice": "Hoá đơn Google",
       "web_design": "Thiết kế Website",
-      "seo": "Seo Website"
+      "seo": "SEO Website"
     },
     "links_title": "Liên kết",
     "links": {

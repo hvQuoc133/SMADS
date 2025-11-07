@@ -173,9 +173,34 @@
 }
 
 .detailText {
-    font-size: 1rem;
-    color: #444;
+    font-size: 18px;
+    color: var(--text-dark);
     text-align: justify;
+    line-height: 1.6;
+}
+
+.backButton {
+    display: inline-block;
+    align-self: start;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.backButton a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.backButton:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
 .detailText p {
@@ -235,16 +260,17 @@
 }
 
 .relatedInfo h4 {
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 600;
     margin: 0 0 4px;
-    color: var(--text-dark);
+    color: var(--color-primary);
 }
 
 .relatedInfo p {
-    font-size: 0.9rem;
-    color: #777;
+    font-size: 14px;
+    color: var(--text-dark);
     margin: 0;
+    line-height: 1.4;
 }
 
 

@@ -53,7 +53,7 @@
 .contactInfo p {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--color-text-muted);
+    color: var(--text-dark);
 }
 
 .contactInfo ul {

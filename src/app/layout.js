@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FloatingContact from "../components/FloatingContact";
 
 export const metadata = {
   title: "SMADS",
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       </head>
       <body suppressHydrationWarning={true}>
         {children}
+        <FloatingContact />
       </body>
     </html>
   );

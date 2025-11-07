@@ -45,11 +45,12 @@ export default function ActivityDetail({ dict, locale, activity, relatedActiviti
             <p className={style.detailDesc}>{activity.desc}</p>
             <div className={style.detailText}>{activity.content}</div>
           </div>
+          <div className={style.backButton}><a href={`/${locale}/activities`}>{dict.activities.btn_back}</a></div>
         </div>
 
         {/* Right Content - Related Articles */}
         <aside className={style.rightContent}>
-          <h3>Bài viết khác</h3>
+          <h3>{dict.activities.list_of_articles}</h3>
 
           <div className={style.relatedList}>
             {relatedActivities && relatedActivities.length > 0 ? (

@@ -24,7 +24,7 @@ export async function POST(req) {
     // Config transporter Gmail
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 465, // cổng bảo mật SSL
+      port: 465,
       secure: true,
       auth: {
         user: process.env.EMAIL_USER,

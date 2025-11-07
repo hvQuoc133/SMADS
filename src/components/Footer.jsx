@@ -37,10 +37,10 @@ export default function Footer({ locale = "vi", dict }) {
               <h6 className="text-uppercase fw-bold mb-4">
                 {dict?.footer?.services_title}
               </h6>
-              <p><a href="#!" className="text-reset">{dict?.footer?.services?.invoice}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.services?.ads}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.services?.web_design}</a></p>
-              <p><a href="#!" className="text-reset">{dict?.footer?.services?.seo}</a></p>
+              <p><a href={`/${locale}/services/ads`} className="text-reset">{dict?.footer?.services?.ads}</a></p>
+              <p><a href={`/${locale}/services/ads-invoice`} className="text-reset">{dict?.footer?.services?.invoice}</a></p>
+              <p><a href={`/${locale}/services/seo`} className="text-reset">{dict?.footer?.services?.seo}</a></p>
+              <p><a href={`/${locale}/services/web-design`} className="text-reset">{dict?.footer?.services?.web_design}</a></p>
             </div>
 
             {/* Link */}
