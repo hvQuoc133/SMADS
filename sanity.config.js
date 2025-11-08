@@ -1,8 +1,8 @@
 import { defineConfig } from "sanity";
-import { deskTool } from "sanity/desk";
+import { structureTool } from "sanity/structure"; // ← Đổi deskTool thành structureTool
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./src/sanity/schemaTypes";
-import structure from "./src/sanity/structure";
+import { structure } from "./src/sanity/structure";
 
 export default defineConfig({
   name: "default",
@@ -12,7 +12,7 @@ export default defineConfig({
   basePath: "/studio",
 
   plugins: [
-    deskTool({
+    structureTool({ // ← Đổi thành structureTool
       structure,
     }),
     visionTool(),
