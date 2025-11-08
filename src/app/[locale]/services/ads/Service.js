@@ -28,17 +28,13 @@ export default function Service({ dict, locale }) {
             }
         };
     }, []);
-    console.log("t.btn_signup =", t.btn_signup);
-    console.log("dict keys:", Object.keys(dict));
-
 
     return (
         <>
             <BgAllPage title="Service" parent="SMADS" />
-
             <section className={styles.servicePage}>
                 {/* HERO */}
-                <div className={styles.hero}>
+                <div className={styles.hero} data-aos="fade-down">
                     <div className={styles.container}>
                         <h1>{t.title1} <span>{t.title2}</span></h1>
                         <p>{t.desc}</p>
@@ -47,7 +43,7 @@ export default function Service({ dict, locale }) {
                 </div>
 
                 {/* OVERVIEW */}
-                <div className={styles.overview}>
+                <div className={styles.overview} data-aos="fade-right">
                     <div className={styles.containerFlex}>
                         <div className={styles.text}>
                             <h2>{t.overviewTitle}</h2>
@@ -65,7 +61,7 @@ export default function Service({ dict, locale }) {
                 </div>
 
                 {/* BENEFITS */}
-                <div className={styles.benefits}>
+                <div className={styles.benefits} data-aos="fade-left">
                     <div className={styles.container}>
                         <h2>{t.benefitsTitle}</h2>
                         <div className={styles.benefitGrid}>
@@ -81,7 +77,7 @@ export default function Service({ dict, locale }) {
                 </div>
 
                 {/* STEPS */}
-                <div className={styles.steps}>
+                <div className={styles.steps} data-aos="fade-up-right">
                     <div className={styles.container}>
                         <h2>{t.stepsTitle}</h2>
                         <div className={styles.timeline}>
@@ -100,7 +96,7 @@ export default function Service({ dict, locale }) {
                 </div>
 
                 {/* PACKAGES */}
-                <div className={styles.packages}>
+                <div className={styles.packages} data-aos="fade-up-left">
                     <div className={styles.container}>
                         <h2>{t.packagesTitle}</h2>
                         <div className={styles.packageGrid}>
@@ -120,7 +116,6 @@ export default function Service({ dict, locale }) {
                     </div>
                 </div>
             </section>
-
             <ScrollToTop />
         </>
     );

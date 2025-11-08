@@ -6,7 +6,8 @@ import styles from "../styles/FloatingContact.module.css";
 
 export default function FloatingContact() {
     return (
-        <div className={styles.floatingBar}>
+        <div className={styles.floatingBar} data-aos="fade-up"
+            data-aos-anchor-placement="bottom-bottom">
             {/* Phone */}
             <Link href="tel:0775779266" className={`${styles.icon} ${styles.phone}`} aria-label="Phone">
                 <FaPhoneAlt />
