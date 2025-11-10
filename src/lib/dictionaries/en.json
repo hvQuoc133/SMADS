@@ -214,8 +214,7 @@
       "btn1": "Get Consultation",
       "btn2": "View Pricing",
       "metaStrong": "Free",
-      "metaText": "Free account setup • Full VAT invoice support",
-      "image": "/images/activities/activity1.jpg"
+      "metaText": "Free account setup • Full VAT invoice support"
     },
     "overviewTitle": "Overview of Google Ads Invoice Accounts",
     "overviewText": "Google Ads Invoice accounts are issued to trusted businesses/partners, saving verification time and reducing payment suspension risk.",
@@ -277,6 +276,114 @@
     "noteTitle": "Note:",
     "noteText": "Rates can be negotiated depending on budget & partnership duration. Full VAT invoices supported.",
     "ctaBtn": "Request a Quote"
+  },
+  "serviceWebDesign": {
+    "hero": {
+      "title": "Website Design Service",
+      "description": "AdsDigi builds modern websites, fast loading, compatible with all devices and optimized for conversion. Support for clear source code handover, administration training and professional warranty.",
+      "cta": "Get Free Consultation",
+      "benefits": [
+        "🌟 Exclusive design according to brand",
+        "⚡ Speed & experience optimization",
+        "🔍 Standard SEO onpage from the start"
+      ]
+    },
+    "whyUs": {
+      "title": "Why choose <span>smads</span>?",
+      "features": [
+        {
+          "title": "Exclusive Design",
+          "description": "Custom design according to industry position, ensuring consistent brand identity."
+        },
+        {
+          "title": "Outstanding Speed",
+          "description": "Optimized code, lazy-load images, caching for fast loading on all networks."
+        },
+        {
+          "title": "SEO Standard",
+          "description": "Setup schema, heading, sitemap, meta to increase search ranking potential."
+        },
+        {
+          "title": "Support & Warranty",
+          "description": "Timely technical support, warranty and expansion consultation after handover."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Website Design Pricing",
+      "subtitle": "Standard package reference — specific quotes will be based on feature requirements",
+      "plans": [
+        {
+          "name": "Basic",
+          "description": "For individuals & small shops",
+          "price": "5,000,000 VND",
+          "features": [
+            "Editable template",
+            "Basic Responsive & SEO",
+            "6 months warranty"
+          ]
+        },
+        {
+          "name": "Professional",
+          "description": "Professional business website",
+          "price": "12,000,000 VND",
+          "features": [
+            "Exclusive design",
+            "Advanced SEO, analytics",
+            "1 year hosting (depending on program)",
+            "12 months warranty"
+          ]
+        },
+        {
+          "name": "Premium",
+          "description": "Comprehensive solution & integration",
+          "price": "20,000,000 VND",
+          "features": [
+            "CRM / Chatbot / Landing page",
+            "Conversion optimization & content strategy",
+            "Long-term maintenance & upgrades"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Service Implementation Process",
+      "steps": [
+        {
+          "title": "Receive Request & Consultation",
+          "description": "Customer sends request, we analyze and consult the most suitable solution."
+        },
+        {
+          "title": "Planning & Quotation",
+          "description": "Build detailed timeline, design plan and send transparent quotation."
+        },
+        {
+          "title": "Design & Development",
+          "description": "Implement interface design, program features and optimize user experience."
+        },
+        {
+          "title": "Testing & Handover",
+          "description": "Comprehensive website testing, usage training and product handover."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How long does it take to complete a website?",
+          "answer": "Depending on scale: from 7-14 days for information sites, 2-6 weeks for complex sites."
+        },
+        {
+          "question": "Can I update content myself?",
+          "answer": "Yes — we hand over CMS or guide operations for you to self-administer."
+        },
+        {
+          "question": "Is there support after handover?",
+          "answer": "Yes — warranty package + optional support package, quick response within 24-72h."
+        }
+      ]
+    }
   },
   "activities": {
     "titleHero": "Activities",

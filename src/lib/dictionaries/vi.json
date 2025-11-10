@@ -214,8 +214,7 @@
       "btn1": "Nhận tư vấn",
       "btn2": "Xem bảng giá",
       "metaStrong": "Free",
-      "metaText": "phí mở tài khoản • Xuất hóa đơn VAT đầy đủ",
-      "image": "/images/activities/activity1.jpg"
+      "metaText": "phí mở tài khoản • Xuất hóa đơn VAT đầy đủ"
     },
     "overviewTitle": "Tổng quan tài khoản Google Ads invoice",
     "overviewText": "Tài khoản Google Ads invoice là tài khoản cấp cho doanh nghiệp/đối tác uy tín — có trust cao, tiết kiệm thời gian xác minh và giảm thiểu rủi ro bị tạm ngưng do lỗi thanh toán.",
@@ -277,6 +276,114 @@
     "noteTitle": "Ghi chú:",
     "noteText": "Mức phí chi tiết có thể thương lượng theo ngân sách & thời gian hợp tác. Hỗ trợ xuất hóa đơn VAT đầy đủ.",
     "ctaBtn": "Nhận báo giá"
+  },
+  "serviceWebDesign": {
+    "hero": {
+      "title": "Dịch vụ thiết kế Website",
+      "description": "AdsDigi xây dựng website hiện đại, tải nhanh, tương thích mọi thiết bị và tối ưu chuyển đổi. Hỗ trợ bàn giao mã nguồn rõ ràng, huấn luyện quản trị và bảo hành chuyên nghiệp.",
+      "cta": "Nhận tư vấn miễn phí",
+      "benefits": [
+        "🌟 Giao diện độc quyền theo thương hiệu",
+        "⚡ Tối ưu tốc độ & trải nghiệm",
+        "🔍 Chuẩn SEO onpage từ đầu"
+      ]
+    },
+    "whyUs": {
+      "title": "Tại sao chọn <span>smads</span>?",
+      "features": [
+        {
+          "title": "Giao diện độc quyền",
+          "description": "Thiết kế riêng theo vị trí ngành nghề, đảm bảo nhận diện thương hiệu đồng nhất."
+        },
+        {
+          "title": "Tốc độ vượt trội",
+          "description": "Tối ưu code, lazy-load hình ảnh, caching để trang tải nhanh trên mọi mạng."
+        },
+        {
+          "title": "Chuẩn SEO",
+          "description": "Thiết lập schema, heading, sitemap, meta để tăng khả năng lên top tìm kiếm."
+        },
+        {
+          "title": "Hỗ trợ & Bảo hành",
+          "description": "Hỗ trợ kỹ thuật kịp thời, bảo hành và tư vấn mở rộng sau bàn giao."
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Bảng giá thiết kế Website",
+      "subtitle": "Gói chuẩn tham khảo — báo giá cụ thể sẽ theo yêu cầu chức năng",
+      "plans": [
+        {
+          "name": "Basic",
+          "description": "Cho cá nhân & cửa hàng nhỏ",
+          "price": "5.000.000 VNĐ",
+          "features": [
+            "Template chỉnh sửa",
+            "Responsive & SEO cơ bản",
+            "Bảo hành 6 tháng"
+          ]
+        },
+        {
+          "name": "Professional",
+          "description": "Website doanh nghiệp",
+          "price": "12.000.000 VNĐ",
+          "features": [
+            "Thiết kế độc quyền",
+            "Chuẩn SEO nâng cao, analytics",
+            "Tặng 1 năm hosting (tuỳ chương trình)",
+            "Bảo hành 12 tháng"
+          ]
+        },
+        {
+          "name": "Premium",
+          "description": "Giải pháp toàn diện & tích hợp",
+          "price": "20.000.000 VNĐ",
+          "features": [
+            "CRM / Chatbot / Landing page",
+            "Tối ưu chuyển đổi & chiến lược nội dung",
+            "Bảo trì & nâng cấp dài hạn"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Quy trình triển khai dịch vụ",
+      "steps": [
+        {
+          "title": "Tiếp nhận yêu cầu & Tư vấn",
+          "description": "Khách hàng gửi yêu cầu, chúng tôi phân tích và tư vấn giải pháp phù hợp nhất."
+        },
+        {
+          "title": "Lên kế hoạch & Báo giá",
+          "description": "Xây dựng timeline chi tiết, lên phương án thiết kế và gửi báo giá minh bạch."
+        },
+        {
+          "title": "Thiết kế & Phát triển",
+          "description": "Triển khai thiết kế giao diện, lập trình tính năng và tối ưu trải nghiệm người dùng."
+        },
+        {
+          "title": "Kiểm thử & Bàn giao",
+          "description": "Test toàn diện website, training hướng dẫn sử dụng và bàn giao sản phẩm."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp",
+      "items": [
+        {
+          "question": "Mất bao lâu để hoàn thành 1 website?",
+          "answer": "Tùy quy mô: từ 7–14 ngày cho site thông tin, 2–6 tuần cho site phức tạp."
+        },
+        {
+          "question": "Tôi có thể tự cập nhật nội dung không?",
+          "answer": "Có — chúng tôi bàn giao CMS hoặc hướng dẫn thao tác để bạn tự quản trị."
+        },
+        {
+          "question": "Có hỗ trợ sau khi bàn giao không?",
+          "answer": "Có — gói bảo hành + gói hỗ trợ tuỳ chọn, phản hồi nhanh trong 24–72h."
+        }
+      ]
+    }
   },
   "activities": {
     "titleHero": "Hoạt động",

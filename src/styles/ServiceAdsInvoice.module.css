@@ -1,131 +1,128 @@
-/* GLOBAL CONTAINER */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-/* HERO SECTION */
-.hero {
+/* ============ SERVICE INVOICE MODULE CSS ============ */
+.wrapper {
+    color: #222;
     background: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
+    overflow-x: hidden;
 }
 
-.hero .container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    flex-wrap: wrap;
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-.left {
-    flex: 1 1 520px;
+/* ============ SECTION BASE ============ */
+.section {
+    padding: 80px 0;
 }
 
-.right {
-    flex: 1 1 480px;
-    text-align: center;
+.section:nth-of-type(even) {
+    background: #fafafa;
 }
 
-.title {
-    font-size: 36px;
+.section h2 {
+    color: var(--color-primary);
+    font-size: 28px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 60px;
+    text-align: center;
     text-transform: capitalize;
 }
 
-.title span {
+/* ============ HERO SECTION ============ */
+.hero {
+    background: #fff;
+    padding: 100px 0;
+}
+
+.heroContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.heroText h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 16px;
     color: var(--color-primary);
 }
 
-.lead {
+.heroText h1 span {
+    color: var(--color-primary);
+}
+
+.heroDesc {
     font-size: 18px;
+    margin-bottom: 32px;
     color: var(--color-secondary);
-    margin-bottom: 25px;
     line-height: 1.6;
 }
 
-.actions {
+.heroActions {
     display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.btnPrimary,
-.btnGhost {
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
 }
 
 .btnPrimary {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    border-radius: 15px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-}
-
-.btnPrimary:hover {
-    filter: brightness(1.1);
-}
-
-.btnGhost {
     padding: 12px 30px;
     border: 1px solid var(--color-primary);
-    border-radius: 15px;
+    border-radius: 5px;
     font-weight: 600;
     color: var(--color-primary);
     background-color: transparent;
     cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.btnGhost:hover {
-    background: var(--color-primary);
+.btnPrimary:hover {
+    transform: scale(1.05);
+    background-color: var(--color-primary);
     color: #fff;
 }
 
-.meta {
-    font-size: 16px;
-    color: var(--text-dark);
-    margin-top: 10px;
+.btnSecondary {
+    padding: 12px 30px;
+    border: 1px solid var(--color-primary);
+    border-radius: 5px;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-primary);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-/* OVERVIEW SECTION */
-.overview {
-    background: #fafafa;
-    padding: 10px 20px;
-}
-
-.h2 {
-    text-align: center;
-    margin-bottom: 15px;
-    position: relative;
-    font-size: 28px;
-    margin-bottom: 16px;
-    font-weight: 700;
-    text-transform: capitalize;
+.btnSecondary:hover {
+    transform: scale(1.05);
+    background-color: #fff;
     color: var(--color-primary);
 }
 
-.h2::after {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
+.heroMeta {
+    font-size: 16px;
+    color: var(--text-dark);
 }
 
-.text {
+.heroVisual {
+    display: flex;
+    justify-content: center;
+}
+
+.heroVisual img {
+    border-radius: 12px;
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ============ OVERVIEW SECTION ============ */
+.overviewText {
     text-align: center;
     color: var(--text-dark);
     line-height: 1.6;
@@ -134,13 +131,11 @@
     font-size: 18px;
 }
 
-/* BENEFITS GRID */
 .benefitsGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 50px;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
 }
 
 .benefitCard {
@@ -158,6 +153,13 @@
     width: 100%;
     max-width: 340px;
     position: relative;
+    border-top: 6px solid var(--color-secondary);
+}
+
+.benefitCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
 }
 
 .benefitCard h4 {
@@ -176,52 +178,29 @@
     color: var(--text-dark);
     font-size: 16px;
     line-height: 1.4;
-    flex: 1;
+    flex: 1 1;
 }
 
-/* ADVANTAGES SECTION */
-.advantages {
-    padding: 60px 0;
-}
-
-.wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
+/* ============ ADVANTAGES SECTION ============ */
+.advantagesContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    flex-wrap: wrap;
+    gap: 60px;
 }
 
-.advHeader {
-    flex: 1 1 40%;
+.advantagesText h2 {
+    text-align: left;
+    margin-bottom: 20px;
 }
 
-.advHeader h2 {
-    font-size: 28px;
-    color: var(--color-primary);
-    margin-bottom: 12px;
-    font-weight: 700;
-    text-transform: capitalize;
+.advantagesText p {
+    color: #444;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
-.advHeader em {
-    color: var(--color-primary);
-    font-weight: 700;
-    text-transform: capitalize;
-    font-size: 28px;
-    font-style: normal;
-}
-
-.advHeader p {
-    color: var(--text-dark);
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.advList {
-    flex: 1 1 50%;
+.advantagesList {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
@@ -230,7 +209,7 @@
     margin: 0;
 }
 
-.advList li {
+.advantagesList li {
     background: #fff;
     border: 1px solid #eee;
     border-radius: 8px;
@@ -241,53 +220,57 @@
     transition: all 0.25s ease;
 }
 
-.advList li:hover {
+.advantagesList li:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     border-color: var(--color-primary);
 }
 
-/* PRICING SECTION */
-.pricing {
-    background: #fafafa;
-    padding: 10px 20px;
+/* ============ PRICING SECTION ============ */
+.pricingText {
+    text-align: center;
+    color: var(--text-dark);
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 0 auto 40px;
+    font-size: 18px;
 }
 
-.feeList {
+.pricingGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 45px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
 }
 
-.feeCard {
+.pricingCard {
     background: #fff;
     border-radius: 14px;
-    padding: 30px 20px;
+    padding: 30px 25px;
     text-align: center;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
 
-.feeCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+.pricingCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.feeLabel {
+.pricingLabel {
     font-size: 21px;
     color: var(--text-dark);
     margin-bottom: 10px;
     font-weight: 600;
 }
 
-.feeRate {
+.pricingRate {
     font-size: 28px;
     font-weight: 700;
     color: var(--color-primary);
 }
 
-.note {
+.pricingNote {
     text-align: center;
     color: var(--text-dark);
     font-size: 16px;
@@ -295,221 +278,111 @@
     margin-top: 25px;
 }
 
-.ctaRow {
+.pricingCta {
     text-align: center;
     margin-top: 35px;
 }
 
-.btnPricing {
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    border-radius: 15px;
-    color: #fff;
-    cursor: pointer;
-    padding: 14px 32px;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.btnPricing:hover {
-    filter: brightness(1.1);
-}
-
-/* ================= Responsive ================= */
-
-/* ---------- ≤1300px ---------- */
-@media (max-width: 1300px) {
-    .wrap {
-        width: 92%;
-        gap: 40px;
-    }
-}
-
-/* ---------- 1300px–1031px ---------- */
-@media (max-width: 1300px) and (min-width: 1031px) {
-    .hero .container {
-        max-width: 85%;
-        margin: 0 auto;
-        gap: 40px;
-    }
-
-    .left {
-        flex: 1 1 50%;
-    }
-
-    .right {
-        flex: 1 1 45%;
-    }
-
-    .title {
-        font-size: 34px;
-    }
-
-    .lead {
-        font-size: 17px;
-    }
-
-    .actions {
-        gap: 12px;
-    }
-
-    .btnPrimary,
-    .btnGhost {
-        font-size: 16px;
-    }
-}
-
-/* ---------- ≤1024px ---------- */
+/* ============ RESPONSIVE DESIGN ============ */
 @media (max-width: 1024px) {
-    .hero .container {
-        flex-wrap: wrap;
-        justify-content: center;
+
+    .heroContent,
+    .advantagesContent {
         gap: 40px;
-        max-width: 90%;
-        margin: 0 auto;
     }
 
-    .left,
-    .right {
-        flex: 1 1 100%;
-        text-align: center;
-    }
-
-    .title {
-        font-size: 32px;
-    }
-
-    .lead {
-        font-size: 17px;
-        max-width: 700px;
-        margin: 0 auto 20px;
-    }
-
-    .actions {
-        justify-content: center;
-    }
-
-    .btnPrimary,
-    .btnGhost {
-        font-size: 16px;
-    }
-
-    .right img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .wrap {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .advHeader,
-    .advList {
-        flex: 1 1 100%;
-    }
-
-    .advList {
-        justify-content: center;
-    }
-
-    .advHeader h2 {
-        font-size: 26px;
-    }
-
-    .advHeader p {
-        font-size: 16px;
+    .heroText h1 {
+        font-size: 2rem;
     }
 }
 
-/* ---------- ≤992px ---------- */
 @media (max-width: 992px) {
+
+    .heroContent,
+    .advantagesContent {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .heroText h1 {
+        font-size: 1.8rem;
+    }
+
+    .advantagesText h2 {
+        text-align: center;
+    }
+
     .benefitsGrid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        justify-items: center;
     }
 }
 
-/* ---------- ≥768px ---------- */
-@media (min-width: 768px) {
-    .pricing {
-        margin-bottom: 100px;
-    }
-}
-
-/* ---------- ≤768px ---------- */
 @media (max-width: 768px) {
-    .title {
-        font-size: 1.9rem;
-    }
-
-    .container {
-        padding: 50px 20px;
+    .section {
+        padding: 60px 0;
     }
 
     .hero {
-        min-height: auto;
-        padding: 40px 0;
-        flex-direction: column;
-        overflow-x: hidden;
+        padding: 80px 0;
     }
 
-    .hero .container {
+    .heroText h1 {
+        font-size: 1.6rem;
+    }
+
+    .heroActions {
         flex-direction: column;
         align-items: center;
-        max-width: 92%;
-        margin: 0 auto;
-    }
-
-    .title {
-        font-size: 26px;
-        line-height: 1.3;
-    }
-
-    .lead {
-        font-size: 15.5px;
-        line-height: 1.5;
-        max-width: 95%;
-        margin: 0 auto 20px;
-    }
-
-    .actions {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
     }
 
     .btnPrimary,
-    .btnGhost {
+    .btnSecondary {
         width: 100%;
-        font-size: 15px;
-        padding: 10px 0;
+        max-width: 280px;
+        text-align: center;
     }
 
-    .right img {
-        width: 100%;
-        height: auto;
-        border-radius: 10px;
-    }
-
-}
-
-/* ---------- ≤600px ---------- */
-@media (max-width: 600px) {
-    .benefitsGrid {
+    .advantagesContent {
         grid-template-columns: 1fr;
     }
 
-    .advList li {
+    .advantagesList {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .benefitsGrid,
+    .pricingGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .advantagesList li {
         font-size: 15px;
         padding: 9px 15px;
     }
+}
 
-    .advHeader h2 {
-        font-size: 22px;
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
     }
 
-    .advHeader p {
-        font-size: 15px;
+    .heroText h1 {
+        font-size: 1.4rem;
+    }
+
+    .heroDesc,
+    .overviewText,
+    .pricingText {
+        font-size: 16px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+        margin-bottom: 40px;
     }
 }
