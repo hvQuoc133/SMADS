@@ -1,5 +1,5 @@
 import { defineConfig } from "sanity";
-import { structureTool } from "sanity/structure"; // ← Đổi deskTool thành structureTool
+import { structureTool } from "sanity/structure";
 import { visionTool } from "@sanity/vision";
 import { schemaTypes } from "./src/sanity/schemaTypes";
 import { structure } from "./src/sanity/structure";
@@ -12,13 +12,42 @@ export default defineConfig({
   basePath: "/studio",
 
   plugins: [
-    structureTool({ // ← Đổi thành structureTool
-      structure,
-    }),
+    structureTool({ structure }),
     visionTool(),
   ],
 
   schema: {
     types: schemaTypes,
   },
+
+  // 🔥 FIX LAG TRIỆT ĐỂ
+  form: {
+    unstable: {
+      value: {
+        autoSave: {
+          threshold: 10000, // 10 giây
+          interval: 10000
+        }
+      }
+    }
+  },
+
+  studio: {
+    unstable_autosave: {
+      enabled: false // 🔥 TẮT AUTO-SAVE
+    }
+  },
+
+  // TẮT REAL-TIME UPDATES
+  api: {
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+    useCdn: true, // Dùng CDN để giảm API calls
+    withCredentials: false
+  },
+
+  // TẮT LIVE PREVIEW
+  live: {
+    enabled: false // 🔥 QUAN TRỌNG: Tắt live preview
+  }
 });

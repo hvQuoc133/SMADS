@@ -16,12 +16,13 @@ export default function ServiceWebDesign({ locale, dict }) {
     const pricing = svc.pricing || {};
     const process = svc.process || {};
     const faq = svc.faq || {};
+    const cta = svc.cta || {};
 
     const toggleFaq = (index) => {
         setOpenFaq(openFaq === index ? null : index);
     };
 
-    // Initialize AOS - Đơn giản hóa
+    // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined" && window.innerWidth >= 768) {
             AOS.init({
@@ -39,7 +40,7 @@ export default function ServiceWebDesign({ locale, dict }) {
             />
 
             <div className={styles.wrapper}>
-                {/* HERO - Chỉ 2 AOS */}
+                {/* HERO */}
                 <section className={`${styles.section} ${styles.hero}`}>
                     <div className={styles.container}>
                         <div className={styles.heroInner}>
@@ -67,7 +68,7 @@ export default function ServiceWebDesign({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* WHY US - 1 AOS */}
+                {/* WHY US */}
                 <section className={`${styles.section} ${styles.whyUs}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2>Tại sao chọn <span>Smads</span>?</h2>
@@ -82,7 +83,7 @@ export default function ServiceWebDesign({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* PRICING - 1 AOS */}
+                {/* PRICING */}
                 <section className={`${styles.section} ${styles.pricing}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2>{pricing.title}</h2>
@@ -112,7 +113,7 @@ export default function ServiceWebDesign({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* PROCESS TIMELINE - 1 AOS */}
+                {/* PROCESS TIMELINE  */}
                 <section className={`${styles.section} ${styles.process}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2 className={styles.sectionTitle}>{process.title}</h2>
@@ -135,7 +136,25 @@ export default function ServiceWebDesign({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* FAQ - 1 AOS */}
+                {/* CTA SECTION */}
+                <section className={`${styles.section} ${styles.ctaSection}`} data-aos="fade-up">
+                    <div className={styles.container}>
+                        <div className={styles.ctaContent}>
+                            <h2>{cta.title || 'Sẵn sàng sở hữu website chuyên nghiệp?'}</h2>
+                            <p>{cta.description || 'Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết'}</p>
+                            <div className={styles.ctaActions}>
+                                <a href={`/${locale}/contact`} className={styles.btnPrimary}>
+                                    {cta.ctaButton || 'Nhận tư vấn ngay'}
+                                </a>
+                                <a href="tel:+84775779266" className={styles.btnSecondary}>
+                                    0775.779.266
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* FAQ */}
                 <section className={`${styles.section} ${styles.faq}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2>{faq.title}</h2>

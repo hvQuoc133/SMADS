@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function ServiceInvoice({ locale, dict }) {
-    // Initialize AOS - Đơn giản hóa
+    // Initialize AOS 
     useEffect(() => {
         if (typeof window !== "undefined" && window.innerWidth >= 768) {
             import("aos").then((AOS) => {
@@ -25,7 +25,7 @@ export default function ServiceInvoice({ locale, dict }) {
             <BgAllPage title={svc.title} parent="SMADS" />
 
             <div className={styles.wrapper}>
-                {/* HERO - 1 AOS */}
+                {/* HERO */}
                 <section className={`${styles.section} ${styles.hero}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <div className={styles.heroContent}>
@@ -54,7 +54,7 @@ export default function ServiceInvoice({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* OVERVIEW - 1 AOS */}
+                {/* OVERVIEW  */}
                 <section className={`${styles.section} ${styles.overview}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2>{svc.overviewTitle}</h2>
@@ -71,7 +71,7 @@ export default function ServiceInvoice({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* ADVANTAGES - 1 AOS */}
+                {/* ADVANTAGES */}
                 <section className={`${styles.section} ${styles.advantages}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <div className={styles.advantagesContent}>
@@ -89,7 +89,7 @@ export default function ServiceInvoice({ locale, dict }) {
                     </div>
                 </section>
 
-                {/* PRICING - 1 AOS */}
+                {/* PRICING */}
                 <section id="pricing" className={`${styles.section} ${styles.pricing}`} data-aos="fade-up">
                     <div className={styles.container}>
                         <h2>{svc.pricingTitle}</h2>

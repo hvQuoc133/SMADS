@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation"; // ← Thêm import này
+import { useParams } from "next/navigation";
 import styles from "../../../styles/About.module.css";
 import BgAllPage from "../../../components/BgAllPage";
 import ScrollToTop from "../../../components/ScrollToTop";
@@ -11,44 +11,49 @@ import "aos/dist/aos.css";
 import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
 
-// Fetch data từ Sanity
 async function getAboutData(locale) {
     const query = `*[_type == "about" && language == $locale][0]{
-    pageTitle,
-    section1 {
-      title,
-      p1,
-      p2,
-      readMore,
-      image
-    },
-    section2 {
-      title,
-      desc,
-      list,
-      image
-    }
-  }`;
-
+        pageTitle,
+        section1 {
+            title,
+            p1,
+            p2,
+            readMore,
+            image
+        },
+        section2 {
+            title,
+            desc,
+            list,
+            image
+        }
+    }`;
     return await client.fetch(query, { locale });
 }
 
-export default function About({ dict }) { // ← Bỏ params ở đây
-    const params = useParams(); // ← Lấy params từ hook
-    const { locale } = params; // ← Destructure từ useParams()
+export default function About({ dict }) {
+    const params = useParams();
+    const { locale } = params;
     const [aboutData, setAboutData] = useState(null);
-    const a = dict.about;
+
+    // Image error handler
+    const handleImageError = (e) => {
+        e.target.src = "/images/fallback-image.png";
+    };
 
     useEffect(() => {
-        // Fetch data từ Sanity
         const fetchAboutData = async () => {
-            const data = await getAboutData(locale);
-            setAboutData(data);
+            try {
+                const data = await getAboutData(locale);
+                setAboutData(data);
+            } catch (error) {
+                console.error("Failed to fetch about data:", error);
+            }
         };
 
         fetchAboutData();
 
-        // Phần AOS của bạn (giữ nguyên)
+        // AOS init (giữ nguyên)
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
                 import("aos").then((AOS) =>
@@ -71,27 +76,27 @@ export default function About({ dict }) { // ← Bỏ params ở đây
         };
     }, [locale]);
 
-    // Fallback data: nếu Sanity không có data thì dùng dict
+    // Fallback data
     const displayData = {
-        pageTitle: aboutData?.pageTitle || a.pageTitle,
+        pageTitle: aboutData?.pageTitle || dict.about.pageTitle,
         section1: {
-            title: aboutData?.section1?.title || a.section1.title,
-            p1: aboutData?.section1?.p1 || a.section1.p1,
-            p2: aboutData?.section1?.p2 || a.section1.p2,
-            readMore: aboutData?.section1?.readMore || a.section1.readMore,
+            title: aboutData?.section1?.title || dict.about.section1.title,
+            p1: aboutData?.section1?.p1 || dict.about.section1.p1,
+            p2: aboutData?.section1?.p2 || dict.about.section1.p2,
+            readMore: aboutData?.section1?.readMore || dict.about.section1.readMore,
             image: aboutData?.section1?.image
         },
         section2: {
-            title: aboutData?.section2?.title || a.section2.title,
-            desc: aboutData?.section2?.desc || a.section2.desc,
-            list: aboutData?.section2?.list || a.section2.list,
+            title: aboutData?.section2?.title || dict.about.section2.title,
+            desc: aboutData?.section2?.desc || dict.about.section2.desc,
+            list: aboutData?.section2?.list || dict.about.section2.list,
             image: aboutData?.section2?.image
         }
     };
 
-    // Hiển thị loading khi chưa có data
-    if (!aboutData && !dict) {
-        return <div>Loading...</div>;
+    // Loading state
+    if (!aboutData) {
+        return <div className={styles.loading}>Loading...</div>;
     }
 
     return (
@@ -111,7 +116,8 @@ export default function About({ dict }) { // ← Bỏ params ở đây
                 <div className={styles.image} data-aos="fade-left">
                     <img
                         src={displayData.section1.image ? urlFor(displayData.section1.image).url() : "/images/about/da_img.png"}
-                        alt="About Illustration"
+                        alt={displayData.section1.title || "About Illustration"}
+                        onError={handleImageError}
                     />
                 </div>
             </section>
@@ -134,7 +140,8 @@ export default function About({ dict }) { // ← Bỏ params ở đây
                     <div className={styles.imageBox} data-aos="flip-right">
                         <img
                             src={displayData.section2.image ? urlFor(displayData.section2.image).url() : "/images/about/best_match.png"}
-                            alt="Business growth"
+                            alt={displayData.section2.title || "Business growth"}
+                            onError={handleImageError}
                             width={520}
                             height={520}
                         />

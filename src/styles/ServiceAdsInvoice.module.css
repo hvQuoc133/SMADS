@@ -1,4 +1,4 @@
-/* ============ SERVICE INVOICE MODULE CSS ============ */
+/*  SERVICE INVOICE MODULE CSS  */
 .wrapper {
     color: #222;
     background: #fff;
@@ -11,7 +11,7 @@
     padding: 0 24px;
 }
 
-/* ============ SECTION BASE ============ */
+/* SECTION BASE */
 .section {
     padding: 80px 0;
 }
@@ -29,7 +29,7 @@
     text-transform: capitalize;
 }
 
-/* ============ HERO SECTION ============ */
+/* HERO SECTION */
 .hero {
     background: #fff;
     padding: 100px 0;
@@ -121,7 +121,7 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* ============ OVERVIEW SECTION ============ */
+/* OVERVIEW SECTION */
 .overviewText {
     text-align: center;
     color: var(--text-dark);
@@ -175,13 +175,13 @@
 }
 
 .benefitCard p {
-    color: var(--text-dark);
+    color: var(--color-text-muted);
     font-size: 16px;
     line-height: 1.4;
     flex: 1 1;
 }
 
-/* ============ ADVANTAGES SECTION ============ */
+/* ADVANTAGES SECTION */
 .advantagesContent {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -226,7 +226,7 @@
     border-color: var(--color-primary);
 }
 
-/* ============ PRICING SECTION ============ */
+/* PRICING SECTION */
 .pricingText {
     text-align: center;
     color: var(--text-dark);
@@ -283,7 +283,9 @@
     margin-top: 35px;
 }
 
-/* ============ RESPONSIVE DESIGN ============ */
+/* ================= Responsive ================= */
+
+/* ---------- ≤1024px ---------- */
 @media (max-width: 1024px) {
 
     .heroContent,
@@ -296,6 +298,7 @@
     }
 }
 
+/* ---------- ≤992px ---------- */
 @media (max-width: 992px) {
 
     .heroContent,
@@ -309,6 +312,11 @@
         font-size: 1.8rem;
     }
 
+    .heroActions {
+        display: flex;
+        justify-self: center;
+    }
+
     .advantagesText h2 {
         text-align: center;
     }
@@ -319,6 +327,7 @@
     }
 }
 
+/* ---------- ≤786px ---------- */
 @media (max-width: 768px) {
     .section {
         padding: 60px 0;
@@ -353,6 +362,7 @@
     }
 }
 
+/* ---------- ≤600px ---------- */
 @media (max-width: 600px) {
 
     .benefitsGrid,
@@ -366,6 +376,7 @@
     }
 }
 
+/* ---------- ≤480px ---------- */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
@@ -384,5 +395,12 @@
     .section h2 {
         font-size: 24px;
         margin-bottom: 40px;
+    }
+}
+
+/* ---------- ≤768px ---------- */
+@media (min-width: 768px) {
+    .pricing {
+        margin-bottom: 100px;
     }
 }

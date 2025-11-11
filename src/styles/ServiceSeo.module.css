@@ -1,4 +1,4 @@
-/* ============ SERVICE SEO MODULE CSS ============ */
+/* SERVICE SEO MODULE CSS */
 .wrapper {
     color: #222;
     background: #fff;
@@ -11,7 +11,7 @@
     padding: 0 24px;
 }
 
-/* ============ SECTION BASE ============ */
+/* SECTION BASE */
 .section {
     padding: 80px 0;
 }
@@ -29,7 +29,7 @@
     text-transform: capitalize;
 }
 
-/* ============ HERO SEO SECTION ============ */
+/* HERO SEO SECTION */
 .heroSeo {
     background: #fff;
     padding: 100px 0;
@@ -168,7 +168,7 @@
     line-height: 1.4;
 }
 
-/* ============ SEO SERVICES GRID ============ */
+/* SEO SERVICES GRID */
 .servicesGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -238,7 +238,7 @@
     border-bottom: none;
 }
 
-/* ============ PROCESS TIMELINE ============ */
+/* PROCESS TIMELINE */
 .sectionTitle {
     color: var(--color-primary);
     font-size: 28px;
@@ -288,7 +288,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 21px;
     font-weight: 700;
     flex-shrink: 0;
     box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
@@ -309,12 +309,12 @@
 }
 
 .timelineText p {
-    color: var(--text-dark);
+    color: var(--color-text-muted);
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* ============ SEO RESULTS - CARD GRID ============ */
+/* SEO RESULTS - CARD GRID */
 .resultsGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -332,7 +332,7 @@
 }
 
 .resultMetric {
-    font-size: 2.5rem;
+    font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 10px;
@@ -381,7 +381,7 @@
     color: #28a745;
 }
 
-/* ============ SEO PRICING - CARD GRID ============ */
+/* SEO PRICING - CARD GRID */
 .pricingPlans {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -424,19 +424,14 @@
 
 .planHeader h3 {
     color: var(--color-primary);
-    font-size: 1.5rem;
+    font-size: 21px;
     margin-bottom: 15px;
 }
 
 .planPrice {
-    font-size: 2.2rem;
+    font-size: 36px;
     font-weight: 700;
     color: var(--color-primary);
-}
-
-.planPrice small {
-    font-size: 1rem;
-    color: #666;
 }
 
 .planFeatures {
@@ -483,7 +478,7 @@
     transform: scale(1.05);
 }
 
-/* ============ FAQ SECTION ============ */
+/* FAQ SECTION */
 .faqList {
     max-width: 800px;
     margin: 0 auto;
@@ -546,22 +541,23 @@
     padding: 0 25px 20px;
 }
 
-/* ============ CTA SECTION ============ */
+/* CTA SECTION */
 .cta {
     background: #fafafa;
     text-align: center;
 }
 
 .cta h2 {
-    font-size: 2.2rem;
+    font-size: 36px;
     margin-bottom: 15px;
     color: var(--color-primary);
 }
 
 .cta p {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 20px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -574,7 +570,9 @@
     flex-wrap: wrap;
 }
 
-/* ============ RESPONSIVE DESIGN ============ */
+/* ================= Responsive ================= */
+
+/* ---------- ≤1024px ---------- */
 @media (max-width: 1024px) {
     .heroSeoContent {
         gap: 40px;
@@ -585,6 +583,7 @@
     }
 }
 
+/* ---------- ≤992px ---------- */
 @media (max-width: 992px) {
     .heroSeoContent {
         grid-template-columns: 1fr;
@@ -606,6 +605,7 @@
     }
 }
 
+/* ---------- ≤786px ---------- */
 @media (max-width: 768px) {
     .section {
         padding: 60px 0;
@@ -637,6 +637,7 @@
     }
 }
 
+/* ---------- ≤600px ---------- */
 @media (max-width: 600px) {
 
     .servicesGrid,
@@ -668,6 +669,7 @@
     }
 }
 
+/* ---------- ≤480px ---------- */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
@@ -692,5 +694,12 @@
     .section h2 {
         font-size: 24px;
         margin-bottom: 40px;
+    }
+}
+
+/* ---------- ≤768px ---------- */
+@media (min-width: 768px) {
+    .cta {
+        margin-bottom: 100px;
     }
 }

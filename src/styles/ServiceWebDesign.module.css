@@ -1,4 +1,4 @@
-/* ============ SERVICE WEB DESIGN MODULE CSS ============ */
+/* SERVICE WEB DESIGN MODULE CSS */
 .wrapper {
     color: #222;
     background: #fff;
@@ -11,7 +11,7 @@
     padding: 0 24px;
 }
 
-/* ============ SECTION BASE ============ */
+/* SECTION BASE */
 .section {
     padding: 80px 0;
 }
@@ -29,7 +29,7 @@
     text-transform: capitalize;
 }
 
-/* ============ HERO SECTION ============ */
+/* HERO SECTION */
 .hero {
     background: #fff;
     padding: 100px 0;
@@ -47,6 +47,7 @@
     font-weight: 700;
     margin-bottom: 16px;
     color: var(--color-primary);
+    text-transform: capitalize;
 }
 
 .heroText p {
@@ -119,7 +120,7 @@
     max-width: 600px;
 }
 
-/* ============ WHY US SECTION ============ */
+/* WHY US SECTION */
 .whyUs h2 {
     text-align: center;
     margin-bottom: 50px;
@@ -151,11 +152,13 @@
     width: 100%;
     max-width: 340px;
     position: relative;
+    border-top: 6px solid var(--color-secondary);
 }
 
 .feature:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border-top: 6px solid var(--color-primary);
 }
 
 .feature h3 {
@@ -171,21 +174,21 @@
 }
 
 .feature p {
-    color: var(--text-dark);
+    color: var(--color-text-muted);
     font-size: 16px;
     line-height: 1.4;
     flex: 1 1;
 }
 
-/* ============ PRICING SECTION ============ */
+/* PRICING SECTION */
 .pricing h2 {
     color: var(--color-primary);
 }
 
 .lead {
     text-align: center;
-    color: #666;
-    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-size: 18px;
     margin-bottom: 50px;
 }
 
@@ -197,7 +200,7 @@
 }
 
 .planCard {
-    background: white;
+    background: #fff;
     border-radius: 12px;
     padding: 30px 25px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -226,7 +229,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-primary);
-    color: white;
+    color: #fff;
     padding: 6px 20px;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -250,9 +253,9 @@
 }
 
 .planDesc {
-    color: #666;
+    color: var(--text-dark);
     margin-bottom: 20px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 .planFeatures {
@@ -264,7 +267,9 @@
 
 .planFeatures li {
     padding: 8px 0;
-    color: #555;
+    font-size: 16px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
     border-bottom: 1px solid #f0f0f0;
     position: relative;
     padding-left: 25px;
@@ -286,7 +291,7 @@
     width: 100%;
     padding: 14px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    color: white;
+    color: #fff;
     border: none;
     border-radius: 8px;
     font-weight: 600;
@@ -299,7 +304,7 @@
     transform: scale(1.05);
 }
 
-/* ============ PROCESS TIMELINE ============ */
+/* PROCESS TIMELINE */
 .sectionTitle {
     color: var(--color-primary);
     font-size: 28px;
@@ -344,7 +349,7 @@
     width: 60px;
     height: 60px;
     background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-    color: white;
+    color: #fff;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -370,12 +375,73 @@
 }
 
 .timelineText p {
-    color: var(--text-dark);
+    color: var(--color-text-muted);
     font-size: 16px;
     line-height: 1.6;
 }
 
-/* ============ FAQ SECTION ============ */
+/* CTA SECTION */
+.ctaSection {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.ctaContent h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ctaContent p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.ctaActions .btnPrimary {
+    background: #fff;
+    color: var(--color-primary);
+    border: 2px solid #fff;
+}
+
+.ctaActions .btnPrimary:hover {
+    background: transparent;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.ctaActions .btnSecondary {
+    padding: 12px 30px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ctaActions .btnSecondary:hover {
+    background: #fff;
+    color: var(--color-primary);
+    transform: scale(1.05);
+}
+
+
+/* FAQ SECTION */
 .faq h2 {
     color: var(--color-primary);
 }
@@ -442,7 +508,9 @@
     padding: 0 25px 20px;
 }
 
-/* ============ RESPONSIVE DESIGN ============ */
+/* ================= Responsive ================= */
+
+/* ---------- ≤1024px ---------- */
 @media (max-width: 1024px) {
     .heroInner {
         gap: 40px;
@@ -453,6 +521,7 @@
     }
 }
 
+/* ---------- ≤992px ---------- */
 @media (max-width: 992px) {
     .heroInner {
         grid-template-columns: 1fr;
@@ -469,6 +538,7 @@
     }
 }
 
+/* ---------- ≤786px ---------- */
 @media (max-width: 768px) {
     .section {
         padding: 60px 0;
@@ -502,8 +572,29 @@
     .planCard.popular:hover {
         transform: translateY(-6px);
     }
+
+    .ctaContent h2 {
+        font-size: 2rem;
+    }
+
+    .ctaContent p {
+        font-size: 1.1rem;
+    }
+
+    .ctaActions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ctaActions .btnPrimary,
+    .ctaActions .btnSecondary {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
+    }
 }
 
+/* ---------- ≤600px ---------- */
 @media (max-width: 600px) {
 
     .servicesGrid,
@@ -533,6 +624,7 @@
     }
 }
 
+/* ---------- ≤480px ---------- */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
@@ -549,5 +641,20 @@
     .section h2 {
         font-size: 24px;
         margin-bottom: 40px;
+    }
+
+    .ctaContent h2 {
+        font-size: 1.8rem;
+    }
+
+    .ctaContent p {
+        font-size: 1rem;
+    }
+}
+
+/* ---------- ≤768px ---------- */
+@media (min-width: 768px) {
+    .faq {
+        margin-bottom: 100px;
     }
 }

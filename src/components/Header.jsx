@@ -70,7 +70,7 @@ export default function Header({ locale = "vi", dict }) {
 
   const servicesSubmenu = [
     {
-      href: `/${locale}/services/ads`,
+      href: `/${locale}/services/ads-service`,
       label: dict?.header?.servicesMenu?.ads || "Google Ads",
     },
     {
@@ -78,7 +78,7 @@ export default function Header({ locale = "vi", dict }) {
       label: dict?.header?.servicesMenu?.invoice || "Invoice Google",
     },
     {
-      href: `/${locale}/services/seo`,
+      href: `/${locale}/services/seo-service`,
       label: dict?.header?.servicesMenu?.seo || "SEO",
     },
     {

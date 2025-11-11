@@ -124,86 +124,198 @@
     }
   },
   "serviceAds": {
-    "title1": "Management Service",
-    "title2": "Google Ads",
-    "desc": "Optimize your budget – Increase revenue – Dominate search results with an effective Google Ads strategy.",
-    "cta": "Get Free Consultation",
-    "overviewTitle": "Service Overview",
-    "overviewDesc": "Our Google Ads service helps businesses quickly reach potential customers through Google Search. With an experienced team, we ensure your ads achieve maximum effectiveness, attract the right audience, and deliver the highest ROI.",
-    "overviewList": [
-      "Reach customers who are actively searching for your products or services",
-      "Track and optimize campaigns in real time",
-      "Guaranteed results – Transparent costs"
+    "pageTitle": "Advertising",
+    "title1": "Google Ads",
+    "title2": "Service",
+    "desc": "Optimize costs - Increase revenue - Lead search results with effective Google advertising strategy.",
+    "cta": "Get Consultation",
+    "viewPricing": "View Pricing",
+    "popularBadge": "Popular",
+    "heroMetrics": [
+      {
+        "value": "+300%",
+        "label": "ROAS"
+      },
+      {
+        "value": "TOP 1",
+        "label": "Google Search"
+      },
+      {
+        "value": "24/7",
+        "label": "Optimization"
+      }
+    ],
+    "whyUs": {
+      "title": "Why choose SMADS Ads?",
+      "features": [
+        {
+          "icon": "🎯",
+          "title": "Precise Targeting",
+          "desc": "Target the right potential customers based on search behavior, demographics and interests"
+        },
+        {
+          "icon": "📊",
+          "title": "Data-Driven Optimization",
+          "desc": "Optimize campaigns based on real data, performance analysis and real-time adjustments"
+        },
+        {
+          "icon": "🚀",
+          "title": "Maximum ROAS",
+          "desc": "Commit to optimal advertising return on ad spend, helping businesses achieve maximum efficiency with budget"
+        }
+      ]
+    },
+    "adTypes": {
+      "title": "Google Advertising Types",
+      "types": [
+        {
+          "icon": "🔍",
+          "name": "Search Ads",
+          "desc": "Appear on Google search results when customers search for related keywords",
+          "features": [
+            "Display when there is search intent",
+            "High conversion rate",
+            "Keyword-based targeting"
+          ]
+        },
+        {
+          "icon": "📱",
+          "name": "Display Ads",
+          "desc": "Banner image ads on Google Display Network, YouTube and partner websites",
+          "features": [
+            "Reach wide audience",
+            "Increase brand awareness",
+            "Effective remarketing"
+          ]
+        },
+        {
+          "icon": "🎥",
+          "name": "Video Ads",
+          "desc": "Video ads on YouTube and display network, attracting attention with visual content",
+          "features": [
+            "High engagement with video",
+            "Effective storytelling",
+            "Interest-based targeting"
+          ]
+        }
+      ]
+    },
+    "stepsTitle": "Implementation Process",
+    "steps": [
+      {
+        "title": "Market & Competitor Analysis",
+        "desc": "We start by researching the market, analyzing competitors and user behavior."
+      },
+      {
+        "title": "Advertising Strategy Development",
+        "desc": "Develop detailed plan with keywords, budget, ad templates and communication messages."
+      },
+      {
+        "title": "Campaign Implementation & Tracking",
+        "desc": "Start running ads, track effectiveness and make real-time adjustments."
+      },
+      {
+        "title": "Reporting, Evaluation & Optimization",
+        "desc": "Summarize results, send periodic reports and propose next optimization solutions."
+      }
     ],
     "benefitsTitle": "Benefits of Using Google Ads Service",
     "benefits": [
       {
         "icon": "/images/services/online.png",
-        "title": "Reach the right target audience",
-        "desc": "Google Ads ensures your business appears in front of users actively searching for your products or services."
+        "title": "Reach the Right Target Customers",
+        "desc": "Google Ads helps your business display to the right people searching for similar products or services."
       },
       {
         "icon": "/images/services/marketing.png",
-        "title": "Optimize advertising costs",
-        "desc": "Spend smarter with flexible budget control and detailed performance tracking."
+        "title": "Optimize Advertising Costs",
+        "desc": "Spend effectively thanks to flexible budget control and detailed performance measurement."
       },
       {
         "icon": "/images/services/increase.png",
-        "title": "Boost revenue quickly",
-        "desc": "Increase conversions by targeting user intent, driving more potential customers and sales."
+        "title": "Quick Revenue Growth",
+        "desc": "Higher conversions by targeting the right needs, driving potential customers and sales."
       }
     ],
-    "stepsTitle": "Our Implementation Process",
-    "steps": [
-      {
-        "title": "Market & Competitor Analysis",
-        "desc": "We start by researching your market, analyzing competitors, and understanding customer behavior."
-      },
-      {
-        "title": "Ad Strategy Development",
-        "desc": "Create a detailed plan with keywords, budget, ad creatives, and communication messages."
-      },
-      {
-        "title": "Campaign Launch & Optimization",
-        "desc": "Run ads, monitor performance, and make real-time adjustments to maximize results."
-      },
-      {
-        "title": "Reporting & Continuous Improvement",
-        "desc": "Summarize performance, provide regular reports, and recommend optimization strategies."
-      }
-    ],
+    "results": {
+      "title": "Actual Results",
+      "before": "Before",
+      "after": "After 3 months",
+      "items": [
+        {
+          "metric": "+450%",
+          "label": "Website Traffic",
+          "beforeValue": "500 visits",
+          "afterValue": "2,750 visits"
+        },
+        {
+          "metric": "+320%",
+          "label": "Lead Generation",
+          "beforeValue": "15 leads",
+          "afterValue": "63 leads"
+        },
+        {
+          "metric": "3.8x",
+          "label": "ROAS",
+          "beforeValue": "1.2x ROAS",
+          "afterValue": "3.8x ROAS"
+        }
+      ]
+    },
     "packagesTitle": "Google Ads Service Packages",
     "btnSignup": "Sign Up Now",
     "packages": [
       {
-        "name": "Basic package",
+        "name": "Basic Package",
         "price": "3,000,000 VND / month",
         "features": [
-          "Ad budget under 10 million VND",
-          "Weekly performance reports",
+          "Advertising budget < 10 million",
+          "Weekly periodic reports",
           "Basic keyword optimization"
         ]
       },
       {
-        "name": "Advanced package",
+        "name": "Advanced Package",
         "price": "5,000,000 VND / month",
         "features": [
-          "Ad budget from 10–30 million VND",
-          "In-depth reports and consultation",
+          "Advertising budget 10-30 million",
+          "In-depth reports & consultation",
           "Advanced conversion optimization"
         ],
         "highlight": true
       },
       {
-        "name": "Enterprise package",
+        "name": "Enterprise Package",
         "price": "8,000,000 VND / month",
         "features": [
-          "Ad budget over 30 million VND",
+          "Advertising budget > 30 million",
           "Dedicated account management",
-          "Detailed reporting and growth suggestions"
+          "Detailed reports, growth proposals"
         ]
       }
-    ]
+    ],
+    "faq": {
+      "title": "Frequently Asked Questions about Google Ads",
+      "items": [
+        {
+          "question": "How long does Google Ads take to show results?",
+          "answer": "Typically 2-4 weeks to see initial results. Campaigns will be continuously optimized in the first 3 months to achieve maximum performance."
+        },
+        {
+          "question": "Is there a commitment to advertising effectiveness?",
+          "answer": "We commit to optimizing ROAS and improving performance at each stage. Transparent reporting of all spending metrics and results."
+        },
+        {
+          "question": "Does the cost include advertising budget?",
+          "answer": "Service costs and advertising budget are separate. We manage and optimize your advertising budget most effectively."
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": "Ready to grow revenue with Google Ads?",
+      "desc": "Register now to receive FREE account audit and optimized advertising strategy",
+      "ctaButton": "Get Consultation"
+    }
   },
   "serviceInvoice": {
     "title": "Google Ads Invoice",
@@ -276,6 +388,197 @@
     "noteTitle": "Note:",
     "noteText": "Rates can be negotiated depending on budget & partnership duration. Full VAT invoices supported.",
     "ctaBtn": "Request a Quote"
+  },
+  "serviceSeo": {
+    "pageTitle": "SEO Service",
+    "hero": {
+      "title": "Comprehensive SEO Service - Get Your Website to TOP Google",
+      "desc": "Smads provides in-depth SEO solutions, comprehensive optimization from Onpage, Offpage to Technical SEO. Committed to clear results, transparent reporting.",
+      "ctaPrimary": "Get Free Website Audit",
+      "ctaSecondary": "View Pricing",
+      "metrics": [
+        {
+          "value": "+450%",
+          "label": "Traffic Growth"
+        },
+        {
+          "value": "TOP 1-3",
+          "label": "Google Ranking"
+        },
+        {
+          "value": "24/7",
+          "label": "Monitoring"
+        }
+      ],
+      "searchResults": [
+        {
+          "url": "smads.com.vn › seo-service",
+          "title": "Professional SEO Service - Top Google Ranking | Smads",
+          "desc": "Smads provides comprehensive SEO services, optimizing websites to top Google quickly and sustainably. SEO team with 10+ years experience."
+        },
+        {
+          "url": "smads.com.vn › seo-website",
+          "title": "SEO Website - Increase natural traffic 300% | Smads",
+          "desc": "Data-driven SEO strategy, optimize conversion rate and increase revenue from organic traffic. Committed to clear results."
+        }
+      ]
+    },
+    "services": {
+      "title": "In-depth SEO Services",
+      "items": [
+        {
+          "icon": "🔍",
+          "name": "Technical SEO",
+          "desc": "Optimize speed, website structure, schema markup, and fix technical errors",
+          "features": [
+            "Site Speed Optimization",
+            "Mobile First Indexing",
+            "Structured Data"
+          ]
+        },
+        {
+          "icon": "📝",
+          "name": "Content SEO",
+          "desc": "Build content strategy, keyword research and content optimization",
+          "features": [
+            "Keyword Research",
+            "Content Planning",
+            "On-page Optimization"
+          ]
+        },
+        {
+          "icon": "🚀",
+          "name": "Off-page SEO",
+          "desc": "Build quality backlinks, brand mentions and social signals",
+          "features": [
+            "Link Building",
+            "Guest Posting",
+            "Social Signals"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Smads 4-Step SEO Process",
+      "steps": [
+        {
+          "title": "Audit & Analysis",
+          "desc": "Comprehensive website evaluation, competitor analysis, strategic keyword research and SEO goal setting"
+        },
+        {
+          "title": "Technical SEO Optimization",
+          "desc": "Fix technical errors, optimize website speed, URL structure, meta tags and user experience across all devices"
+        },
+        {
+          "title": "Content & Onpage SEO",
+          "desc": "Build content strategy, optimize onpage, develop high-quality content and internal linking"
+        },
+        {
+          "title": "Offpage & Reporting",
+          "desc": "Build quality backlinks, ranking monitoring, traffic analysis and detailed monthly results reporting"
+        }
+      ]
+    },
+    "results": {
+      "title": "Actual SEO Results",
+      "before": "Before",
+      "after": "After 6 months",
+      "items": [
+        {
+          "metric": "+450%",
+          "label": "Organic Traffic",
+          "beforeValue": "250/month",
+          "afterValue": "1,200/month"
+        },
+        {
+          "metric": "TOP 1-3",
+          "label": "Keyword Ranking",
+          "beforeValue": "2 keywords",
+          "afterValue": "15 keywords"
+        },
+        {
+          "metric": "+217%",
+          "label": "Conversion Rate",
+          "beforeValue": "1.2%",
+          "afterValue": "3.8%"
+        },
+        {
+          "metric": "+17",
+          "label": "Domain Authority",
+          "beforeValue": "18",
+          "afterValue": "35"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "SEO Service Pricing",
+      "popularBadge": "Popular",
+      "perMonth": "/month",
+      "contactPrice": "Contact",
+      "plans": [
+        {
+          "name": "SEO Basic",
+          "price": "15,000,000đ",
+          "features": [
+            "50 strategic keywords",
+            "5 SEO standard articles",
+            "10 quality backlinks",
+            "Monthly reports",
+            "8h/day support"
+          ],
+          "buttonText": "Choose Plan"
+        },
+        {
+          "name": "SEO Pro",
+          "price": "25,000,000đ",
+          "popular": true,
+          "features": [
+            "100+ strategic keywords",
+            "10 quality articles",
+            "25 high-quality backlinks",
+            "Technical SEO audit",
+            "Weekly reports",
+            "24/7 support"
+          ],
+          "buttonText": "Choose Plan"
+        },
+        {
+          "name": "SEO Enterprise",
+          "price": "Contact",
+          "features": [
+            "Unlimited keywords",
+            "Multi-channel content strategy",
+            "Link building strategy",
+            "Competitor analysis",
+            "Real-time dashboard",
+            "Dedicated account manager"
+          ],
+          "buttonText": "Contact"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions about SEO",
+      "items": [
+        {
+          "question": "How long does SEO take to reach top?",
+          "answer": "Depending on industry and competition: 3-6 months for low competition keywords, 6-12 months for premium keywords. We commit to monthly progress reports."
+        },
+        {
+          "question": "Is there a commitment to results?",
+          "answer": "We commit to traffic growth, keyword positions and performance at each stage. Transparent reporting of all metrics."
+        },
+        {
+          "question": "What does SEO cost include?",
+          "answer": "Includes: Technical audit, keyword research, content creation, link building, monitoring and reporting. No hidden additional costs."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to conquer TOP Google?",
+      "desc": "Register now to receive FREE Website Audit and suitable SEO strategy consultation",
+      "ctaPrimary": "Register for consultation now"
+    }
   },
   "serviceWebDesign": {
     "hero": {
@@ -383,6 +686,11 @@
           "answer": "Yes — warranty package + optional support package, quick response within 24-72h."
         }
       ]
+    },
+    "cta": {
+      "title": "Ready to own a professional website?",
+      "description": "Contact now for free consultation and detailed quotation",
+      "ctaButton": "Get consultation now"
     }
   },
   "activities": {

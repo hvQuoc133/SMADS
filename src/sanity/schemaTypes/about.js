@@ -19,7 +19,36 @@ export default {
             name: 'pageTitle',
             title: 'Tiêu đề trang',
             type: 'string',
-            validation: Rule => Rule.required()
+            validation: Rule => Rule.required().max(60),
+            description: 'Tối đa 60 ký tự'
+        },
+        // SEO Section
+        {
+            name: 'seo',
+            title: 'Cấu hình SEO',
+            type: 'object',
+            fields: [
+                {
+                    name: 'metaTitle',
+                    title: 'Meta Title',
+                    type: 'string',
+                    description: 'Tiêu đề SEO (50-60 ký tự)',
+                    validation: Rule => Rule.max(60)
+                },
+                {
+                    name: 'metaDescription',
+                    title: 'Meta Description',
+                    type: 'text',
+                    description: 'Mô tả SEO (150-160 ký tự)',
+                    validation: Rule => Rule.max(160)
+                },
+                {
+                    name: 'keywords',
+                    title: 'Từ khóa',
+                    type: 'string',
+                    description: 'Phân cách bằng dấu phẩy'
+                }
+            ]
         },
         // Section 1
         {
@@ -30,7 +59,8 @@ export default {
                 {
                     name: 'title',
                     title: 'Tiêu đề',
-                    type: 'string'
+                    type: 'string',
+                    validation: Rule => Rule.required()
                 },
                 {
                     name: 'p1',
@@ -51,7 +81,15 @@ export default {
                     name: 'image',
                     title: 'Hình ảnh',
                     type: 'image',
-                    options: { hotspot: true }
+                    options: { hotspot: true },
+                    fields: [
+                        {
+                            name: 'alt',
+                            title: 'Alt Text',
+                            type: 'string',
+                            description: 'Mô tả ảnh cho SEO'
+                        }
+                    ]
                 }
             ]
         },
@@ -64,7 +102,8 @@ export default {
                 {
                     name: 'title',
                     title: 'Tiêu đề',
-                    type: 'string'
+                    type: 'string',
+                    validation: Rule => Rule.required()
                 },
                 {
                     name: 'desc',
@@ -75,15 +114,31 @@ export default {
                     name: 'list',
                     title: 'Danh sách tính năng',
                     type: 'array',
-                    of: [{ type: 'string' }]
+                    of: [{ type: 'string' }],
+                    validation: Rule => Rule.min(1).max(10)
                 },
                 {
                     name: 'image',
                     title: 'Hình ảnh',
                     type: 'image',
-                    options: { hotspot: true }
+                    options: { hotspot: true },
+                    fields: [
+                        {
+                            name: 'alt',
+                            title: 'Alt Text',
+                            type: 'string',
+                            description: 'Mô tả ảnh cho SEO'
+                        }
+                    ]
                 }
             ]
         }
-    ]
+    ],
+    preview: {
+        select: {
+            title: 'pageTitle',
+            subtitle: 'language',
+            media: 'section1.image'
+        }
+    }
 }

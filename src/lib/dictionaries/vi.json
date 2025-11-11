@@ -124,35 +124,82 @@
     }
   },
   "serviceAds": {
+    "pageTitle": "Quảng cáo",
     "title1": "Dịch vụ chạy quảng cáo",
     "title2": "Google Ads",
     "desc": "Tối ưu chi phí – Tăng doanh thu – Dẫn đầu kết quả tìm kiếm với chiến lược quảng cáo Google hiệu quả.",
-    "cta": "Nhận tư vấn miễn phí",
-    "overviewTitle": "Tổng quan dịch vụ",
-    "overviewDesc": "Dịch vụ Google Ads giúp doanh nghiệp nhanh chóng tiếp cận khách hàng tiềm năng thông qua công cụ tìm kiếm Google...",
-    "overviewList": [
-      "Hiển thị đúng khách hàng đang có nhu cầu tìm kiếm",
-      "Đo lường và tối ưu chiến dịch theo thời gian thực",
-      "Cam kết hiệu quả – minh bạch chi phí"
-    ],
-    "benefitsTitle": "Lợi ích khi sử dụng dịch vụ Google Ads",
-    "benefits": [
+    "cta": "Nhận tư vấn",
+    "viewPricing": "Xem Báo Giá",
+    "popularBadge": "Phổ Biến",
+    "heroMetrics": [
       {
-        "icon": "/images/services/online.png",
-        "title": "Tiếp cận đúng khách hàng mục tiêu",
-        "desc": "Google Ads giúp doanh nghiệp của bạn hiển thị trước đúng người đang tìm kiếm sản phẩm hoặc dịch vụ tương tự."
+        "value": "+300%",
+        "label": "ROAS"
       },
       {
-        "icon": "/images/services/marketing.png",
-        "title": "Tối ưu chi phí quảng cáo",
-        "desc": "Chi tiêu hiệu quả nhờ khả năng kiểm soát ngân sách linh hoạt và đo lường hiệu suất chi tiết."
+        "value": "TOP 1",
+        "label": "Google Search"
       },
       {
-        "icon": "/images/services/increase.png",
-        "title": "Tăng doanh thu nhanh chóng",
-        "desc": "Chuyển đổi cao hơn nhờ nhắm đúng nhu cầu, thúc đẩy lượng khách hàng tiềm năng và doanh số."
+        "value": "24/7",
+        "label": "Optimization"
       }
     ],
+    "whyUs": {
+      "title": "Tại sao chọn SMADS?",
+      "features": [
+        {
+          "icon": "🎯",
+          "title": "Targeting Chính Xác",
+          "desc": "Nhắm đúng đối tượng khách hàng tiềm năng dựa trên hành vi tìm kiếm, nhân khẩu học và sở thích"
+        },
+        {
+          "icon": "📊",
+          "title": "Data-Driven Optimization",
+          "desc": "Tối ưu chiến dịch dựa trên data thực tế, phân tích hiệu suất và điều chỉnh theo thời gian thực"
+        },
+        {
+          "icon": "🚀",
+          "title": "ROAS Tối Đa",
+          "desc": "Cam kết tỷ lệ hoàn vốn quảng cáo tối ưu, giúp doanh nghiệp đạt hiệu quả cao nhất với ngân sách"
+        }
+      ]
+    },
+    "adTypes": {
+      "title": "Loại hình quảng cáo Google",
+      "types": [
+        {
+          "icon": "🔍",
+          "name": "Search Ads",
+          "desc": "Xuất hiện trên kết quả tìm kiếm Google khi khách hàng tìm kiếm từ khóa liên quan",
+          "features": [
+            "Hiển thị khi có intent tìm kiếm",
+            "Tỷ lệ chuyển đổi cao",
+            "Targeting theo từ khóa"
+          ]
+        },
+        {
+          "icon": "📱",
+          "name": "Display Ads",
+          "desc": "Quảng cáo banner hình ảnh trên mạng hiển thị Google, YouTube và website đối tác",
+          "features": [
+            "Tiếp cận lượng audience rộng",
+            "Tăng brand awareness",
+            "Remarketing hiệu quả"
+          ]
+        },
+        {
+          "icon": "🎥",
+          "name": "Video Ads",
+          "desc": "Quảng cáo video trên YouTube và mạng hiển thị, thu hút sự chú ý bằng nội dung trực quan",
+          "features": [
+            "Tương tác cao với video",
+            "Storytelling hiệu quả",
+            "Targeting theo interest"
+          ]
+        }
+      ]
+    },
     "stepsTitle": "Quy trình triển khai",
     "steps": [
       {
@@ -172,6 +219,49 @@
         "desc": "Tổng hợp kết quả, gửi báo cáo định kỳ và đề xuất giải pháp tối ưu tiếp theo."
       }
     ],
+    "benefitsTitle": "Lợi ích khi sử dụng dịch vụ Google Ads",
+    "benefits": [
+      {
+        "icon": "/images/services/online.png",
+        "title": "Tiếp cận đúng khách hàng mục tiêu",
+        "desc": "Google Ads giúp doanh nghiệp của bạn hiển thị trước đúng người đang tìm kiếm sản phẩm hoặc dịch vụ tương tự."
+      },
+      {
+        "icon": "/images/services/marketing.png",
+        "title": "Tối ưu chi phí quảng cáo",
+        "desc": "Chi tiêu hiệu quả nhờ khả năng kiểm soát ngân sách linh hoạt và đo lường hiệu suất chi tiết."
+      },
+      {
+        "icon": "/images/services/increase.png",
+        "title": "Tăng doanh thu nhanh chóng",
+        "desc": "Chuyển đổi cao hơn nhờ nhắm đúng nhu cầu, thúc đẩy lượng khách hàng tiềm năng và doanh số."
+      }
+    ],
+    "results": {
+      "title": "Kết quả thực tế",
+      "before": "Trước",
+      "after": "Sau 3 tháng",
+      "items": [
+        {
+          "metric": "+450%",
+          "label": "Website Traffic",
+          "beforeValue": "500 visits",
+          "afterValue": "2,750 visits"
+        },
+        {
+          "metric": "+320%",
+          "label": "Lead Generation",
+          "beforeValue": "15 leads",
+          "afterValue": "63 leads"
+        },
+        {
+          "metric": "3.8x",
+          "label": "ROAS",
+          "beforeValue": "1.2x ROAS",
+          "afterValue": "3.8x ROAS"
+        }
+      ]
+    },
     "packagesTitle": "Các gói dịch vụ Google Ads",
     "btnSignup": "Đăng ký ngay",
     "packages": [
@@ -203,7 +293,29 @@
           "Báo cáo chi tiết, đề xuất tăng trưởng"
         ]
       }
-    ]
+    ],
+    "faq": {
+      "title": "Câu hỏi thường gặp về Google Ads",
+      "items": [
+        {
+          "question": "Google Ads mất bao lâu để có kết quả?",
+          "answer": "Thông thường từ 2-4 tuần để thấy kết quả ban đầu. Chiến dịch sẽ được tối ưu liên tục trong 3 tháng đầu để đạt hiệu suất cao nhất."
+        },
+        {
+          "question": "Có cam kết về hiệu quả quảng cáo không?",
+          "answer": "Chúng tôi cam kết tối ưu ROAS và cải thiện hiệu suất theo từng giai đoạn. Báo cáo minh bạch mọi chỉ số chi tiêu và kết quả."
+        },
+        {
+          "question": "Chi phí có bao gồm ngân sách quảng cáo không?",
+          "answer": "Chi phí dịch vụ và ngân sách quảng cáo là riêng biệt. Chúng tôi quản lý và tối ưu ngân sách quảng cáo của bạn một cách hiệu quả nhất."
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": "Sẵn sàng tăng trưởng doanh thu với Google Ads?",
+      "desc": "Đăng ký ngay để nhận Audit tài khoản MIỄN PHÍ và chiến lược quảng cáo tối ưu",
+      "ctaButton": "Nhận tư vấn"
+    }
   },
   "serviceInvoice": {
     "title": "Hoá Đơn Google Ads",
@@ -276,6 +388,197 @@
     "noteTitle": "Ghi chú:",
     "noteText": "Mức phí chi tiết có thể thương lượng theo ngân sách & thời gian hợp tác. Hỗ trợ xuất hóa đơn VAT đầy đủ.",
     "ctaBtn": "Nhận báo giá"
+  },
+  "serviceSeo": {
+    "pageTitle": "Dịch vụ SEO",
+    "hero": {
+      "title": "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google",
+      "desc": "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO. Cam kết kết quả rõ ràng, báo cáo minh bạch.",
+      "ctaPrimary": "Nhận Audit Website Miễn Phí",
+      "ctaSecondary": "Xem Báo Giá",
+      "metrics": [
+        {
+          "value": "+450%",
+          "label": "Traffic Growth"
+        },
+        {
+          "value": "TOP 1-3",
+          "label": "Google Ranking"
+        },
+        {
+          "value": "24/7",
+          "label": "Monitoring"
+        }
+      ],
+      "searchResults": [
+        {
+          "url": "smads.com.vn › dịch-vụ-seo",
+          "title": "Dịch vụ SEO chuyên nghiệp - Đứng top Google | Smads",
+          "desc": "Smads cung cấp dịch vụ SEO tổng thể, tối ưu website lên top Google nhanh chóng và bền vững. Đội ngũ SEO 10+ năm kinh nghiệm."
+        },
+        {
+          "url": "smads.com.vn › seo-website",
+          "title": "SEO Website - Tăng traffic tự nhiên 300% | Smads",
+          "desc": "Chiến lược SEO data-driven, tối ưu conversion rate và tăng doanh thu từ organic traffic. Cam kết kết quả rõ ràng."
+        }
+      ]
+    },
+    "services": {
+      "title": "Dịch vụ SEO Chuyên sâu",
+      "items": [
+        {
+          "icon": "🔍",
+          "name": "Technical SEO",
+          "desc": "Tối ưu tốc độ, cấu trúc website, schema markup, và fix lỗi kỹ thuật",
+          "features": [
+            "Site Speed Optimization",
+            "Mobile First Indexing",
+            "Structured Data"
+          ]
+        },
+        {
+          "icon": "📝",
+          "name": "Content SEO",
+          "desc": "Xây dựng content strategy, keyword research và content optimization",
+          "features": [
+            "Keyword Research",
+            "Content Planning",
+            "On-page Optimization"
+          ]
+        },
+        {
+          "icon": "🚀",
+          "name": "Off-page SEO",
+          "desc": "Xây dựng backlink chất lượng, brand mention và social signals",
+          "features": [
+            "Link Building",
+            "Guest Posting",
+            "Social Signals"
+          ]
+        }
+      ]
+    },
+    "process": {
+      "title": "Quy trình SEO 4 bước của Smads",
+      "steps": [
+        {
+          "title": "Audit & Phân tích",
+          "desc": "Đánh giá toàn diện website, phân tích competitor, research từ khoá chiến lược và xác định mục tiêu SEO"
+        },
+        {
+          "title": "Tối ưu Technical SEO",
+          "desc": "Fix lỗi kỹ thuật, tối ưu tốc độ website, cấu trúc URL, meta tags và trải nghiệm người dùng trên mọi thiết bị"
+        },
+        {
+          "title": "Content & Onpage SEO",
+          "desc": "Xây dựng content strategy, tối ưu onpage, phát triển content chất lượng cao và internal linking"
+        },
+        {
+          "title": "Offpage & Reporting",
+          "desc": "Xây dựng backlink chất lượng, monitoring ranking, phân tích traffic và báo cáo kết quả chi tiết hàng tháng"
+        }
+      ]
+    },
+    "results": {
+      "title": "Kết quả SEO thực tế",
+      "before": "Trước",
+      "after": "Sau 6 tháng",
+      "items": [
+        {
+          "metric": "+450%",
+          "label": "Organic Traffic",
+          "beforeValue": "250/tháng",
+          "afterValue": "1,200/tháng"
+        },
+        {
+          "metric": "TOP 1-3",
+          "label": "Keyword Ranking",
+          "beforeValue": "2 từ khoá",
+          "afterValue": "15 từ khoá"
+        },
+        {
+          "metric": "+217%",
+          "label": "Conversion Rate",
+          "beforeValue": "1.2%",
+          "afterValue": "3.8%"
+        },
+        {
+          "metric": "+17",
+          "label": "Domain Authority",
+          "beforeValue": "18",
+          "afterValue": "35"
+        }
+      ]
+    },
+    "pricing": {
+      "title": "Bảng giá dịch vụ SEO",
+      "popularBadge": "Phổ Biến",
+      "perMonth": "/tháng",
+      "contactPrice": "Liên hệ",
+      "plans": [
+        {
+          "name": "SEO Basic",
+          "price": "15.000.000đ",
+          "features": [
+            "50 từ khoá chiến lược",
+            "5 bài content chuẩn SEO",
+            "10 backlink chất lượng",
+            "Báo cáo hàng tháng",
+            "Support 8h/ngày"
+          ],
+          "buttonText": "Chọn Gói"
+        },
+        {
+          "name": "SEO Pro",
+          "price": "25.000.000đ",
+          "popular": true,
+          "features": [
+            "100+ từ khoá chiến lược",
+            "10 bài content chất lượng",
+            "25 backlink chất lượng cao",
+            "Technical SEO audit",
+            "Báo cáo hàng tuần",
+            "Support 24/7"
+          ],
+          "buttonText": "Chọn Gói"
+        },
+        {
+          "name": "SEO Enterprise",
+          "price": "Liên hệ",
+          "features": [
+            "Từ khoá không giới hạn",
+            "Content strategy đa kênh",
+            "Link building strategy",
+            "Competitor analysis",
+            "Real-time dashboard",
+            "Dedicated account manager"
+          ],
+          "buttonText": "Liên Hệ"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Câu hỏi thường gặp về SEO",
+      "items": [
+        {
+          "question": "SEO mất bao lâu để lên top?",
+          "answer": "Tuỳ ngành và độ cạnh tranh: 3-6 tháng cho từ khoá ít cạnh tranh, 6-12 tháng cho từ khoá cao cấp. Chúng tôi cam kết báo cáo tiến độ hàng tháng."
+        },
+        {
+          "question": "Có cam kết kết quả không?",
+          "answer": "Chúng tôi cam kết tăng trưởng traffic, vị trí từ khoá và performance theo từng giai đoạn. Báo cáo minh bạch mọi chỉ số."
+        },
+        {
+          "question": "Chi phí SEO bao gồm những gì?",
+          "answer": "Bao gồm: Technical audit, keyword research, content creation, link building, monitoring và báo cáo. Không phát sinh thêm chi phí ẩn."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sẵn sàng chinh phục TOP Google?",
+      "desc": "Đăng ký ngay để nhận Audit Website MIỄN PHÍ và tư vấn chiến lược SEO phù hợp",
+      "ctaPrimary": "Đăng ký tư vấn ngay"
+    }
   },
   "serviceWebDesign": {
     "hero": {
@@ -383,6 +686,11 @@
           "answer": "Có — gói bảo hành + gói hỗ trợ tuỳ chọn, phản hồi nhanh trong 24–72h."
         }
       ]
+    },
+    "cta": {
+      "title": "Sẵn sàng sở hữu website chuyên nghiệp?",
+      "description": "Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết",
+      "ctaButton": "Nhận tư vấn ngay"
     }
   },
   "activities": {

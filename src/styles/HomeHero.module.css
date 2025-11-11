@@ -1,5 +1,4 @@
 /* HOME PAGE STYLE */
-
 .hero {
   width: 100%;
   background-image: url('/images/home/img.png');
@@ -34,7 +33,7 @@
 
 .title {
   color: #fff;
-  font-size: 35px;
+  font-size: 36px;
   text-transform: capitalize;
   display: block;
   line-height: 2;
@@ -63,9 +62,11 @@
   color: #fff;
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .primaryButton:hover {
+  transform: scale(1.05);
   background-color: #fff;
   color: var(--color-primary)
 }
@@ -169,11 +170,13 @@
   color: var(--color-primary);
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .startupButton:hover {
   background-color: var(--color-primary);
   color: #fff;
+  transform: scale(1.05);
 }
 
 /* Content 4 */
@@ -255,7 +258,7 @@
 }
 
 .featureCard p {
-  color: var(--color-dark);
+  color: var(--color-text-muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -422,7 +425,7 @@
 .descOptimization {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-dark);
 }
 
 .textContent {
@@ -445,7 +448,7 @@
 }
 
 .textContent p {
-  color: var(--color-dark);
+  color: var(--color-text-muted);
   font-size: 16px;
   line-height: 1.6;
 }
@@ -511,6 +514,7 @@
   margin-bottom: 20px;
   line-height: 1.2;
   color: #fff;
+  text-transform: capitalize;
 }
 
 .ctaText p {
@@ -534,11 +538,13 @@
   color: #fff;
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .ctaButton button:hover {
   background-color: #fff;
   color: var(--color-primary);
+  transform: scale(1.05);
 }
 
 .ctaShapeLeft_1,
@@ -882,9 +888,6 @@
     height: auto;
   }
 }
-
-
-
 
 /* ---------- ≤600px ---------- */
 @media (max-width: 600px) {
