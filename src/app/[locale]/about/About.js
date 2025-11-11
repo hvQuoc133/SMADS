@@ -12,7 +12,7 @@ import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
 
 async function getAboutData(locale) {
-    const query = `*[_type == "about" && language == $locale][0]{
+    const query = `*[_type == "about" && language == $lang][0]{
         pageTitle,
         section1 {
             title,
@@ -28,7 +28,8 @@ async function getAboutData(locale) {
             image
         }
     }`;
-    return await client.fetch(query, { locale });
+
+    return await client.fetch(query, { lang: locale });
 }
 
 export default function About({ dict }) {
