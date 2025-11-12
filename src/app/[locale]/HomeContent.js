@@ -19,21 +19,7 @@ export default function HomeContent({ homeData, dict, locale }) {
     // Ưu tiên data từ Sanity, fallback từ JSON
     const t = homeData || dict?.home;
 
-    // Fallback: nếu không có data từ Sanity, dùng component cũ
-    if (!homeData) {
-        return <HomeHero locale={locale} />;
-    }
-
-    const activities = (dict.activities?.list || []).map((item, idx) => ({
-        ...item,
-        id: idx + 1,
-        image: item.image
-            ? (item.image.startsWith("/") ? item.image : "/" + item.image)
-            : `/images/activities/activity${idx + 1}.jpg`,
-        slug: item.slug || `activity-${idx + 1}`,
-    }));
-
-    // Initialize AOS
+    // Initialize AOS - PHẢI ĐẶT TRƯỚC MỌI ĐIỀU KIỆN
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
@@ -55,6 +41,20 @@ export default function HomeContent({ homeData, dict, locale }) {
             }
         };
     }, []);
+
+    // Fallback: nếu không có data từ Sanity, dùng component cũ
+    if (!homeData) {
+        return <HomeHero locale={locale} />;
+    }
+
+    const activities = (dict.activities?.list || []).map((item, idx) => ({
+        ...item,
+        id: idx + 1,
+        image: item.image
+            ? (item.image.startsWith("/") ? item.image : "/" + item.image)
+            : `/images/activities/activity${idx + 1}.jpg`,
+        slug: item.slug || `activity-${idx + 1}`,
+    }));
 
     function StartItem({ end, label }) {
         const ref = useRef(null);
@@ -139,7 +139,7 @@ export default function HomeContent({ homeData, dict, locale }) {
             <section className={styles.startupContainer}>
                 <div className={styles.startupLeft} data-aos="fade-down-right">
                     <img
-                        src={getImageUrl(t.hero?.image) || "/images/home/services_img.png"}
+                        src={getImageUrl(t.startup?.image) || "/images/home/services_img.png"} {/* ← SỬA startup image */}
                         alt={t.startup?.image?.alt || "Startup Illustration"}
                         onError={handleImageError}
                         loading="lazy"
@@ -171,7 +171,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                         <div key={index} className={styles.featureCard}>
                             <div className={styles.iconWrap}>
                                 <img
-                                    src={getImageUrl(t.hero?.image) || `/images/home/features_icon0${index + 1}.png`}
+                                    src={getImageUrl(item.icon) || `/images/home/features_icon0${index + 1}.png`} {/* ← SỬA item.icon */}
                                     alt={item.icon?.alt || item.title}
                                     onError={handleImageError}
                                     loading="lazy"
@@ -191,7 +191,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                 <div className={styles.parallaxContent}>
                     <div className={styles.imageBox} data-aos="fade-up">
                         <img
-                            src={getImageUrl(t.hero?.image) || "/images/home/counter_img.png"}
+                            src={getImageUrl(t.stats?.image) || "/images/home/counter_img.png"} {/* ← SỬA stats image */}
                             alt={t.stats?.image?.alt || "Statistics Visual"}
                             onError={handleImageError}
                             loading="lazy"
@@ -238,7 +238,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                             <div key={index} className={styles.textContent}>
                                 <div className={styles.textContent_1}>
                                     <img
-                                        src={getImageUrl(t.hero?.image) || `/images/home/optimize_icon0${index + 1}.png`}
+                                        src={getImageUrl(item.icon) || `/images/home/optimize_icon0${index + 1}.png`} {/* ← SỬA item.icon */}
                                         alt={item.icon?.alt || item.title}
                                         onError={handleImageError}
                                         loading="lazy"
