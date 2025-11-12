@@ -139,7 +139,7 @@ export default function HomeContent({ homeData, dict, locale }) {
             <section className={styles.startupContainer}>
                 <div className={styles.startupLeft} data-aos="fade-down-right">
                     <img
-                        src={getImageUrl(t.startup?.image) || "/images/home/services_img.png"} {/* ← SỬA startup image */}
+                        src={getImageUrl(t.startup?.image) || "/images/home/services_img.png"}
                         alt={t.startup?.image?.alt || "Startup Illustration"}
                         onError={handleImageError}
                         loading="lazy"
@@ -171,7 +171,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                         <div key={index} className={styles.featureCard}>
                             <div className={styles.iconWrap}>
                                 <img
-                                    src={getImageUrl(item.icon) || `/images/home/features_icon0${index + 1}.png`} {/* ← SỬA item.icon */}
+                                    src={getImageUrl(item.icon) || `/images/home/features_icon0${index + 1}.png`}
                                     alt={item.icon?.alt || item.title}
                                     onError={handleImageError}
                                     loading="lazy"
@@ -191,7 +191,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                 <div className={styles.parallaxContent}>
                     <div className={styles.imageBox} data-aos="fade-up">
                         <img
-                            src={getImageUrl(t.stats?.image) || "/images/home/counter_img.png"} {/* ← SỬA stats image */}
+                            src={getImageUrl(t.stats?.image) || "/images/home/counter_img.png"}
                             alt={t.stats?.image?.alt || "Statistics Visual"}
                             onError={handleImageError}
                             loading="lazy"
@@ -238,7 +238,7 @@ export default function HomeContent({ homeData, dict, locale }) {
                             <div key={index} className={styles.textContent}>
                                 <div className={styles.textContent_1}>
                                     <img
-                                        src={getImageUrl(item.icon) || `/images/home/optimize_icon0${index + 1}.png`} {/* ← SỬA item.icon */}
+                                        src={getImageUrl(item.icon) || `/images/home/optimize_icon0${index + 1}.png`}
                                         alt={item.icon?.alt || item.title}
                                         onError={handleImageError}
                                         loading="lazy"
