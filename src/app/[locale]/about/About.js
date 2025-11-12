@@ -14,18 +14,28 @@ import { urlFor } from "../../../sanity/lib/image";
 async function getAboutData(locale) {
     const query = `*[_type == "about" && language == $lang][0]{
         pageTitle,
+        seo {
+            metaTitle,
+            metaDescription,
+            keywords
+        },
         section1 {
             title,
             p1,
             p2,
             readMore,
-            image
+            image {
+             asset->,
+                alt
+            }
         },
         section2 {
             title,
             desc,
             list,
-            image
+            image {
+             asset->,
+                alt}
         }
     }`;
 
@@ -117,8 +127,9 @@ export default function About({ dict }) {
                 <div className={styles.image} data-aos="fade-left">
                     <img
                         src={displayData.section1.image ? urlFor(displayData.section1.image).url() : "/images/about/da_img.png"}
-                        alt={displayData.section1.title || "About Illustration"}
+                        alt={displayData.section1.image?.alt || displayData.section1.title || "About Illustration"}
                         onError={handleImageError}
+                        loading="lazy"
                     />
                 </div>
             </section>
@@ -141,10 +152,11 @@ export default function About({ dict }) {
                     <div className={styles.imageBox} data-aos="flip-right">
                         <img
                             src={displayData.section2.image ? urlFor(displayData.section2.image).url() : "/images/about/best_match.png"}
-                            alt={displayData.section2.title || "Business growth"}
+                            alt={displayData.section2.image?.alt || displayData.section1.title || "About Illustration"}
                             onError={handleImageError}
                             width={520}
                             height={520}
+                            loading="lazy"
                         />
                     </div>
                 </div>
