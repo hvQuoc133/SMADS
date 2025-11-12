@@ -7,21 +7,28 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Agency from "../../../components/Agency";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { urlFor } from "../../../sanity/lib/image";
+import About from "./About";
 
-export default function AboutFallback({ dict, locale }) {
-    // Lấy data từ JSON dict - GIỐNG CONTACT
-    const a = dict?.about;
+export default function AboutContent({ aboutData, dict, locale }) {
+    // Fallback: nếu không có data từ Sanity, dùng component fallback
+    if (!aboutData) {
+        return <About dict={dict} locale={locale} />;
+    }
 
-    // Initialize AOS - GIỐNG CONTACT
+    // Lấy data từ Sanity
+    const displayData = aboutData;
+
+    // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
-                import("aos").then((AOS) => {
+                import("aos").then((AOS) =>
                     AOS.init({
                         duration: 1000,
                         once: true,
-                    });
-                });
+                    })
+                );
             } else {
                 document.querySelectorAll("[data-aos]").forEach((el) => {
                     el.removeAttribute("data-aos");
@@ -40,29 +47,28 @@ export default function AboutFallback({ dict, locale }) {
         e.target.src = "/images/fallback-image.png";
     };
 
-    // Loading state nếu không có dict - GIỐNG CONTACT
-    if (!a) {
-        return <div className={styles.loading}>Loading...</div>;
-    }
+    const getImageUrl = (image) => {
+        return image?._ref ? urlFor(image).quality(80).url() : null;
+    };
 
     return (
         <>
-            <BgAllPage title={a.pageTitle} parent="SMADS" />
+            <BgAllPage title={displayData.pageTitle} parent="SMADS" />
 
             {/* Section 1 */}
             <section className={styles.content}>
                 <div className={styles.text} data-aos="fade-up">
-                    <h2>{a.section1.title}</h2>
-                    <p>{a.section1.p1}</p>
-                    <p>{a.section1.p2}</p>
+                    <h2>{displayData.section1?.title}</h2>
+                    <p>{displayData.section1?.p1}</p>
+                    <p>{displayData.section1?.p2}</p>
                     <button className={styles.readMore}>
-                        {a.section1.readMore}
+                        {displayData.section1?.readMore}
                     </button>
                 </div>
                 <div className={styles.image} data-aos="fade-left">
                     <img
-                        src="/images/about/da_img.png"
-                        alt={a.section1.title || "About Illustration"}
+                        src={getImageUrl(displayData.section1?.image) || "/images/about/da_img.png"}
+                        alt={displayData.section1?.image?.alt || displayData.section1?.title || "About Illustration"}
                         onError={handleImageError}
                         loading="lazy"
                     />
@@ -73,10 +79,10 @@ export default function AboutFallback({ dict, locale }) {
             <section className={styles.bestMatchSection}>
                 <div className={styles.container}>
                     <div className={styles.textBox} data-aos="flip-left">
-                        <h2>{a.section2.title}</h2>
-                        <p>{a.section2.desc}</p>
+                        <h2>{displayData.section2?.title}</h2>
+                        <p>{displayData.section2?.desc}</p>
                         <ul className={styles.featureList}>
-                            {a.section2.list.map((item, idx) => (
+                            {displayData.section2?.list?.map((item, idx) => (
                                 <li key={idx}>
                                     <i className="fa-solid fa-check"></i> {item}
                                 </li>
@@ -86,8 +92,8 @@ export default function AboutFallback({ dict, locale }) {
 
                     <div className={styles.imageBox} data-aos="flip-right">
                         <img
-                            src="/images/about/best_match.png"
-                            alt={a.section2.title || "Business growth"}
+                            src={getImageUrl(displayData.section2?.image) || "/images/about/best_match.png"}
+                            alt={displayData.section2?.image?.alt || displayData.section2?.title || "Business growth"}
                             onError={handleImageError}
                             width={520}
                             height={520}

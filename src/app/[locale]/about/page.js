@@ -1,17 +1,36 @@
 import { getDictionary } from "../../../lib/dictionaries";
-import About from "./About";
+import AboutContent from "./AboutContent"; // ← ĐỔI THÀNH AboutContent
 import { client } from "../../../sanity/lib/client";
 
-// Func fetch data metadata
+// Hàm fetch data ĐẦY ĐỦ cho component
 async function getAboutData(locale) {
     const query = `*[_type == "about" && language == $lang][0]{
-    pageTitle,
-    seo {
-      metaTitle,
-      metaDescription,
-      keywords
-    }
-  }`;
+        pageTitle,
+        seo {
+            metaTitle,
+            metaDescription,
+            keywords
+        },
+        section1 {
+            title,
+            p1,
+            p2,
+            readMore,
+            image {
+                asset->,
+                alt
+            }
+        },
+        section2 {
+            title,
+            desc,
+            list,
+            image {
+                asset->,
+                alt
+            }
+        }
+    }`; // ← THÊM ĐẦY ĐỦ FIELDS
 
     return await client.fetch(query, { lang: locale });
 }
@@ -42,13 +61,14 @@ export async function generateMetadata({ params }) {
     }
 }
 
-// Add revalidation  ISR
 export const revalidate = 3600; // 1 hour
-
-export const dynamic = 'force-dynamic';
 
 export default async function AboutPage({ params }) {
     const { locale } = await params;
-    const dict = await getDictionary(locale);
-    return <About dict={dict} />;
+    const [dict, aboutData] = await Promise.all([
+        getDictionary(locale),
+        getAboutData(locale).catch(() => null) // ← THÊM ERROR HANDLING
+    ]);
+
+    return <AboutContent aboutData={aboutData} dict={dict} locale={locale} />; // ← ĐỔI THÀNH AboutContent
 }
