@@ -11,15 +11,7 @@ import { urlFor } from "../../../sanity/lib/image";
 import About from "./About";
 
 export default function AboutContent({ aboutData, dict, locale }) {
-    // Fallback: nếu không có data từ Sanity, dùng component fallback
-    if (!aboutData) {
-        return <About dict={dict} locale={locale} />;
-    }
-
-    // Lấy data từ Sanity
-    const displayData = aboutData;
-
-    // Initialize AOS
+    // Initialize AOS - PHẢI ĐẶT TRƯỚC MỌI CONDITION
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
@@ -41,6 +33,14 @@ export default function AboutContent({ aboutData, dict, locale }) {
             }
         };
     }, []);
+
+    // Fallback: nếu không có data từ Sanity, dùng component fallback
+    if (!aboutData) {
+        return <About dict={dict} locale={locale} />;
+    }
+
+    // Lấy data từ Sanity
+    const displayData = aboutData;
 
     // Image error handler
     const handleImageError = (e) => {
