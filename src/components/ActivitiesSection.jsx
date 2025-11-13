@@ -22,7 +22,7 @@ export default function ActivitiesSection({ dict, activities, locale }) {
               <div className={style.activityImg}>
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.alt || item.title}
                   width={400}
                   height={260}
                   className={style.image}

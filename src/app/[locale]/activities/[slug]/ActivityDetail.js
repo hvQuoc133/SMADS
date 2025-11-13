@@ -32,7 +32,7 @@ export default function ActivityDetail({ dict, locale, activity, relatedActiviti
           <div className={style.detailImage} data-aos="fade-up">
             <Image
               src={activity.image}
-              alt={activity.title}
+              alt={activity.alt || activity.title}
               width={900}
               height={500}
               className={style.image}
@@ -59,20 +59,20 @@ export default function ActivityDetail({ dict, locale, activity, relatedActiviti
                   <Link href={`/${locale}/activities/${item.slug}`} className={style.relatedLink}>
                     <Image
                       src={item.image}
-                      alt={item.title}
+                      alt={item.alt || item.title}
                       width={100}
                       height={100}
                       className={style.relatedThumb}
                     />
                     <div className={style.relatedInfo}>
                       <h4>{item.title}</h4>
-                      <p>{item.desc.slice(0, 60)}...</p>
+                      <p>{item.desc?.slice(0, 60)}...</p>
                     </div>
                   </Link>
                 </div>
               ))
             ) : (
-              <p>Không có bài viết liên quan</p>
+              <p>{locale === 'vi' ? 'Không có bài viết liên quan' : 'No related articles'}</p>
             )}
           </div>
         </aside>

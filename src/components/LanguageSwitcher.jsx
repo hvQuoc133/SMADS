@@ -1,39 +1,47 @@
+// components/LanguageSwitcher.jsx
 "use client";
 
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import styles from "../styles/Language-switcher.module.css";
-import viDict from "@/lib/dictionaries/vi.json";
-import enDict from "@/lib/dictionaries/en.json";
 
 export default function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
+  const [slugMapping, setSlugMapping] = useState({});
 
-  const currentLocale = pathname.split("/")[1]; // 'vi' hoặc 'en'
-  const otherLocale = currentLocale === "vi" ? "en" : "vi";
+  const currentLocale = pathname.split("/")[1];
+
+  // Fetch slug mapping từ tất cả activities
+  useEffect(() => {
+    const fetchSlugMapping = async () => {
+      try {
+        const response = await fetch('/api/slug-mapping');
+        const data = await response.json();
+        if (data.success) {
+          setSlugMapping(data.mapping);
+        }
+      } catch (error) {
+        console.error('Failed to load slug mapping:', error);
+      }
+    };
+
+    fetchSlugMapping();
+  }, []);
 
   const handleChange = (locale) => {
     const parts = pathname.split("/").filter(Boolean);
 
-    // Processing page activities
     if (parts[1] === "activities" && parts[2]) {
-      const slug = decodeURIComponent(parts[2]);
+      const currentSlug = decodeURIComponent(parts[2]);
 
-      if (currentLocale === "vi") {
-        const match = viDict.activities.list.find((a) => a.slug === slug);
-        if (match?.slug_en) {
-          return router.push(`/${locale}/activities/${match.slug_en}`);
-        }
-      } else {
-        const match = enDict.activities.list.find((a) => a.slug === slug);
-        if (match?.slug_vi) {
-          return router.push(`/${locale}/activities/${match.slug_vi}`);
-        }
-      }
+      // Tìm slug tương ứng
+      const newSlug = slugMapping[currentSlug] || currentSlug;
+
+      return router.push(`/${locale}/activities/${newSlug}`);
     }
 
-    // Other pages → just change locale
     router.push(pathname.replace(`/${currentLocale}`, `/${locale}`));
   };
 
@@ -43,8 +51,7 @@ export default function LanguageSwitcher() {
         <button
           key={locale}
           onClick={() => handleChange(locale)}
-          className={`${styles.langBtn} ${currentLocale === locale ? styles.active : ""
-            }`}
+          className={`${styles.langBtn} ${currentLocale === locale ? styles.active : ""}`}
         >
           <Image
             src={`/images/icon/${locale}.png`}

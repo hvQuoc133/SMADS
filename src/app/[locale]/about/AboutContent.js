@@ -11,7 +11,7 @@ import { urlFor } from "../../../sanity/lib/image";
 import About from "./About";
 
 export default function AboutContent({ aboutData, dict, locale }) {
-    // Initialize AOS - PHẢI ĐẶT TRƯỚC MỌI CONDITION
+    // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
@@ -39,8 +39,13 @@ export default function AboutContent({ aboutData, dict, locale }) {
         return <About dict={dict} locale={locale} />;
     }
 
-    // Lấy data từ Sanity
-    const displayData = aboutData;
+    // Helper function để lấy content theo ngôn ngữ
+    const getLocalizedContent = (viContent, enContent) => {
+        return locale === 'vi' ? viContent : enContent || viContent;
+    };
+
+    // Page title theo ngôn ngữ
+    const pageTitle = getLocalizedContent(aboutData.pageTitle, aboutData.pageTitleEn);
 
     // Image error handler
     const handleImageError = (e) => {
@@ -53,36 +58,36 @@ export default function AboutContent({ aboutData, dict, locale }) {
 
     return (
         <>
-            <BgAllPage title={displayData.pageTitle} parent="SMADS" />
+            <BgAllPage title={pageTitle} parent="SMADS" />
 
-            {/* Section 1 */}
+            {/* Section 1 - SỬ DỤNG MULTILINGUAL */}
             <section className={styles.content}>
                 <div className={styles.text} data-aos="fade-up">
-                    <h2>{displayData.section1?.title}</h2>
-                    <p>{displayData.section1?.p1}</p>
-                    <p>{displayData.section1?.p2}</p>
+                    <h2>{getLocalizedContent(aboutData.section1?.title, aboutData.section1?.titleEn)}</h2>
+                    <p>{getLocalizedContent(aboutData.section1?.p1, aboutData.section1?.p1En)}</p>
+                    <p>{getLocalizedContent(aboutData.section1?.p2, aboutData.section1?.p2En)}</p>
                     <button className={styles.readMore}>
-                        {displayData.section1?.readMore}
+                        {getLocalizedContent(aboutData.section1?.readMore, aboutData.section1?.readMoreEn)}
                     </button>
                 </div>
                 <div className={styles.image} data-aos="fade-left">
                     <img
-                        src={getImageUrl(displayData.section1?.image) || "/images/about/da_img.png"}
-                        alt={displayData.section1?.image?.alt || displayData.section1?.title || "About Illustration"}
+                        src={getImageUrl(aboutData.section1?.image) || "/images/about/da_img.png"}
+                        alt={aboutData.section1?.image?.alt || getLocalizedContent(aboutData.section1?.title, aboutData.section1?.titleEn) || "About Illustration"}
                         onError={handleImageError}
                         loading="lazy"
                     />
                 </div>
             </section>
 
-            {/* Section 2 */}
+            {/* Section 2 - SỬ DỤNG MULTILINGUAL */}
             <section className={styles.bestMatchSection}>
                 <div className={styles.container}>
                     <div className={styles.textBox} data-aos="flip-left">
-                        <h2>{displayData.section2?.title}</h2>
-                        <p>{displayData.section2?.desc}</p>
+                        <h2>{getLocalizedContent(aboutData.section2?.title, aboutData.section2?.titleEn)}</h2>
+                        <p>{getLocalizedContent(aboutData.section2?.desc, aboutData.section2?.descEn)}</p>
                         <ul className={styles.featureList}>
-                            {displayData.section2?.list?.map((item, idx) => (
+                            {(locale === 'vi' ? aboutData.section2?.list : aboutData.section2?.listEn || aboutData.section2?.list)?.map((item, idx) => (
                                 <li key={idx}>
                                     <i className="fa-solid fa-check"></i> {item}
                                 </li>
@@ -92,8 +97,8 @@ export default function AboutContent({ aboutData, dict, locale }) {
 
                     <div className={styles.imageBox} data-aos="flip-right">
                         <img
-                            src={getImageUrl(displayData.section2?.image) || "/images/about/best_match.png"}
-                            alt={displayData.section2?.image?.alt || displayData.section2?.title || "Business growth"}
+                            src={getImageUrl(aboutData.section2?.image) || "/images/about/best_match.png"}
+                            alt={aboutData.section2?.image?.alt || getLocalizedContent(aboutData.section2?.title, aboutData.section2?.titleEn) || "Business growth"}
                             onError={handleImageError}
                             width={520}
                             height={520}

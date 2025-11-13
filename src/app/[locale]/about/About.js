@@ -62,7 +62,7 @@ export default function AboutFallback({ dict, locale }) {
                 <div className={styles.image} data-aos="fade-left">
                     <img
                         src="/images/about/da_img.png"
-                        alt={a.section1.title || "About Illustration"}
+                        alt={aboutData.section1?.image?.alt || getLocalizedContent(aboutData.section1?.title, aboutData.section1?.titleEn) || "About Illustration"}
                         onError={handleImageError}
                         loading="lazy"
                     />
@@ -87,7 +87,7 @@ export default function AboutFallback({ dict, locale }) {
                     <div className={styles.imageBox} data-aos="flip-right">
                         <img
                             src="/images/about/best_match.png"
-                            alt={a.section2.title || "Business growth"}
+                            alt={aboutData.section2?.image?.alt || getLocalizedContent(aboutData.section2?.title, aboutData.section2?.titleEn) || "Business growth"}
                             onError={handleImageError}
                             width={520}
                             height={520}
