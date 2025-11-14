@@ -39,8 +39,9 @@
 
 .jobList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 380px));
+  gap: 20px;
+  justify-content: center;
 }
 
 .jobCard {

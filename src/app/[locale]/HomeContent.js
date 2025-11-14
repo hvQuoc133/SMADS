@@ -14,12 +14,49 @@ import viDict from "@/lib/dictionaries/vi.json";
 import enDict from "@/lib/dictionaries/en.json";
 import { urlFor } from "../../sanity/lib/image";
 import HomeHero from "./HomeHero";
+import { client } from "../../sanity/lib/client";
 
 export default function HomeContent({ homeData, dict, locale }) {
     // Ưu tiên data từ Sanity, fallback từ JSON
     const t = homeData || dict?.home;
 
-    // Initialize AOS - PHẢI ĐẶT TRƯỚC MỌI ĐIỀU KIỆN
+    // State để lưu activities từ Sanity
+    const [homeActivities, setHomeActivities] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    // Fetch activities từ Sanity
+    useEffect(() => {
+        async function fetchHomeActivities() {
+            try {
+                setLoading(true);
+                const query = `*[_type == "activity"] | order(publishedAt desc)[0...3]{
+                    _id,
+                    title,
+                    titleEn,
+                    description,
+                    descriptionEn,
+                    slugVi,
+                    slugEn,
+                    image {
+                        asset->,
+                        alt
+                    }
+                }`;
+
+                const activities = await client.fetch(query);
+                setHomeActivities(activities || []);
+            } catch (error) {
+                console.error('Error fetching home activities:', error);
+                setHomeActivities([]);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchHomeActivities();
+    }, []);
+
+    // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
@@ -47,13 +84,14 @@ export default function HomeContent({ homeData, dict, locale }) {
         return <HomeHero locale={locale} />;
     }
 
-    const activities = (dict.activities?.list || []).map((item, idx) => ({
-        ...item,
-        id: idx + 1,
-        image: item.image
-            ? (item.image.startsWith("/") ? item.image : "/" + item.image)
-            : `/images/activities/activity${idx + 1}.jpg`,
-        slug: item.slug || `activity-${idx + 1}`,
+    // SỬA QUAN TRỌNG: Dùng activities từ Sanity thay vì dict
+    const activities = homeActivities.map((item, idx) => ({
+        id: item._id || idx + 1,
+        title: locale === 'vi' ? item.title : item.titleEn || item.title,
+        desc: locale === 'vi' ? item.description : item.descriptionEn || item.description,
+        image: item.image ? urlFor(item.image).quality(80).url() : `/images/activities/activity${idx + 1}.jpg`,
+        slug: locale === 'vi' ? item.slugVi : item.slugEn || `activity-${idx + 1}`,
+        alt: item.image?.alt || (locale === 'vi' ? item.title : item.titleEn || item.title),
     }));
 
     function StartItem({ end, label }) {
@@ -298,7 +336,10 @@ export default function HomeContent({ homeData, dict, locale }) {
             </section>
 
             {/* Content 9 - Activities Section */}
-            <ActivitiesSection dict={dict} activities={activities} locale={locale} />
+            {!loading && (
+                <ActivitiesSection dict={dict} activities={activities} locale={locale} />
+            )}
+
             <ScrollToTop />
         </>
     );

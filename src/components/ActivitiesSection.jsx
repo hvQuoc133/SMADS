@@ -7,6 +7,32 @@ import style from "../styles/Activities.module.css";
 export default function ActivitiesSection({ dict, activities, locale }) {
   if (!dict?.activities || !activities) return null;
 
+  console.log('📦 ActivitiesSection received:', {
+    hasDict: !!dict,
+    hasActivities: !!activities,
+    activitiesCount: activities?.length,
+    activitiesData: activities
+  });
+
+  if (!dict?.activities || !activities) {
+    console.log('❌ Missing data:', {
+      hasDict: !!dict,
+      hasDictActivities: !!dict?.activities,
+      hasActivities: !!activities
+    });
+    return null;
+  }
+
+  // Trong component cha (ví dụ: HomeContent hoặc trang khác)
+  console.log('🏠 PARENT PAGE - Activities data to pass:', {
+    activitiesCount: activities?.length,
+    activitiesData: activities,
+    source: 'Sanity or Dict?' // Xem data từ đâu
+  });
+
+  // Và kiểm tra xem component có được render không
+  console.log('🔧 Rendering ActivitiesSection component...');
+
   return (
     <section className={style.activitiesSection}>
       <div className={style.container}>

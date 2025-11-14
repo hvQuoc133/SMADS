@@ -160,6 +160,9 @@ export async function generateMetadata({ params }) {
   }
 }
 
+export const revalidate = 0;
+export const dynamic = 'force-dynamic';
+
 export default async function ActivitiesPage({ params }) {
   const { locale } = await params;
   const [dict, pageData, activitiesData] = await Promise.all([
@@ -167,6 +170,7 @@ export default async function ActivitiesPage({ params }) {
     getActivitiesPageData().catch(() => null),
     getAllActivities().catch(() => [])
   ]);
+
 
   return (
     <ActivitiesContent

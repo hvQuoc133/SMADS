@@ -572,7 +572,14 @@
 
 /* ================= Responsive ================= */
 
-/* ---------- ≤1024px ---------- */
+/* ---------- ≤1200px ---------- */
+@media (max-width: 1200px) {
+    .planPrice {
+        font-size: 32px;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .heroSeoContent {
         gap: 40px;
