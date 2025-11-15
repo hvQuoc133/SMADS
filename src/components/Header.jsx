@@ -49,10 +49,10 @@ export default function Header({ locale = "vi", dict }) {
 
   // Link active
   const isActive = (href) => {
-    if (href.includes("/activities")) {
+    if (href && href.includes("/activities")) {
       return pathname.includes("/activities");
     }
-    if (href.includes("/services")) {
+    if (href && href.includes("/services")) {
       return pathname.startsWith(`/${locale}/services`);
     }
     return pathname === href;
@@ -62,7 +62,8 @@ export default function Header({ locale = "vi", dict }) {
   const menuItems = [
     { href: `/${locale}`, label: dict?.header?.home || "Trang chủ" },
     { href: `/${locale}/about`, label: dict?.header?.about || "Giới thiệu" },
-    { href: `/${locale}/services`, label: dict?.header?.services || "Dịch vụ" },
+    // Service item không có href nữa, chỉ có label để mở dropdown
+    { label: dict?.header?.services || "Dịch vụ", isDropdown: true },
     { href: `/${locale}/activities`, label: dict?.header?.activities || "Hoạt động" },
     { href: `/${locale}/career`, label: dict?.header?.career || "Tuyển dụng" },
     { href: `/${locale}/contact`, label: dict?.header?.contact || "Liên hệ" },
@@ -86,6 +87,7 @@ export default function Header({ locale = "vi", dict }) {
       label: dict?.header?.servicesMenu?.webDesign || "Web Design",
     },
   ];
+
   return (
     <nav
       ref={navRef}
@@ -122,7 +124,7 @@ export default function Header({ locale = "vi", dict }) {
         >
           <ul className="navbar-nav mx-auto">
             {menuItems.map((item, idx) => {
-              if (item.href.includes("/services")) {
+              if (item.isDropdown) {
                 return (
                   <li
                     key={idx}
@@ -130,13 +132,13 @@ export default function Header({ locale = "vi", dict }) {
                     onMouseEnter={() => setDropdownOpen(true)}
                     onMouseLeave={() => setDropdownOpen(false)}
                   >
-                    <Link
-                      href={item.href}
-                      className={`nav-link ${isActive(item.href) ? "active" : ""}`}
+                    <a
+                      href="#"
+                      className={`nav-link ${isActive(`/${locale}/services`) ? "active" : ""}`}
                       onClick={(e) => e.preventDefault()}
                     >
                       <span>{item.label}</span>
-                    </Link>
+                    </a>
 
                     <ul className={`dropdown-menu ${dropdownOpen ? "show" : ""}`}>
                       {servicesSubmenu.map((sub, subIdx) => (
