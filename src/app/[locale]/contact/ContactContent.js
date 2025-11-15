@@ -13,6 +13,9 @@ import { urlFor } from "../../../sanity/lib/image";
 import ContactFallback from "./Contact";
 
 export default function ContactContent({ pageData, dict, locale }) {
+
+    const [isLoading, setIsLoading] = useState(false);
+
     // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -44,8 +47,6 @@ export default function ContactContent({ pageData, dict, locale }) {
     const toastMsgs = pageData.toast || {};
     const social = pageData.socialLinks || {};
     const map = pageData.map || {};
-
-    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

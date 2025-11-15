@@ -9,6 +9,10 @@ import { toast } from "react-toastify";
 import CareerFallback from "./Career";
 
 export default function CareerContent({ pageData, dict, locale }) {
+
+    const [selectedJob, setSelectedJob] = useState(null);
+    const [showForm, setShowForm] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     // Initialize AOS
     useEffect(() => {
         if (typeof window !== "undefined") {
@@ -33,10 +37,6 @@ export default function CareerContent({ pageData, dict, locale }) {
     if (!pageData) {
         return <CareerFallback dict={dict} />;
     }
-
-    const [selectedJob, setSelectedJob] = useState(null);
-    const [showForm, setShowForm] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
 
     // Lấy data từ Sanity
     const intro = pageData.intro || {};
