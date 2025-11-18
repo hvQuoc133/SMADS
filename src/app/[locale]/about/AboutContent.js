@@ -34,17 +34,17 @@ export default function AboutContent({ aboutData, dict, locale }) {
         };
     }, []);
 
-    // Fallback: nếu không có data từ Sanity, dùng component fallback
+    // Fallback
     if (!aboutData) {
         return <About dict={dict} locale={locale} />;
     }
 
-    // Helper function để lấy content theo ngôn ngữ
+    // Helper function 
     const getLocalizedContent = (viContent, enContent) => {
         return locale === 'vi' ? viContent : enContent || viContent;
     };
 
-    // Page title theo ngôn ngữ
+    // Page title 
     const pageTitle = getLocalizedContent(aboutData.pageTitle, aboutData.pageTitleEn);
 
     // Image error handler
@@ -60,7 +60,7 @@ export default function AboutContent({ aboutData, dict, locale }) {
         <>
             <BgAllPage title={pageTitle} parent="SMADS" />
 
-            {/* Section 1 - SỬ DỤNG MULTILINGUAL */}
+            {/* Section 1 */}
             <section className={styles.content}>
                 <div className={styles.text} data-aos="fade-up">
                     <h2>{getLocalizedContent(aboutData.section1?.title, aboutData.section1?.titleEn)}</h2>
@@ -80,7 +80,7 @@ export default function AboutContent({ aboutData, dict, locale }) {
                 </div>
             </section>
 
-            {/* Section 2 - SỬ DỤNG MULTILINGUAL */}
+            {/* Section 2 */}
             <section className={styles.bestMatchSection}>
                 <div className={styles.container}>
                     <div className={styles.textBox} data-aos="flip-left">

@@ -7,10 +7,33 @@ async function getContactData(locale) {
   const query = `*[_type == "contactPage" && language == $lang][0]{
         pageTitle,
         language,
+        // ✅ SEO DATA TỪ SEO ANALYSIS
         seo {
             metaTitle,
+            metaTitleEn,
             metaDescription,
+            metaDescriptionEn,
             keywords,
+            keywordsEn,
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle,
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            content,
+            contentEn,
+            readingTime,
+            seoPriority
+        },
+        // ✅ SEO IMAGES RIÊNG
+        seoImages {
             ogImage {
                 asset->,
                 alt
@@ -18,9 +41,7 @@ async function getContactData(locale) {
             twitterImage {
                 asset->,
                 alt
-            },
-            twitterHandle,
-            canonicalUrl
+            }
         },
         contactInfo {
             getInTouch,
@@ -74,19 +95,33 @@ export async function generateMetadata({ params }) {
       throw new Error('No contact data found');
     }
 
-    // SEO TITLE & DESCRIPTION
-    const title = data?.seo?.metaTitle || data?.pageTitle || "Liên hệ - SMADS";
-    const description = data?.seo?.metaDescription || "Liên hệ với SMADS để được tư vấn và hỗ trợ";
-    const keywords = data?.seo?.keywords;
+    // ✅ LẤY TITLE & DESCRIPTION THEO NGÔN NGỮ
+    const title = locale === 'vi'
+      ? data?.seo?.metaTitle || data?.pageTitle || "Liên hệ - SMADS"
+      : data?.seo?.metaTitleEn || data?.pageTitle || "Contact - SMADS";
 
-    // OG IMAGE
-    const ogImage = data?.seo?.ogImage?._ref
-      ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+    const description = locale === 'vi'
+      ? data?.seo?.metaDescription || "Liên hệ với SMADS để được tư vấn và hỗ trợ"
+      : data?.seo?.metaDescriptionEn || "Contact SMADS for consultation and support";
+
+    const keywords = locale === 'vi'
+      ? data?.seo?.keywords
+      : data?.seo?.keywordsEn;
+
+    // ✅ OG IMAGE TỪ SEO IMAGES SECTION
+    const ogImage = data?.seoImages?.ogImage?._ref
+      ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
       : '/images/og-default.jpg';
 
-    const twitterImage = data?.seo?.twitterImage?._ref
-      ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+    const twitterImage = data?.seoImages?.twitterImage?._ref
+      ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
       : ogImage;
+
+    // ✅ OG TITLE & DESCRIPTION (CÓ THỂ KHÁC VỚI META)
+    const ogTitle = data?.seo?.ogTitle || title;
+    const ogDescription = data?.seo?.ogDescription || description;
+    const twitterTitle = data?.seo?.twitterTitle || title;
+    const twitterDescription = data?.seo?.twitterDescription || description;
 
     const baseUrl = 'https://smads.com.vn';
     const url = `${baseUrl}/${locale}/contact`;
@@ -97,10 +132,10 @@ export async function generateMetadata({ params }) {
       description: description,
       keywords: keywords,
 
-      // OPEN GRAPH
+      // ✅ OPEN GRAPH
       openGraph: {
-        title: title,
-        description: description,
+        title: ogTitle,
+        description: ogDescription,
         url: url,
         siteName: 'SMADS',
         type: 'website',
@@ -110,21 +145,21 @@ export async function generateMetadata({ params }) {
             url: ogImage,
             width: 1200,
             height: 630,
-            alt: data?.seo?.ogImage?.alt || 'Liên hệ SMADS',
+            alt: data?.seoImages?.ogImage?.alt || title,
           },
         ],
       },
 
-      // TWITTER CARDS
+      // ✅ TWITTER CARDS
       twitter: {
-        card: 'summary_large_image',
-        title: title,
-        description: description,
+        card: data?.seo?.twitterCardType || 'summary_large_image',
+        title: twitterTitle,
+        description: twitterDescription,
         images: [twitterImage],
         creator: data?.seo?.twitterHandle || '@smads',
       },
 
-      // CANONICAL & ALTERNATES
+      // ✅ CANONICAL & ALTERNATES
       alternates: {
         canonical: data?.seo?.canonicalUrl || url,
         languages: {
@@ -133,20 +168,10 @@ export async function generateMetadata({ params }) {
         },
       },
 
-      // ROBOTS
-      robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
+      // ✅ ROBOTS (TỪ SEO ANALYSIS)
+      robots: data?.seo?.metaRobots || 'index, follow',
 
-      // OTHER META
+      // ✅ OTHER META
       authors: ['SMADS'],
       publisher: 'SMADS',
     };
@@ -157,11 +182,15 @@ export async function generateMetadata({ params }) {
 
     return {
       metadataBase: metadataBase,
-      title: "Liên hệ - SMADS",
-      description: "Liên hệ với SMADS để được tư vấn và hỗ trợ",
+      title: locale === 'vi' ? "Liên hệ - SMADS" : "Contact - SMADS",
+      description: locale === 'vi'
+        ? "Liên hệ với SMADS để được tư vấn và hỗ trợ"
+        : "Contact SMADS for consultation and support",
       openGraph: {
-        title: "Liên hệ - SMADS",
-        description: "Liên hệ với SMADS để được tư vấn và hỗ trợ",
+        title: locale === 'vi' ? "Liên hệ - SMADS" : "Contact - SMADS",
+        description: locale === 'vi'
+          ? "Liên hệ với SMADS để được tư vấn và hỗ trợ"
+          : "Contact SMADS for consultation and support",
         url: url,
         siteName: 'SMADS',
         type: 'website',
@@ -171,7 +200,7 @@ export async function generateMetadata({ params }) {
             url: `${baseUrl}/images/og-default.jpg`,
             width: 1200,
             height: 630,
-            alt: 'Liên hệ SMADS',
+            alt: locale === 'vi' ? 'Liên hệ SMADS' : 'Contact SMADS',
           },
         ],
       },

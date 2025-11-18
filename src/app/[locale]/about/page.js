@@ -3,23 +3,45 @@ import AboutContent from "./AboutContent";
 import { client } from "../../../sanity/lib/client";
 import { urlFor } from "../../../sanity/lib/image";
 
-// Hàm fetch data ĐẦY ĐỦ cho component
 async function getAboutData(locale) {
     const query = `*[_type == "about"][0]{
         pageTitle,
         pageTitleEn,
         seo {
+            // 👇 CÁC FIELD CƠ BẢN
             metaTitle,
             metaTitleEn,
             metaDescription,
             metaDescriptionEn,
             keywords,
             keywordsEn,
+            
+            // 👇 FIELD MỚI TỪ SEO ANALYZER
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle, 
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            seoPriority,
+            content,
+            contentEn
+        },
+        seoImages {
             ogImage {
                 asset->,
                 alt
             },
-            twitterHandle
+            twitterImage {
+                asset->,
+                alt  
+            }
         },
         section1 {
             title,
@@ -52,7 +74,7 @@ async function getAboutData(locale) {
     return await client.fetch(query);
 }
 
-// Generate SEO metadata
+// Generate SEO metadata 
 export async function generateMetadata({ params }) {
     const { locale } = await params;
 
@@ -63,7 +85,7 @@ export async function generateMetadata({ params }) {
             throw new Error('No about data found');
         }
 
-        // Dùng field theo ngôn ngữ
+        // SEO ANALYZER
         const title = locale === 'vi'
             ? data?.seo?.metaTitle || data?.pageTitle
             : data?.seo?.metaTitleEn || data?.pageTitleEn || "About SMADS";
@@ -76,15 +98,50 @@ export async function generateMetadata({ params }) {
             ? data?.seo?.keywords
             : data?.seo?.keywordsEn;
 
-        // OG Image từ SEO section (ưu tiên) hoặc section1
-        const ogImage = data?.seo?.ogImage
-            ? urlFor(data.seo.ogImage).width(1200).height(630).url()
-            : data?.section1?.image
-                ? urlFor(data.section1.image).width(1200).height(630).url()
-                : '/images/og-default.jpg';
+        // 👇 OG TITLE & DESCRIPTION 
+        const ogTitle = locale === 'vi'
+            ? data?.seo?.ogTitle || data?.seo?.metaTitle
+            : data?.seo?.ogTitle || data?.seo?.metaTitleEn || data?.seo?.metaTitle;
+
+        const ogDescription = locale === 'vi'
+            ? data?.seo?.ogDescription || data?.seo?.metaDescription
+            : data?.seo?.ogDescription || data?.seo?.metaDescriptionEn || data?.seo?.metaDescription;
+
+        // 👇 TWITTER TITLE & DESCRIPTION 
+        const twitterTitle = locale === 'vi'
+            ? data?.seo?.twitterTitle || data?.seo?.metaTitle
+            : data?.seo?.twitterTitle || data?.seo?.metaTitleEn || data?.seo?.metaTitle;
+
+        const twitterDescription = locale === 'vi'
+            ? data?.seo?.twitterDescription || data?.seo?.metaDescription
+            : data?.seo?.twitterDescription || data?.seo?.metaDescriptionEn || data?.seo?.metaDescription;
+
+        // Helper function 
+        const isValidImage = (img) => img && typeof img === 'object' && img._ref;
+
+        const ogImage = isValidImage(data?.seoImages?.ogImage)
+            ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
+            : isValidImage(data?.seo?.ogImage)
+                ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+                : isValidImage(data?.section1?.image)
+                    ? urlFor(data.section1.image).width(1200).height(630).url()
+                    : '/images/og-default.jpg';
+
+        const twitterImage = isValidImage(data?.seoImages?.twitterImage)
+            ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
+            : ogImage;
+
+        // 👇 CANONICAL URL 
+        const canonicalUrl = data?.seo?.canonicalUrl || `https://smads.com.vn/${locale}/about`;
+
+        // 👇 META ROBOTS 
+        const metaRobots = data?.seo?.metaRobots || 'index, follow';
+
+        // 👇 TWITTER CARD TYPE 
+        const twitterCardType = data?.seo?.twitterCardType || 'summary_large_image';
 
         const baseUrl = 'https://smads.com.vn';
-        const url = `${baseUrl}/${locale}/about`;
+        const url = canonicalUrl;
 
         return {
             metadataBase: new URL('https://smads.com.vn'),
@@ -92,10 +149,10 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // Open Graph
+            // 👇 OPEN GRAPH 
             openGraph: {
-                title: title,
-                description: description,
+                title: ogTitle,
+                description: ogDescription,
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -105,45 +162,42 @@ export async function generateMetadata({ params }) {
                         url: ogImage,
                         width: 1200,
                         height: 630,
-                        alt: data?.seo?.ogImage?.alt || data?.section1?.image?.alt || 'About SMADS',
+                        alt: data?.seoImages?.ogImage?.alt || data?.seo?.ogImage?.alt || data?.section1?.image?.alt || 'About SMADS',
                     },
                 ],
             },
 
-            // Twitter Cards
+            //  TWITTER CARDS 
             twitter: {
-                card: 'summary_large_image',
-                title: title,
-                description: description,
-                images: [ogImage],
+                card: twitterCardType,
+                title: twitterTitle,
+                description: twitterDescription,
+                images: [twitterImage],
                 creator: data?.seo?.twitterHandle || '@smads',
             },
 
-            // Canonical & Alternates
+            // 👇 CANONICAL & ALTERNATES 
             alternates: {
-                canonical: url,
+                canonical: canonicalUrl,
                 languages: {
-                    'vi': `${baseUrl}/vi/about`,
-                    'en': `${baseUrl}/en/about`,
+                    'vi': `https://smads.com.vn/vi/about`,
+                    'en': `https://smads.com.vn/en/about`,
                 },
             },
 
-            // Robots
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
-                    index: true,
-                    follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
-                },
-            },
+            // 👇 ROBOTS
+            robots: metaRobots,
 
             // Other meta
             authors: ['SMADS'],
             publisher: 'SMADS',
+
+            //  STRUCTURED DATA 
+            ...(data?.seo?.structuredData && {
+                other: {
+                    'script:ld+json': data.seo.structuredData
+                }
+            })
         };
     } catch (error) {
         console.error('Error generating metadata:', error);

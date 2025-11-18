@@ -9,10 +9,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 export default function AboutFallback({ dict, locale }) {
-    // Lấy data từ JSON dict - GIỐNG CONTACT
+    // Get data from JSON dict
     const a = dict?.about;
 
-    // Initialize AOS - GIỐNG CONTACT
+    // Initialize AOS 
     useEffect(() => {
         if (typeof window !== "undefined") {
             if (window.innerWidth >= 768) {
@@ -40,7 +40,6 @@ export default function AboutFallback({ dict, locale }) {
         e.target.src = "/images/fallback-image.png";
     };
 
-    // Loading state nếu không có dict - GIỐNG CONTACT
     if (!a) {
         return <div className={styles.loading}>Loading...</div>;
     }
@@ -97,6 +96,7 @@ export default function AboutFallback({ dict, locale }) {
                 </div>
             </section>
 
+            <SEOAnalyzer />
             <Agency dict={dict} />
             <ScrollToTop />
         </>
