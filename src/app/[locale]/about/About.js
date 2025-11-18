@@ -96,7 +96,6 @@ export default function AboutFallback({ dict, locale }) {
                 </div>
             </section>
 
-            <SEOAnalyzer />
             <Agency dict={dict} />
             <ScrollToTop />
         </>
