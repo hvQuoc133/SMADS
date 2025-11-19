@@ -8,7 +8,6 @@ async function getAboutData(locale) {
         pageTitle,
         pageTitleEn,
         seo {
-            // 👇 CÁC FIELD CƠ BẢN
             metaTitle,
             metaTitleEn,
             metaDescription,
@@ -16,7 +15,7 @@ async function getAboutData(locale) {
             keywords,
             keywordsEn,
             
-            // 👇 FIELD MỚI TỪ SEO ANALYZER
+            // FIELD SEO ANALYZER
             focusKeyword,
             focusKeywordEn,
             secondaryKeywords,
@@ -176,7 +175,7 @@ export async function generateMetadata({ params }) {
                 creator: data?.seo?.twitterHandle || '@smads',
             },
 
-            // 👇 CANONICAL & ALTERNATES 
+            // CANONICAL & ALTERNATES 
             alternates: {
                 canonical: canonicalUrl,
                 languages: {
@@ -185,14 +184,14 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // 👇 ROBOTS
+            // ROBOTS
             robots: metaRobots,
 
             // Other meta
             authors: ['SMADS'],
             publisher: 'SMADS',
 
-            //  STRUCTURED DATA 
+            // STRUCTURED DATA 
             ...(data?.seo?.structuredData && {
                 other: {
                     'script:ld+json': data.seo.structuredData

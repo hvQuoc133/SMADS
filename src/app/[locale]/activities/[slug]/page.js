@@ -17,6 +17,42 @@ async function getActivityDetailData(slug) {
       asset->,
       alt
     },
+    // SEO ANALYSIS
+    seo {
+      metaTitle,
+      metaTitleEn,
+      metaDescription,
+      metaDescriptionEn,
+      keywords,
+      keywordsEn,
+      focusKeyword,
+      focusKeywordEn,
+      secondaryKeywords,
+      secondaryKeywordsEn,
+      ogTitle,
+      ogDescription,
+      twitterTitle,
+      twitterDescription,
+      twitterCardType,
+      canonicalUrl,
+      metaRobots,
+      structuredData,
+      content,
+      contentEn,
+      readingTime,
+      seoPriority
+    },
+    // SEO IMAGES
+    seoImages {
+      ogImage {
+        asset->,
+        alt
+      },
+      twitterImage {
+        asset->,
+        alt
+      }
+    },
     publishedAt,
     _updatedAt
   }`;
@@ -77,13 +113,39 @@ export async function generateMetadata({ params }) {
   try {
     const data = await getActivityDetailData(slug);
 
-    const title = locale === 'vi' ? data?.title : data?.titleEn;
-    const description = locale === 'vi' ? data?.description : data?.descriptionEn;
+    if (!data) {
+      throw new Error('Activity not found');
+    }
 
-    // OG Image
-    const ogImage = data?.image
-      ? urlFor(data.image).width(1200).height(630).url()
-      : '/images/og-default.jpg';
+    // TITLE & DESCRIPTION 
+    const title = locale === 'vi'
+      ? data?.seo?.metaTitle || data?.title || "Chi tiết hoạt động - SMADS"
+      : data?.seo?.metaTitleEn || data?.titleEn || "Activity Detail - SMADS";
+
+    const description = locale === 'vi'
+      ? data?.seo?.metaDescription || data?.description || "Khám phá chi tiết hoạt động của SMADS"
+      : data?.seo?.metaDescriptionEn || data?.descriptionEn || "Explore SMADS activity details";
+
+    const keywords = locale === 'vi'
+      ? data?.seo?.keywords
+      : data?.seo?.keywordsEn;
+
+    // OG IMAGE SEO IMAGES
+    const ogImage = data?.seoImages?.ogImage?._ref
+      ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
+      : data?.image?._ref
+        ? urlFor(data.image).width(1200).height(630).url()
+        : '/images/og-default.jpg';
+
+    const twitterImage = data?.seoImages?.twitterImage?._ref
+      ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
+      : ogImage;
+
+    // OG TITLE & DESCRIPTION 
+    const ogTitle = data?.seo?.ogTitle || title;
+    const ogDescription = data?.seo?.ogDescription || description;
+    const twitterTitle = data?.seo?.twitterTitle || title;
+    const twitterDescription = data?.seo?.twitterDescription || description;
 
     const baseUrl = 'https://smads.com.vn';
     const currentSlug = locale === 'vi' ? data?.slugVi : data?.slugEn;
@@ -91,13 +153,14 @@ export async function generateMetadata({ params }) {
 
     return {
       metadataBase: new URL('https://smads.com.vn'),
-      title: title || "Activity Detail - SMADS",
-      description: description || "Activity details",
+      title: title,
+      description: description,
+      keywords: keywords,
 
-      // Open Graph
+      // OPEN GRAPH
       openGraph: {
-        title: title || "Activity Detail - SMADS",
-        description: description || "Activity details",
+        title: ogTitle,
+        description: ogDescription,
         url: url,
         siteName: 'SMADS',
         type: 'article',
@@ -107,60 +170,55 @@ export async function generateMetadata({ params }) {
             url: ogImage,
             width: 1200,
             height: 630,
-            alt: data?.image?.alt || title || 'SMADS Activity',
+            alt: data?.seoImages?.ogImage?.alt || data?.image?.alt || title,
           },
         ],
         publishedTime: data?.publishedAt,
         modifiedTime: data?._updatedAt,
       },
 
-      // Twitter Cards
+      // TWITTER CARDS
       twitter: {
-        card: 'summary_large_image',
-        title: title || "Activity Detail - SMADS",
-        description: description || "Activity details",
-        images: [ogImage],
-        creator: '@smads',
+        card: data?.seo?.twitterCardType || 'summary_large_image',
+        title: twitterTitle,
+        description: twitterDescription,
+        images: [twitterImage],
+        creator: data?.seo?.twitterHandle || '@smads',
       },
 
-      // Canonical & Alternates
+      // CANONICAL & ALTERNATES
       alternates: {
-        canonical: url,
+        canonical: data?.seo?.canonicalUrl || url,
         languages: {
           'vi': `${baseUrl}/vi/activities/${data?.slugVi || slug}`,
           'en': `${baseUrl}/en/activities/${data?.slugEn || slug}`,
         },
       },
 
-      // Robots
-      robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
+      // ROBOTS
+      robots: data?.seo?.metaRobots || 'index, follow',
 
-      // Other meta
+      // OTHER META
       authors: ['SMADS'],
       publisher: 'SMADS',
     };
 
   } catch (error) {
+    console.error('Error generating activity metadata:', error);
     const baseUrl = 'https://smads.com.vn';
     const url = `${baseUrl}/${locale}/activities/${slug}`;
 
     return {
       metadataBase: new URL('https://smads.com.vn'),
-      title: "Activity Detail - SMADS",
-      description: "Activity details",
+      title: locale === 'vi' ? "Chi tiết hoạt động - SMADS" : "Activity Detail - SMADS",
+      description: locale === 'vi'
+        ? "Khám phá chi tiết hoạt động của SMADS"
+        : "Explore SMADS activity details",
       openGraph: {
-        title: "Activity Detail - SMADS",
-        description: "Activity details",
+        title: locale === 'vi' ? "Chi tiết hoạt động - SMADS" : "Activity Detail - SMADS",
+        description: locale === 'vi'
+          ? "Khám phá chi tiết hoạt động của SMADS"
+          : "Explore SMADS activity details",
         url: url,
         siteName: 'SMADS',
         type: 'article',
@@ -170,7 +228,7 @@ export async function generateMetadata({ params }) {
             url: `${baseUrl}/images/og-default.jpg`,
             width: 1200,
             height: 630,
-            alt: 'SMADS Activity',
+            alt: locale === 'vi' ? 'Hoạt động SMADS' : 'SMADS Activity',
           },
         ],
       },

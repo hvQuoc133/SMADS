@@ -7,7 +7,7 @@ async function getCareerData(locale) {
   const query = `*[_type == "careerPage" && language == $lang][0]{
         pageTitle,
         language,
-        // ✅ SEO DATA TỪ SEO ANALYSIS (SCHEMA MỚI)
+        // ✅ SEO DATA  ANALYSIS 
         seo {
             metaTitle,
             metaTitleEn,
@@ -32,7 +32,7 @@ async function getCareerData(locale) {
             readingTime,
             seoPriority
         },
-        // ✅ SEO IMAGES RIÊNG (SCHEMA MỚI)
+        // ✅ SEO IMAGES 
         seoImages {
             ogImage {
                 asset->,
@@ -109,7 +109,7 @@ export async function generateMetadata({ params }) {
       throw new Error('No career data found');
     }
 
-    // ✅ LẤY TITLE & DESCRIPTION THEO NGÔN NGỮ (SCHEMA MỚI)
+    // TITLE & DESCRIPTION 
     const title = locale === 'vi'
       ? data?.seo?.metaTitle || data?.pageTitle || "Tuyển dụng - SMADS"
       : data?.seo?.metaTitleEn || data?.pageTitle || "Careers - SMADS";
@@ -122,7 +122,7 @@ export async function generateMetadata({ params }) {
       ? data?.seo?.keywords
       : data?.seo?.keywordsEn;
 
-    // ✅ OG IMAGE TỪ SEO IMAGES SECTION (SCHEMA MỚI)
+    // OG IMAGE SEO IMAGES SECTION
     const ogImage = data?.seoImages?.ogImage?._ref
       ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
       : '/images/og-default.jpg';
@@ -131,7 +131,7 @@ export async function generateMetadata({ params }) {
       ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
       : ogImage;
 
-    // ✅ OG TITLE & DESCRIPTION (CÓ THỂ KHÁC VỚI META)
+    // OG TITLE & DESCRIPTION
     const ogTitle = data?.seo?.ogTitle || title;
     const ogDescription = data?.seo?.ogDescription || description;
     const twitterTitle = data?.seo?.twitterTitle || title;
@@ -146,7 +146,7 @@ export async function generateMetadata({ params }) {
       description: description,
       keywords: keywords,
 
-      // ✅ OPEN GRAPH
+      // OPEN GRAPH
       openGraph: {
         title: ogTitle,
         description: ogDescription,
@@ -164,7 +164,7 @@ export async function generateMetadata({ params }) {
         ],
       },
 
-      // ✅ TWITTER CARDS
+      // TWITTER CARDS
       twitter: {
         card: data?.seo?.twitterCardType || 'summary_large_image',
         title: twitterTitle,
@@ -173,7 +173,7 @@ export async function generateMetadata({ params }) {
         creator: data?.seo?.twitterHandle || '@smads',
       },
 
-      // ✅ CANONICAL & ALTERNATES
+      // CANONICAL & ALTERNATES
       alternates: {
         canonical: data?.seo?.canonicalUrl || url,
         languages: {
@@ -182,10 +182,10 @@ export async function generateMetadata({ params }) {
         },
       },
 
-      // ✅ ROBOTS (TỪ SEO ANALYSIS)
+      // ROBOTS 
       robots: data?.seo?.metaRobots || 'index, follow',
 
-      // ✅ OTHER META
+      // OTHER META
       authors: ['SMADS'],
       publisher: 'SMADS',
     };

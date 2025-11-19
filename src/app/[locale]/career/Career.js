@@ -98,7 +98,7 @@ export default function Career({ dict }) {
         const phone = formData.get("phone").trim();
         const file = formData.get("cv");
 
-        // ✅ Bắt đầu loading
+        // Start loading
         setIsLoading(true);
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

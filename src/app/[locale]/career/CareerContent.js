@@ -33,12 +33,12 @@ export default function CareerContent({ pageData, dict, locale }) {
         };
     }, []);
 
-    // Fallback nếu không có data từ Sanity
+    // Fallback 
     if (!pageData) {
         return <CareerFallback dict={dict} />;
     }
 
-    // Lấy data từ Sanity
+    // Get data from Sanity
     const intro = pageData.intro || {};
     const positions = pageData.positions || {};
     const jobs = pageData.jobs || [];
@@ -66,7 +66,7 @@ export default function CareerContent({ pageData, dict, locale }) {
         const phone = formData.get("phone").trim();
         const file = formData.get("cv");
 
-        // ✅ Bắt đầu loading
+        // Start loading
         setIsLoading(true);
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

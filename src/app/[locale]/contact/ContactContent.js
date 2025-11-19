@@ -37,7 +37,7 @@ export default function ContactContent({ pageData, dict, locale }) {
         };
     }, []);
 
-    // Fallback nếu không có data từ Sanity
+    // Fallback 
     if (!pageData) {
         return <ContactFallback dict={dict} />;
     }
