@@ -39,7 +39,7 @@ const portableTextComponents = {
                 );
             }
 
-            return <div>Image not available</div>;
+            return null;
         }
     },
     marks: {
