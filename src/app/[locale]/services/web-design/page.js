@@ -7,10 +7,33 @@ async function getServiceWebDesignData(locale) {
     const query = `*[_type == "serviceWebDesignPage" && language == $lang][0]{
         pageTitle,
         language,
+        // SEO ANALYSIS MỚI
         seo {
             metaTitle,
-            metaDescription,
+            metaTitleEn,
+            metaDescription, 
+            metaDescriptionEn,
             keywords,
+            keywordsEn,
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle,
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            content,
+            contentEn,
+            readingTime,
+            seoPriority
+        },
+        // SEO IMAGES MỚI
+        seoImages {
             ogImage {
                 asset->,
                 alt
@@ -18,9 +41,7 @@ async function getServiceWebDesignData(locale) {
             twitterImage {
                 asset->,
                 alt
-            },
-            twitterHandle,
-            canonicalUrl
+            }
         },
         hero {
             title,
@@ -87,20 +108,28 @@ export async function generateMetadata({ params }) {
             throw new Error('No service web design data found');
         }
 
-        // SEO TITLE & DESCRIPTION
-        const title = data?.seo?.metaTitle || data?.pageTitle || "Thiết kế Website Chuyên nghiệp - SMADS";
-        const description = data?.seo?.metaDescription || "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng";
-        const keywords = data?.seo?.keywords;
+        // SEO TITLE & DESCRIPTION - theo locale
+        const title = locale === 'vi'
+            ? data?.seo?.metaTitle || data?.pageTitle || "Thiết kế Website Chuyên nghiệp - SMADS"
+            : data?.seo?.metaTitleEn || data?.pageTitle || "Professional Website Design - SMADS";
 
-        // OG IMAGE
-        const ogImage = data?.seo?.ogImage?._ref
-            ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+        const description = locale === 'vi'
+            ? data?.seo?.metaDescription || "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng"
+            : data?.seo?.metaDescriptionEn || "Professional website design service, responsive, SEO-friendly, optimized user experience";
+
+        const keywords = locale === 'vi'
+            ? data?.seo?.keywords
+            : data?.seo?.keywordsEn;
+
+        // OG IMAGE & TWITTER IMAGE - từ seoImages mới
+        const ogImage = data?.seoImages?.ogImage?._ref
+            ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : data?.hero?.heroImage?._ref
                 ? urlFor(data.hero.heroImage).width(1200).height(630).url()
                 : '/images/og-default.jpg';
 
-        const twitterImage = data?.seo?.twitterImage?._ref
-            ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+        const twitterImage = data?.seoImages?.twitterImage?._ref
+            ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
             : ogImage;
 
         const baseUrl = 'https://smads.com.vn';
@@ -112,10 +141,10 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // OPEN GRAPH
+            // OPEN GRAPH - dùng SEO fields nếu có
             openGraph: {
-                title: title,
-                description: description,
+                title: data?.seo?.ogTitle || title,
+                description: data?.seo?.ogDescription || description,
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -125,16 +154,16 @@ export async function generateMetadata({ params }) {
                         url: ogImage,
                         width: 1200,
                         height: 630,
-                        alt: data?.seo?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Thiết kế Website SMADS',
+                        alt: data?.seoImages?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Thiết kế Website SMADS',
                     },
                 ],
             },
 
-            // TWITTER CARDS
+            // TWITTER CARDS - dùng SEO fields nếu có
             twitter: {
-                card: 'summary_large_image',
-                title: title,
-                description: description,
+                card: data?.seo?.twitterCardType || 'summary_large_image',
+                title: data?.seo?.twitterTitle || title,
+                description: data?.seo?.twitterDescription || description,
                 images: [twitterImage],
                 creator: data?.seo?.twitterHandle || '@smads',
             },
@@ -148,18 +177,8 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // ROBOTS
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
-                    index: true,
-                    follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
-                },
-            },
+            // ROBOTS - từ metaRobots
+            robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META
             authors: ['SMADS'],
@@ -170,25 +189,42 @@ export async function generateMetadata({ params }) {
         const baseUrl = 'https://smads.com.vn';
         const url = `${baseUrl}/${locale}/services/web-design`;
 
+        // THÊM KHAI BÁO BIẾN
+        const ogImage = `${baseUrl}/images/og-default.jpg`;
+        const twitterImage = ogImage;
+
         return {
             metadataBase: metadataBase,
-            title: "Thiết kế Website Chuyên nghiệp - SMADS",
-            description: "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng",
+            title: locale === 'vi' ? "Thiết kế Website Chuyên nghiệp - SMADS" : "Professional Website Design - SMADS",
+            description: locale === 'vi'
+                ? "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng"
+                : "Professional website design service, responsive, SEO-friendly, optimized user experience",
             openGraph: {
-                title: "Thiết kế Website Chuyên nghiệp - SMADS",
-                description: "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng",
+                title: locale === 'vi' ? "Thiết kế Website Chuyên nghiệp - SMADS" : "Professional Website Design - SMADS",
+                description: locale === 'vi'
+                    ? "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng"
+                    : "Professional website design service, responsive, SEO-friendly, optimized user experience",
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
                 locale: locale === 'vi' ? 'vi_VN' : 'en_US',
                 images: [
                     {
-                        url: `${baseUrl}/images/og-default.jpg`,
+                        url: ogImage,
                         width: 1200,
                         height: 630,
                         alt: 'Thiết kế Website SMADS',
                     },
                 ],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: locale === 'vi' ? "Thiết kế Website Chuyên nghiệp - SMADS" : "Professional Website Design - SMADS",
+                description: locale === 'vi'
+                    ? "Dịch vụ thiết kế website chuyên nghiệp, responsive, chuẩn SEO, tối ưu trải nghiệm người dùng"
+                    : "Professional website design service, responsive, SEO-friendly, optimized user experience",
+                images: [twitterImage],
+                creator: '@smads',
             },
             alternates: {
                 canonical: url,
@@ -197,6 +233,7 @@ export async function generateMetadata({ params }) {
                     'en': `${baseUrl}/en/services/web-design`,
                 },
             },
+            robots: 'index, follow',
         };
     }
 }

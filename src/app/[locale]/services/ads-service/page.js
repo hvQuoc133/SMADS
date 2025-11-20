@@ -7,10 +7,33 @@ async function getServiceAdsData(locale) {
     const query = `*[_type == "serviceAdsPage" && language == $lang][0]{
         pageTitle,
         language,
+        // SEO ANALYSIS 
         seo {
             metaTitle,
-            metaDescription,
+            metaTitleEn,
+            metaDescription, 
+            metaDescriptionEn,
             keywords,
+            keywordsEn,
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle,
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            content,
+            contentEn,
+            readingTime,
+            seoPriority
+        },
+        // SEO IMAGES 
+        seoImages {
             ogImage {
                 asset->,
                 alt
@@ -18,9 +41,7 @@ async function getServiceAdsData(locale) {
             twitterImage {
                 asset->,
                 alt
-            },
-            twitterHandle,
-            canonicalUrl
+            }
         },
         hero {
             title1,
@@ -122,20 +143,28 @@ export async function generateMetadata({ params }) {
             throw new Error('No service ads data found');
         }
 
-        // SEO TITLE & DESCRIPTION
-        const title = data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ Quảng cáo Google Ads - SMADS";
-        const description = data?.seo?.metaDescription || "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu";
-        const keywords = data?.seo?.keywords;
+        // SEO TITLE & DESCRIPTION - theo locale
+        const title = locale === 'vi'
+            ? data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ Quảng cáo Google Ads - SMADS"
+            : data?.seo?.metaTitleEn || data?.pageTitle || "Google Ads Advertising Service - SMADS";
 
-        // OG IMAGE
-        const ogImage = data?.seo?.ogImage?._ref
-            ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+        const description = locale === 'vi'
+            ? data?.seo?.metaDescription || "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu"
+            : data?.seo?.metaDescriptionEn || "Professional Google Ads advertising service, cost optimization and revenue growth";
+
+        const keywords = locale === 'vi'
+            ? data?.seo?.keywords
+            : data?.seo?.keywordsEn;
+
+        // OG IMAGE & TWITTER IMAGE - từ seoImages mới
+        const ogImage = data?.seoImages?.ogImage?._ref
+            ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : data?.hero?.heroImage?._ref
                 ? urlFor(data.hero.heroImage).width(1200).height(630).url()
                 : '/images/og-default.jpg';
 
-        const twitterImage = data?.seo?.twitterImage?._ref
-            ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+        const twitterImage = data?.seoImages?.twitterImage?._ref
+            ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
             : ogImage;
 
         const baseUrl = 'https://smads.com.vn';
@@ -147,10 +176,10 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // OPEN GRAPH
+            // OPEN GRAPH - dùng SEO fields nếu có
             openGraph: {
-                title: title,
-                description: description,
+                title: data?.seo?.ogTitle || title,
+                description: data?.seo?.ogDescription || description,
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -160,16 +189,16 @@ export async function generateMetadata({ params }) {
                         url: ogImage,
                         width: 1200,
                         height: 630,
-                        alt: data?.seo?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Dịch vụ Quảng cáo SMADS',
+                        alt: data?.seoImages?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Dịch vụ Quảng cáo SMADS',
                     },
                 ],
             },
 
-            // TWITTER CARDS
+            // TWITTER CARDS - dùng SEO fields nếu có
             twitter: {
-                card: 'summary_large_image',
-                title: title,
-                description: description,
+                card: data?.seo?.twitterCardType || 'summary_large_image',
+                title: data?.seo?.twitterTitle || title,
+                description: data?.seo?.twitterDescription || description,
                 images: [twitterImage],
                 creator: data?.seo?.twitterHandle || '@smads',
             },
@@ -183,18 +212,8 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // ROBOTS
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
-                    index: true,
-                    follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
-                },
-            },
+            // ROBOTS - từ metaRobots
+            robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META
             authors: ['SMADS'],
@@ -207,11 +226,15 @@ export async function generateMetadata({ params }) {
 
         return {
             metadataBase: metadataBase,
-            title: "Dịch vụ Quảng cáo Google Ads - SMADS",
-            description: "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu",
+            title: locale === 'vi' ? "Dịch vụ Quảng cáo Google Ads - SMADS" : "Google Ads Advertising Service - SMADS",
+            description: locale === 'vi'
+                ? "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu"
+                : "Professional Google Ads advertising service, cost optimization and revenue growth",
             openGraph: {
-                title: "Dịch vụ Quảng cáo Google Ads - SMADS",
-                description: "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu",
+                title: locale === 'vi' ? "Dịch vụ Quảng cáo Google Ads - SMADS" : "Google Ads Advertising Service - SMADS",
+                description: locale === 'vi'
+                    ? "Dịch vụ quảng cáo Google Ads chuyên nghiệp, tối ưu chi phí và tăng doanh thu"
+                    : "Professional Google Ads advertising service, cost optimization and revenue growth",
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -232,6 +255,7 @@ export async function generateMetadata({ params }) {
                     'en': `${baseUrl}/en/services/ads`,
                 },
             },
+            robots: 'index, follow',
         };
     }
 }

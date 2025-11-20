@@ -17,14 +17,14 @@ import HomeHero from "./HomeHero";
 import { client } from "../../sanity/lib/client";
 
 export default function HomeContent({ homeData, dict, locale }) {
-    // Ưu tiên data từ Sanity, fallback từ JSON
+
     const t = homeData || dict?.home;
 
-    // State để lưu activities từ Sanity
+    // State
     const [homeActivities, setHomeActivities] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Fetch activities từ Sanity
+    // Fetch activities Sanity
     useEffect(() => {
         async function fetchHomeActivities() {
             try {

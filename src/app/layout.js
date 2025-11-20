@@ -4,7 +4,7 @@ import FloatingContact from "../components/FloatingContact";
 
 export const metadata = {
   title: "SMADS",
-  description: "Website truyền thông sáng tạo",
+  description: "",
 };
 
 export default function RootLayout({ children }) {

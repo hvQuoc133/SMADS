@@ -6,8 +6,8 @@ import { getDictionary } from "../../lib/dictionaries";
 import ToastProvider from "../../components/ToastProvider";
 
 export const metadata = {
-  title: "SMADS - Truyền thông sáng tạo",
-  description: "Website truyền thông SMADS",
+  title: "SMADS",
+  description: "",
 };
 
 export default async function LocaleLayout({ children, params }) {

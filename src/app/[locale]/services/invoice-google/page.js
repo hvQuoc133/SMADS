@@ -7,10 +7,33 @@ async function getServiceInvoiceData(locale) {
     const query = `*[_type == "serviceInvoicePage" && language == $lang][0]{
         pageTitle,
         language,
+        // SEO ANALYSIS 
         seo {
             metaTitle,
-            metaDescription,
+            metaTitleEn,
+            metaDescription, 
+            metaDescriptionEn,
             keywords,
+            keywordsEn,
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle,
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            content,
+            contentEn,
+            readingTime,
+            seoPriority
+        },
+        // SEO IMAGES 
+        seoImages {
             ogImage {
                 asset->,
                 alt
@@ -18,9 +41,7 @@ async function getServiceInvoiceData(locale) {
             twitterImage {
                 asset->,
                 alt
-            },
-            twitterHandle,
-            canonicalUrl
+            }
         },
         hero {
             title1,
@@ -77,20 +98,28 @@ export async function generateMetadata({ params }) {
             throw new Error('No service invoice data found');
         }
 
-        // SEO TITLE & DESCRIPTION
-        const title = data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ Hóa đơn Điện tử - SMADS";
-        const description = data?.seo?.metaDescription || "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử";
-        const keywords = data?.seo?.keywords;
+        // SEO TITLE & DESCRIPTION 
+        const title = locale === 'vi'
+            ? data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ Hóa đơn Điện tử - SMADS"
+            : data?.seo?.metaTitleEn || data?.pageTitle || "E-Invoice Service - SMADS";
 
-        // OG IMAGE
-        const ogImage = data?.seo?.ogImage?._ref
-            ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+        const description = locale === 'vi'
+            ? data?.seo?.metaDescription || "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử"
+            : data?.seo?.metaDescriptionEn || "Professional e-invoice service, fully compliant with legal regulations on electronic invoices";
+
+        const keywords = locale === 'vi'
+            ? data?.seo?.keywords
+            : data?.seo?.keywordsEn;
+
+        // OG IMAGE & TWITTER IMAGE - từ seoImages mới
+        const ogImage = data?.seoImages?.ogImage?._ref
+            ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : data?.hero?.heroImage?._ref
                 ? urlFor(data.hero.heroImage).width(1200).height(630).url()
                 : '/images/og-default.jpg';
 
-        const twitterImage = data?.seo?.twitterImage?._ref
-            ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+        const twitterImage = data?.seoImages?.twitterImage?._ref
+            ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
             : ogImage;
 
         const baseUrl = 'https://smads.com.vn';
@@ -102,10 +131,10 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // OPEN GRAPH
+            // OPEN GRAPH 
             openGraph: {
-                title: title,
-                description: description,
+                title: data?.seo?.ogTitle || title,
+                description: data?.seo?.ogDescription || description,
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -115,16 +144,16 @@ export async function generateMetadata({ params }) {
                         url: ogImage,
                         width: 1200,
                         height: 630,
-                        alt: data?.seo?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Dịch vụ Hóa đơn Điện tử SMADS',
+                        alt: data?.seoImages?.ogImage?.alt || data?.hero?.heroImage?.alt || 'Dịch vụ Hóa đơn Điện tử SMADS',
                     },
                 ],
             },
 
-            // TWITTER CARDS
+            // TWITTER CARDS 
             twitter: {
-                card: 'summary_large_image',
-                title: title,
-                description: description,
+                card: data?.seo?.twitterCardType || 'summary_large_image',
+                title: data?.seo?.twitterTitle || title,
+                description: data?.seo?.twitterDescription || description,
                 images: [twitterImage],
                 creator: data?.seo?.twitterHandle || '@smads',
             },
@@ -138,18 +167,8 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // ROBOTS
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
-                    index: true,
-                    follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
-                },
-            },
+            // ROBOTS - metaRobots
+            robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META
             authors: ['SMADS'],
@@ -162,11 +181,15 @@ export async function generateMetadata({ params }) {
 
         return {
             metadataBase: metadataBase,
-            title: "Dịch vụ Hóa đơn Điện tử - SMADS",
-            description: "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử",
+            title: locale === 'vi' ? "Dịch vụ Hóa đơn Điện tử - SMADS" : "E-Invoice Service - SMADS",
+            description: locale === 'vi'
+                ? "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử"
+                : "Professional e-invoice service, fully compliant with legal regulations on electronic invoices",
             openGraph: {
-                title: "Dịch vụ Hóa đơn Điện tử - SMADS",
-                description: "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử",
+                title: locale === 'vi' ? "Dịch vụ Hóa đơn Điện tử - SMADS" : "E-Invoice Service - SMADS",
+                description: locale === 'vi'
+                    ? "Dịch vụ hóa đơn điện tử chuyên nghiệp, đáp ứng đầy đủ quy định pháp luật về hóa đơn điện tử"
+                    : "Professional e-invoice service, fully compliant with legal regulations on electronic invoices",
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -187,6 +210,7 @@ export async function generateMetadata({ params }) {
                     'en': `${baseUrl}/en/services/invoice`,
                 },
             },
+            robots: 'index, follow',
         };
     }
 }

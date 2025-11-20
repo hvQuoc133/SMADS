@@ -7,10 +7,33 @@ async function getServiceSeoData(locale) {
     const query = `*[_type == "serviceSeoPage" && language == $lang][0]{
         pageTitle,
         language,
+        // SEO ANALYSIS 
         seo {
             metaTitle,
-            metaDescription,
+            metaTitleEn,
+            metaDescription, 
+            metaDescriptionEn,
             keywords,
+            keywordsEn,
+            focusKeyword,
+            focusKeywordEn,
+            secondaryKeywords,
+            secondaryKeywordsEn,
+            ogTitle,
+            ogDescription,
+            twitterTitle,
+            twitterDescription,
+            twitterCardType,
+            canonicalUrl,
+            metaRobots,
+            structuredData,
+            content,
+            contentEn,
+            readingTime,
+            seoPriority
+        },
+        // SEO IMAGES 
+        seoImages {
             ogImage {
                 asset->,
                 alt
@@ -18,9 +41,7 @@ async function getServiceSeoData(locale) {
             twitterImage {
                 asset->,
                 alt
-            },
-            twitterHandle,
-            canonicalUrl
+            }
         },
         hero {
             title,
@@ -106,17 +127,25 @@ export async function generateMetadata({ params }) {
         }
 
         // SEO TITLE & DESCRIPTION
-        const title = data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google";
-        const description = data?.seo?.metaDescription || "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO";
-        const keywords = data?.seo?.keywords;
+        const title = locale === 'vi'
+            ? data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google"
+            : data?.seo?.metaTitleEn || data?.pageTitle || "Comprehensive SEO Service - Rank Website on Google TOP";
+
+        const description = locale === 'vi'
+            ? data?.seo?.metaDescription || "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO"
+            : data?.seo?.metaDescriptionEn || "Smads provides in-depth SEO solutions, comprehensive optimization from Onpage, Offpage to Technical SEO";
+
+        const keywords = locale === 'vi'
+            ? data?.seo?.keywords
+            : data?.seo?.keywordsEn;
 
         // OG IMAGE
-        const ogImage = data?.seo?.ogImage?._ref
-            ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+        const ogImage = data?.seoImages?.ogImage?._ref
+            ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : '/images/og-default.jpg';
 
-        const twitterImage = data?.seo?.twitterImage?._ref
-            ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+        const twitterImage = data?.seoImages?.twitterImage?._ref
+            ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
             : ogImage;
 
         const baseUrl = 'https://smads.com.vn';
@@ -130,8 +159,8 @@ export async function generateMetadata({ params }) {
 
             // OPEN GRAPH
             openGraph: {
-                title: title,
-                description: description,
+                title: data?.seo?.ogTitle || title,
+                description: data?.seo?.ogDescription || description,
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
@@ -141,16 +170,16 @@ export async function generateMetadata({ params }) {
                         url: ogImage,
                         width: 1200,
                         height: 630,
-                        alt: data?.seo?.ogImage?.alt || 'Dịch vụ SEO SMADS',
+                        alt: data?.seoImages?.ogImage?.alt || 'Dịch vụ SEO SMADS',
                     },
                 ],
             },
 
             // TWITTER CARDS
             twitter: {
-                card: 'summary_large_image',
-                title: title,
-                description: description,
+                card: data?.seo?.twitterCardType || 'summary_large_image',
+                title: data?.seo?.twitterTitle || title,
+                description: data?.seo?.twitterDescription || description,
                 images: [twitterImage],
                 creator: data?.seo?.twitterHandle || '@smads',
             },
@@ -165,17 +194,7 @@ export async function generateMetadata({ params }) {
             },
 
             // ROBOTS
-            robots: {
-                index: true,
-                follow: true,
-                googleBot: {
-                    index: true,
-                    follow: true,
-                    'max-video-preview': -1,
-                    'max-image-preview': 'large',
-                    'max-snippet': -1,
-                },
-            },
+            robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META
             authors: ['SMADS'],
@@ -186,25 +205,42 @@ export async function generateMetadata({ params }) {
         const baseUrl = 'https://smads.com.vn';
         const url = `${baseUrl}/${locale}/services/seo`;
 
+        // THÊM KHAI BÁO BIẾN
+        const ogImage = `${baseUrl}/images/og-default.jpg`;
+        const twitterImage = ogImage;
+
         return {
             metadataBase: metadataBase,
-            title: "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google",
-            description: "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO",
+            title: locale === 'vi' ? "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google" : "Comprehensive SEO Service - Rank Website on Google TOP",
+            description: locale === 'vi'
+                ? "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO"
+                : "Smads provides in-depth SEO solutions, comprehensive optimization from Onpage, Offpage to Technical SEO",
             openGraph: {
-                title: "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google",
-                description: "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO",
+                title: locale === 'vi' ? "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google" : "Comprehensive SEO Service - Rank Website on Google TOP",
+                description: locale === 'vi'
+                    ? "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO"
+                    : "Smads provides in-depth SEO solutions, comprehensive optimization from Onpage, Offpage to Technical SEO",
                 url: url,
                 siteName: 'SMADS',
                 type: 'website',
                 locale: locale === 'vi' ? 'vi_VN' : 'en_US',
                 images: [
                     {
-                        url: `${baseUrl}/images/og-default.jpg`,
+                        url: ogImage,
                         width: 1200,
                         height: 630,
                         alt: 'Dịch vụ SEO SMADS',
                     },
                 ],
+            },
+            twitter: {
+                card: 'summary_large_image',
+                title: locale === 'vi' ? "Dịch vụ SEO Tổng thể - Đưa Website Lên TOP Google" : "Comprehensive SEO Service - Rank Website on Google TOP",
+                description: locale === 'vi'
+                    ? "Smads cung cấp giải pháp SEO chuyên sâu, tối ưu toàn diện từ Onpage, Offpage đến Technical SEO"
+                    : "Smads provides in-depth SEO solutions, comprehensive optimization from Onpage, Offpage to Technical SEO",
+                images: [twitterImage],
+                creator: '@smads',
             },
             alternates: {
                 canonical: url,
@@ -213,6 +249,7 @@ export async function generateMetadata({ params }) {
                     'en': `${baseUrl}/en/services/seo`,
                 },
             },
+            robots: 'index, follow',
         };
     }
 }

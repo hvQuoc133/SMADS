@@ -1,16 +1,39 @@
 import { getDictionary } from "../../lib/dictionaries";
 import HomeContent from "./HomeContent";
 import { client } from "../../sanity/lib/client";
-import { urlFor } from "../../sanity/lib/image"; // THÊM IMPORT NÀY
+import { urlFor } from "../../sanity/lib/image";
 
 async function getHomeData(locale) {
   const query = `*[_type == "home" && language == $lang][0]{
     pageTitle,
     language,
+    // SEO ANALYSIS
     seo {
       metaTitle,
-      metaDescription,
+      metaTitleEn,
+      metaDescription, 
+      metaDescriptionEn,
       keywords,
+      keywordsEn,
+      focusKeyword,
+      focusKeywordEn,
+      secondaryKeywords,
+      secondaryKeywordsEn,
+      ogTitle,
+      ogDescription,
+      twitterTitle,
+      twitterDescription,
+      twitterCardType,
+      canonicalUrl,
+      metaRobots,
+      structuredData,
+      content,
+      contentEn,
+      readingTime,
+      seoPriority
+    },
+    // SEO IMAGES
+    seoImages {
       ogImage {
         asset->,
         alt
@@ -18,11 +41,9 @@ async function getHomeData(locale) {
       twitterImage {
         asset->,
         alt
-      },
-      twitterHandle,
-      canonicalUrl,
-      robotsIndex
+      }
     },
+    // 
     hero {
       title1,
       highlight,
@@ -100,22 +121,28 @@ export async function generateMetadata({ params }) {
     }
 
     // SEO TITLE & DESCRIPTION
-    const title = data?.seo?.metaTitle || data?.pageTitle || "SMADS - Home";
-    const description = data?.seo?.metaDescription || "Welcome to SMADS";
-    const keywords = data?.seo?.keywords;
+    const title = locale === 'vi'
+      ? data?.seo?.metaTitle || data?.pageTitle || "SMADS - Trang Chủ"
+      : data?.seo?.metaTitleEn || data?.pageTitle || "SMADS - Home";
+
+    const description = locale === 'vi'
+      ? data?.seo?.metaDescription || "Chào mừng đến với SMADS"
+      : data?.seo?.metaDescriptionEn || "Welcome to SMADS";
+
+    const keywords = locale === 'vi'
+      ? data?.seo?.keywords
+      : data?.seo?.keywordsEn;
 
     // OG IMAGE & TWITTER IMAGE
-    const ogImage = data?.seo?.ogImage?._ref
-      ? urlFor(data.seo.ogImage).width(1200).height(630).url()
+    const ogImage = data?.seoImages?.ogImage?._ref
+      ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
       : data?.hero?.image?._ref
         ? urlFor(data.hero.image).width(1200).height(630).url()
         : '/images/og-default.jpg';
 
-    const twitterImage = data?.seo?.twitterImage?._ref
-      ? urlFor(data.seo.twitterImage).width(1200).height(600).url()
+    const twitterImage = data?.seoImages?.twitterImage?._ref
+      ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
       : ogImage;
-
-
 
     const baseUrl = 'https://smads.com.vn';
     const url = `${baseUrl}/${locale}`;
@@ -128,8 +155,8 @@ export async function generateMetadata({ params }) {
 
       // OPEN GRAPH
       openGraph: {
-        title: title,
-        description: description,
+        title: data?.seo?.ogTitle || title,
+        description: data?.seo?.ogDescription || description,
         url: url,
         siteName: 'SMADS',
         type: 'website',
@@ -139,16 +166,16 @@ export async function generateMetadata({ params }) {
             url: ogImage,
             width: 1200,
             height: 630,
-            alt: data?.seo?.ogImage?.alt || data?.hero?.image?.alt || 'SMADS Home',
+            alt: data?.seoImages?.ogImage?.alt || data?.hero?.image?.alt || 'SMADS Home',
           },
         ],
       },
 
       // TWITTER CARDS
       twitter: {
-        card: 'summary_large_image',
-        title: title,
-        description: description,
+        card: data?.seo?.twitterCardType || 'summary_large_image',
+        title: data?.seo?.twitterTitle || title,
+        description: data?.seo?.twitterDescription || description,
         images: [twitterImage],
         creator: data?.seo?.twitterHandle || '@smads',
       },
@@ -163,17 +190,7 @@ export async function generateMetadata({ params }) {
       },
 
       // ROBOTS
-      robots: {
-        index: data?.seo?.robotsIndex !== false,
-        follow: true,
-        googleBot: {
-          index: data?.seo?.robotsIndex !== false,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
-      },
+      robots: data?.seo?.metaRobots || 'index, follow',
 
       // OTHER META
       authors: ['SMADS'],
@@ -185,11 +202,11 @@ export async function generateMetadata({ params }) {
 
     return {
       metadataBase: metadataBase,
-      title: "SMADS - Home",
-      description: "Welcome to SMADS",
+      title: locale === 'vi' ? "SMADS - Trang Chủ" : "SMADS - Home",
+      description: locale === 'vi' ? "Chào mừng đến với SMADS" : "Welcome to SMADS",
       openGraph: {
-        title: "SMADS - Home",
-        description: "Welcome to SMADS",
+        title: locale === 'vi' ? "SMADS - Trang Chủ" : "SMADS - Home",
+        description: locale === 'vi' ? "Chào mừng đến với SMADS" : "Welcome to SMADS",
         url: `${baseUrl}/${locale}`,
         siteName: 'SMADS',
         type: 'website',
@@ -210,6 +227,7 @@ export async function generateMetadata({ params }) {
           'en': `${baseUrl}/en`,
         },
       },
+      robots: 'index, follow',
     };
   }
 }
