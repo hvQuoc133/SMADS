@@ -111,7 +111,7 @@ export async function generateMetadata({ params }) {
             ? data?.seo?.keywords
             : data?.seo?.keywordsEn;
 
-        // OG IMAGE & TWITTER IMAGE - từ seoImages mới
+        // OG IMAGE & TWITTER IMAGE
         const ogImage = data?.seoImages?.ogImage?._ref
             ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : data?.hero?.heroImage?._ref
@@ -167,7 +167,7 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // ROBOTS - metaRobots
+            // ROBOTS
             robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META

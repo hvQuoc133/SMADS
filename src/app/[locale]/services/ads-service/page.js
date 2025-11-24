@@ -143,7 +143,7 @@ export async function generateMetadata({ params }) {
             throw new Error('No service ads data found');
         }
 
-        // SEO TITLE & DESCRIPTION - theo locale
+        // SEO TITLE & DESCRIPTION 
         const title = locale === 'vi'
             ? data?.seo?.metaTitle || data?.pageTitle || "Dịch vụ Quảng cáo Google Ads - SMADS"
             : data?.seo?.metaTitleEn || data?.pageTitle || "Google Ads Advertising Service - SMADS";
@@ -156,7 +156,7 @@ export async function generateMetadata({ params }) {
             ? data?.seo?.keywords
             : data?.seo?.keywordsEn;
 
-        // OG IMAGE & TWITTER IMAGE - từ seoImages mới
+        // OG IMAGE & TWITTER IMAGE
         const ogImage = data?.seoImages?.ogImage?._ref
             ? urlFor(data.seoImages.ogImage).width(1200).height(630).url()
             : data?.hero?.heroImage?._ref
@@ -176,7 +176,7 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // OPEN GRAPH - dùng SEO fields nếu có
+            // OPEN GRAPH
             openGraph: {
                 title: data?.seo?.ogTitle || title,
                 description: data?.seo?.ogDescription || description,
@@ -194,7 +194,7 @@ export async function generateMetadata({ params }) {
                 ],
             },
 
-            // TWITTER CARDS - dùng SEO fields nếu có
+            // TWITTER CARDS
             twitter: {
                 card: data?.seo?.twitterCardType || 'summary_large_image',
                 title: data?.seo?.twitterTitle || title,
@@ -212,7 +212,7 @@ export async function generateMetadata({ params }) {
                 },
             },
 
-            // ROBOTS - từ metaRobots
+            // ROBOTS 
             robots: data?.seo?.metaRobots || 'index, follow',
 
             // OTHER META

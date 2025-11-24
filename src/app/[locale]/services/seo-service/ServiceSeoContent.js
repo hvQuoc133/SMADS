@@ -23,7 +23,7 @@ export default function ServiceSeoContent({ pageData, dict, locale }) {
         }
     }, []);
 
-    // Fallback nếu không có data từ Sanity
+    // Fallback
     if (!pageData) {
         return <ServiceSeoFallback locale={locale} dict={dict} />;
     }
@@ -32,7 +32,7 @@ export default function ServiceSeoContent({ pageData, dict, locale }) {
         setOpenFaq(openFaq === index ? null : index);
     };
 
-    // Lấy data từ Sanity
+    // Get data Sanity
     const hero = pageData.hero || {};
     const heroMetrics = pageData.heroMetrics || [];
     const searchResults = pageData.searchResults || [];

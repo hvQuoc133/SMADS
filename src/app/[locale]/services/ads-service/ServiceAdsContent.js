@@ -20,7 +20,7 @@ export default function ServiceAdsContent({ pageData, dict, locale }) {
         }
     }, []);
 
-    // Fallback nếu không có data từ Sanity
+    // Fallback 
     if (!pageData) {
         return <ServiceAdsFallback dict={dict} locale={locale} />;
     }
@@ -29,7 +29,7 @@ export default function ServiceAdsContent({ pageData, dict, locale }) {
         setOpenFaq(openFaq === index ? null : index);
     };
 
-    // Lấy data từ Sanity
+    // Get data Sanity
     const hero = pageData.hero || {};
     const heroMetrics = pageData.heroMetrics || [];
     const whyUs = pageData.whyUs || {};
@@ -173,7 +173,7 @@ export default function ServiceAdsContent({ pageData, dict, locale }) {
                             {benefitsList.map((benefit, index) => (
                                 <div key={index} className={styles.benefitCard}>
                                     <Image
-                                        // SỬA: DÙNG benefit.icon.asset?.url TRỰC TIẾP
+                                        // EDIT: Use benefit.icon.asset?.url
                                         src={benefit.icon?.asset?.url || "/images/fallback-image.png"}
                                         alt={benefit.icon?.alt || benefit.title}
                                         width={64}

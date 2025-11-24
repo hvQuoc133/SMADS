@@ -108,7 +108,7 @@ export default function AboutContent({ aboutData, dict, locale }) {
                 </div>
             </section>
 
-            <Agency dict={dict} />
+            <Agency locale={locale} />
             <ScrollToTop />
         </>
     );

@@ -79,12 +79,11 @@ export default function HomeContent({ homeData, dict, locale }) {
         };
     }, []);
 
-    // Fallback: nếu không có data từ Sanity, dùng component cũ
+    // Fallback
     if (!homeData) {
         return <HomeHero locale={locale} />;
     }
 
-    // SỬA QUAN TRỌNG: Dùng activities từ Sanity thay vì dict
     const activities = homeActivities.map((item, idx) => ({
         id: item._id || idx + 1,
         title: locale === 'vi' ? item.title : item.titleEn || item.title,
@@ -294,13 +293,13 @@ export default function HomeContent({ homeData, dict, locale }) {
                     <div className={styles.featuresHeader}>
                         <p className={styles.featureSubtitle}>{t.optimization?.clientsSubtitle}</p>
                         <h2 className={styles.featureTitle}>{t.optimization?.clientsTitle}</h2>
-                        <Testimonials />
+                        <Testimonials locale={locale} />
                     </div>
                 </div>
             </section>
 
             {/* Content 7 - Agency Section */}
-            <Agency />
+            <Agency locale={locale} />
 
             {/* Content 8 - CTA Section */}
             <section className={styles.ctaSection}>

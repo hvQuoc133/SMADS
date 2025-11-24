@@ -97,7 +97,7 @@ export async function generateMetadata({ params }) {
             ? data?.seo?.keywords
             : data?.seo?.keywordsEn;
 
-        // 👇 OG TITLE & DESCRIPTION 
+        // OG TITLE & DESCRIPTION 
         const ogTitle = locale === 'vi'
             ? data?.seo?.ogTitle || data?.seo?.metaTitle
             : data?.seo?.ogTitle || data?.seo?.metaTitleEn || data?.seo?.metaTitle;
@@ -130,13 +130,13 @@ export async function generateMetadata({ params }) {
             ? urlFor(data.seoImages.twitterImage).width(1200).height(600).url()
             : ogImage;
 
-        // 👇 CANONICAL URL 
+        // CANONICAL URL 
         const canonicalUrl = data?.seo?.canonicalUrl || `https://smads.com.vn/${locale}/about`;
 
-        // 👇 META ROBOTS 
+        // META ROBOTS 
         const metaRobots = data?.seo?.metaRobots || 'index, follow';
 
-        // 👇 TWITTER CARD TYPE 
+        // TWITTER CARD TYPE 
         const twitterCardType = data?.seo?.twitterCardType || 'summary_large_image';
 
         const baseUrl = 'https://smads.com.vn';
@@ -148,7 +148,7 @@ export async function generateMetadata({ params }) {
             description: description,
             keywords: keywords,
 
-            // 👇 OPEN GRAPH 
+            // OPEN GRAPH 
             openGraph: {
                 title: ogTitle,
                 description: ogDescription,

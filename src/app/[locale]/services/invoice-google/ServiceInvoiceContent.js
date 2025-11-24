@@ -18,12 +18,12 @@ export default function ServiceInvoiceContent({ pageData, dict, locale }) {
         }
     }, []);
 
-    // Fallback nếu không có data từ Sanity
+    // Fallback
     if (!pageData) {
         return <ServiceInvoiceFallback locale={locale} dict={dict} />;
     }
 
-    // Lấy data từ Sanity
+    // Get data Sanity
     const hero = pageData.hero || {};
     const overview = pageData.overview || {};
     const benefits = pageData.benefits || [];

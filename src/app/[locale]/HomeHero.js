@@ -91,7 +91,7 @@ async function getHomeData(locale) {
   return result;
 }
 
-// HÀM FALLBACK METADATA
+// FALLBACK METADATA
 function getFallbackMetadata(locale, metadataBase) {
   const baseUrl = 'https://smads.com.vn';
 
@@ -142,7 +142,7 @@ export async function generateMetadata({ params }) {
   try {
     const data = await getHomeData(locale);
 
-    // CHECK NULL QUAN TRỌNG
+    // CHECK NULL 
     if (!data) {
       console.log('❌ No home data found for locale:', locale);
       return getFallbackMetadata(locale, metadataBase);
@@ -153,7 +153,7 @@ export async function generateMetadata({ params }) {
     const description = data?.seo?.metaDescription || "Welcome to SMADS";
     const keywords = data?.seo?.keywords;
 
-    // OG IMAGE - CHECK _ref TRƯỚC KHI DÙNG urlFor
+    // OG IMAGE - CHECK _ref 
     const ogImage = data?.seo?.ogImage?._ref
       ? urlFor(data.seo.ogImage).width(1200).height(630).url()
       : data?.hero?.image?._ref

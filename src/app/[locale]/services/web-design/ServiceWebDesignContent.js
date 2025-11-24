@@ -9,7 +9,7 @@ import { urlFor } from "../../../../sanity/lib/image";
 import ServiceWebDesignFallback from "./ServiceWebDesign";
 
 export default function ServiceWebDesignContent({ pageData, dict, locale }) {
-    // HOOKS ĐẦU TIÊN - TRƯỚC MỌI ĐIỀU KIỆN
+    // HOOKS 
     const [openFaq, setOpenFaq] = useState(null);
 
     // Initialize AOS
@@ -24,7 +24,7 @@ export default function ServiceWebDesignContent({ pageData, dict, locale }) {
         }
     }, []);
 
-    // Fallback nếu không có data từ Sanity - SAU HOOKS
+    // Fallback 
     if (!pageData) {
         return <ServiceWebDesignFallback locale={locale} dict={dict} />;
     }

@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
 
   const currentLocale = pathname.split("/")[1];
 
-  // Fetch slug mapping từ tất cả activities
+  // Fetch slug mapping all activities
   useEffect(() => {
     const fetchSlugMapping = async () => {
       try {
@@ -36,7 +36,7 @@ export default function LanguageSwitcher() {
     if (parts[1] === "activities" && parts[2]) {
       const currentSlug = decodeURIComponent(parts[2]);
 
-      // Tìm slug tương ứng
+      // Find slug
       const newSlug = slugMapping[currentSlug] || currentSlug;
 
       return router.push(`/${locale}/activities/${newSlug}`);
