@@ -243,6 +243,8 @@ export async function generateMetadata({ params }) {
   }
 }
 
+export const dynamic = 'force-dynamic';
+
 export default async function ActivityDetailPage({ params }) {
   const { slug, locale } = await params;
   const [dict, activityData, relatedActivities] = await Promise.all([
