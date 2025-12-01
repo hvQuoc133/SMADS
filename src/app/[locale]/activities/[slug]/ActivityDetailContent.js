@@ -11,57 +11,8 @@ import Link from "next/link";
 import ActivityDetail from "./ActivityDetail";
 import { urlFor } from "../../../../sanity/lib/image";
 import { PortableText } from "@portabletext/react";
+import portableTextComponents from "@/components/portableTextComponents";
 
-// Custom PortableText Components
-const portableTextComponents = {
-    types: {
-        image: ({ value }) => {
-            if (value?.asset?._ref) {
-                const imageUrl = urlFor(value)
-                    .width(800)
-                    .height(500)
-                    .quality(80)
-                    .url();
-
-                return (
-                    <div className={style.contentImage}>
-                        <Image
-                            src={imageUrl}
-                            alt={value.alt || 'Content image'}
-                            width={800}
-                            height={500}
-                            className={style.image}
-                        />
-                        {value.caption && (
-                            <p className={style.imageCaption}>{value.caption}</p>
-                        )}
-                    </div>
-                );
-            }
-
-            return null;
-        }
-    },
-    marks: {
-        strong: ({ children }) => <strong>{children}</strong>,
-        em: ({ children }) => <em>{children}</em>,
-    },
-    block: {
-        h1: ({ children }) => <h1 className={style.contentH1}>{children}</h1>,
-        h2: ({ children }) => <h2 className={style.contentH2}>{children}</h2>,
-        h3: ({ children }) => <h3 className={style.contentH3}>{children}</h3>,
-        blockquote: ({ children }) => <blockquote className={style.blockquote}>{children}</blockquote>,
-        normal: ({ children }) => <p className={style.contentParagraph}>{children}</p>,
-    },
-    list: {
-        bullet: ({ children }) => <ul className={style.contentList}>{children}</ul>,
-        number: ({ children }) => <ol className={style.contentList}>{children}</ol>,
-    },
-    listItem: {
-        bullet: ({ children }) => <li className={style.contentListItem}>{children}</li>,
-        number: ({ children }) => <li className={style.contentListItem}>{children}</li>,
-    }
-};
 
 export default function ActivityDetailContent({ activityData, dict, locale, relatedActivities }) {
 

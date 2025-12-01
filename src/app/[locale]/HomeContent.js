@@ -15,6 +15,9 @@ import enDict from "@/lib/dictionaries/en.json";
 import { urlFor } from "../../sanity/lib/image";
 import HomeHero from "./HomeHero";
 import { client } from "../../sanity/lib/client";
+import { PortableText } from "@portabletext/react";
+import portableTextHero from "@/components/portableTextHero";
+import Link from "next/link";
 
 export default function HomeContent({ homeData, dict, locale }) {
 
@@ -127,11 +130,15 @@ export default function HomeContent({ homeData, dict, locale }) {
                             {t.hero?.title1}   <br />
                             <span className={styles.highlight}>{t.hero?.highlight}</span>
                         </h1>
-                        <p className={styles.description}>
-                            {t.hero?.desc}
-                        </p>
+                        <div className={styles.description}>
+                            <PortableText value={t.hero?.desc} components={portableTextHero} />
+                        </div>
                         <div className={styles.buttons}>
-                            <button className={styles.primaryButton}>{t.hero?.readMore}</button>
+                            <Link href={t.hero?.readMore?.link || "#"}>
+                                <button className={styles.primaryButton}>
+                                    {t.hero?.readMore?.text || "Đọc thêm"}
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.right} data-aos="fade-left">
@@ -186,11 +193,15 @@ export default function HomeContent({ homeData, dict, locale }) {
                     <h1 className={styles.startupTitle}>
                         {t.startup?.title}
                     </h1>
-                    <p className={styles.startupDescription}>
-                        {t.startup?.desc}
-                    </p>
+                    <div className={styles.startupDescription}>
+                        <PortableText value={t.startup?.desc} components={portableTextHero} />
+                    </div>
                     <div className={styles.startupBtn}>
-                        <button className={styles.startupButton}>{t.startup?.button}</button>
+                        <Link href={t.startup?.button?.link || "#"}>
+                            <button className={styles.startupButton}>
+                                {t.startup?.button?.text || "Xem thêm"}
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -274,11 +285,12 @@ export default function HomeContent({ homeData, dict, locale }) {
                         {t.optimization?.items?.map((item, index) => (
                             <div key={index} className={styles.textContent}>
                                 <div className={styles.textContent_1}>
-                                    <img
-                                        src={getImageUrl(item.icon) || `/images/home/optimize_icon0${index + 1}.png`}
+                                    <Image
+                                        src={item.icon ? urlFor(item.icon).width(80).height(80).url() : "/images/home/optimize_icon0.png"}
                                         alt={item.icon?.alt || item.title}
+                                        width={80}
+                                        height={80}
                                         onError={handleImageError}
-                                        loading="lazy"
                                     />
                                     <h4>{item.title}</h4>
                                 </div>

@@ -201,48 +201,6 @@
     font-size: 14px;
 }
 
-/* Styles typography */
-.contentH1 {
-    font-size: 2rem;
-    margin: 1.5rem 0 1rem 0;
-    color: var(--color-text-muted);
-}
-
-.contentH2 {
-    font-size: 1.5rem;
-    margin: 1.5rem 0 1rem 0;
-    color: var(--color-text-muted);
-}
-
-.contentH3 {
-    font-size: 1.25rem;
-    margin: 1.25rem 0 0.75rem 0;
-    color: var(--color-text-muted);
-}
-
-.contentParagraph {
-    margin: 1rem 0;
-    line-height: 1.6;
-    color: #333;
-}
-
-.blockquote {
-    border-left: 4px solid #007bff;
-    padding-left: 1rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    color: var(--color-text-muted);
-}
-
-.contentList {
-    margin: 1rem 0;
-    padding-left: 2rem;
-}
-
-.contentListItem {
-    margin: 0.5rem 0;
-    line-height: 1.5;
-}
 
 .backButton {
     display: inline-block;
