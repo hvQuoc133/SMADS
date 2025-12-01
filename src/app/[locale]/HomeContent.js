@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "../../styles/HomeHero.module.css";
 import Testimonials from "@/components/Testimonials";
 import ScrollToTop from "@/components/ScrollToTop";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import AOS from "aos";
 import 'aos/dist/aos.css';
 import CountUp from "react-countup";
@@ -25,7 +25,7 @@ export default function HomeContent({ homeData, dict, locale }) {
 
     // State
     const [homeActivities, setHomeActivities] = useState([]);
-    const lines = homeData?.startup?.lines || [];
+    const lines = useMemo(() => homeData?.startup?.lines || [], [homeData?.startup?.lines]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentImage, setCurrentImage] = useState(null);
     const [currentAlt, setCurrentAlt] = useState("");
@@ -48,7 +48,7 @@ export default function HomeContent({ homeData, dict, locale }) {
             setCurrentImage(img);
             setCurrentAlt(firstLine.image?.alt || homeData?.startup?.title);
         }
-    }, [lines, homeData]);
+    }, [lines]);
 
     // Fetch activities Sanity
     useEffect(() => {
@@ -105,11 +105,6 @@ export default function HomeContent({ homeData, dict, locale }) {
         };
     }, []);
 
-    // Fallback
-    if (!homeData) {
-        return <HomeHero locale={locale} />;
-    }
-
     const activities = homeActivities.map((item, idx) => ({
         id: item._id || idx + 1,
         title: locale === 'vi' ? item.title : item.titleEn || item.title,
@@ -153,6 +148,10 @@ export default function HomeContent({ homeData, dict, locale }) {
         }
     }, [locale]);
 
+    // Fallback
+    if (!homeData) {
+        return <HomeHero locale={locale} />;
+    }
 
     return (
         <>
