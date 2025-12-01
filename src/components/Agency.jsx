@@ -94,7 +94,7 @@ export default function Agency({ locale = 'vi' }) {
             <div className={styles.agencyWrapper}>
                 <div className={styles.agencyContent}>
                     {/* LEFT TEXT */}
-                    <div className={styles.agencyText} data-aos="fade-left">
+                    <div className={styles.agencyText}>
                         <h2>
                             {a.titleLine1} <br />
                             <span>{a.titleLine2}</span>
@@ -116,7 +116,7 @@ export default function Agency({ locale = 'vi' }) {
                     </div>
 
                     {/* RIGHT IMAGE */}
-                    <div className={styles.agencyImage} data-aos="fade-right">
+                    <div className={styles.agencyImage}>
                         <img
                             src={a.image?.asset ?
                                 urlFor(a.image).width(500).height(400).quality(80).url() :

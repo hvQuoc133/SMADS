@@ -55,14 +55,18 @@ async function getHomeData(locale) {
       }
     },
     startup {
-      title,
-      desc,
-      button,
-      image {
-        asset->,
-        alt
-      }
-    },
+  title,
+  desc,
+  button,
+  lines[]{
+    text,
+    image {          
+      asset->,
+      alt
+    }
+  }
+}
+,
     features {
       subtitle,
       title,

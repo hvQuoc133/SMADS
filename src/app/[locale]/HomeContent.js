@@ -25,7 +25,30 @@ export default function HomeContent({ homeData, dict, locale }) {
 
     // State
     const [homeActivities, setHomeActivities] = useState([]);
+    const lines = homeData?.startup?.lines || [];
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [currentImage, setCurrentImage] = useState(null);
+    const [currentAlt, setCurrentAlt] = useState("");
     const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        if (homeData) {
+            setLoading(false);
+        }
+    }, [homeData]);
+
+    // Update current image when lines or homeData change
+    useEffect(() => {
+        if (lines.length > 0) {
+            const firstLine = lines[0];
+            const img = firstLine.image && firstLine.image.asset
+                ? urlFor(firstLine.image).url()
+                : "/images/home/services_img.png";
+
+            setCurrentImage(img);
+            setCurrentAlt(firstLine.image?.alt || homeData?.startup?.title);
+        }
+    }, [lines, homeData]);
 
     // Fetch activities Sanity
     useEffect(() => {
@@ -116,8 +139,20 @@ export default function HomeContent({ homeData, dict, locale }) {
     };
 
     const getImageUrl = (image) => {
-        return image?._ref ? urlFor(image).quality(80).url() : null;
+        return image?.asset?._ref
+            ? urlFor(image).quality(80).url()
+            : null;
     };
+
+
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.AOS) {
+            setTimeout(() => {
+                window.AOS.refresh();
+            }, 100);
+        }
+    }, [locale]);
+
 
     return (
         <>
@@ -128,7 +163,10 @@ export default function HomeContent({ homeData, dict, locale }) {
                     <div className={styles.left} data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                         <h1 className={styles.title}>
                             {t.hero?.title1}   <br />
-                            <span className={styles.highlight}>{t.hero?.highlight}</span>
+                            <span className={`${styles.highlight} ${styles[t.hero?.highlightFontSize]}`}>
+                                {t.hero?.highlight}
+                            </span>
+
                         </h1>
                         <div className={styles.description}>
                             <PortableText value={t.hero?.desc} components={portableTextHero} />
@@ -181,29 +219,62 @@ export default function HomeContent({ homeData, dict, locale }) {
                 onError={handleImageError}
             />
             <section className={styles.startupContainer}>
+                {/* Left image */}
                 <div className={styles.startupLeft} data-aos="fade-down-right">
-                    <img
-                        src={getImageUrl(t.startup?.image) || "/images/home/services_img.png"}
-                        alt={t.startup?.image?.alt || "Startup Illustration"}
-                        onError={handleImageError}
-                        loading="lazy"
-                    />
+                    {currentImage ? (
+                        <div className={styles.startupImageWrapper}>
+                            <Image
+                                src={currentImage}
+                                alt={currentAlt}
+                                width={750}
+                                height={450}
+                                className={styles.startupImage}
+                                loading="lazy"
+                            />
+                        </div>
+                    ) : (
+                        <img
+                            src="/images/home/services_img.png"
+                            alt="Startup Illustration"
+                            loading="lazy"
+                        />
+                    )}
                 </div>
+
+                {/* Right content */}
                 <div className={styles.startupRight} data-aos="fade-down-left">
-                    <h1 className={styles.startupTitle}>
-                        {t.startup?.title}
-                    </h1>
+                    <h2 className={styles.startupTitle}>
+                        {homeData?.startup?.title}
+                    </h2>
                     <div className={styles.startupDescription}>
-                        <PortableText value={t.startup?.desc} components={portableTextHero} />
+                        {lines.map((line, index) => (
+                            <p
+                                key={index}
+                                onClick={() => {
+                                    const img = line.image && line.image.asset
+                                        ? urlFor(line.image).url()
+                                        : "/images/home/services_img.png"; // ảnh fallback
+
+                                    setCurrentImage(img);
+                                    setCurrentAlt(line.image?.alt || homeData?.startup?.title);
+                                    setActiveIndex(index);
+                                }}
+                                className={`${styles.clickableLine} ${index === activeIndex ? styles.active : ""}`}
+                            >
+                                {line.text}
+                            </p>
+
+                        ))}
                     </div>
                     <div className={styles.startupBtn}>
-                        <Link href={t.startup?.button?.link || "#"}>
+                        <Link href={homeData?.startup?.button?.link || "#"}>
                             <button className={styles.startupButton}>
-                                {t.startup?.button?.text || "Xem thêm"}
+                                {homeData?.startup?.button?.text || "Xem thêm"}
                             </button>
                         </Link>
                     </div>
                 </div>
+
             </section>
 
             {/* Content 4 - Features Section */}

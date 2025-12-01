@@ -6,7 +6,7 @@ export default function BgAllPage({ title, parent }) {
     <section className={styles.hero}>
       <div className={styles.heroContainer}>
         <div className={styles.heroText}>
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>
             <span>{parent}</span> &gt; {title}
           </p>
