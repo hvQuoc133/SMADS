@@ -16,20 +16,21 @@ import { urlFor } from "../../sanity/lib/image";
 import HomeHero from "./HomeHero";
 import { client } from "../../sanity/lib/client";
 import { PortableText } from "@portabletext/react";
-import portableTextHero from "@/components/portableTextHero";
+import portableTextUniversal from "@/components/portableTextUniversal";
 import Link from "next/link";
 
 export default function HomeContent({ homeData, dict, locale }) {
 
-    const t = homeData || dict?.home;
-
     // State
+    const t = homeData || dict?.home;
     const [homeActivities, setHomeActivities] = useState([]);
     const lines = useMemo(() => homeData?.startup?.lines || [], [homeData?.startup?.lines]);
     const [activeIndex, setActiveIndex] = useState(0);
     const [currentImage, setCurrentImage] = useState(null);
     const [currentAlt, setCurrentAlt] = useState("");
     const [loading, setLoading] = useState(true);
+    const [currentOverlayText, setCurrentOverlayText] = useState("");
+
 
     useEffect(() => {
         if (homeData) {
@@ -47,6 +48,9 @@ export default function HomeContent({ homeData, dict, locale }) {
 
             setCurrentImage(img);
             setCurrentAlt(firstLine.image?.alt || homeData?.startup?.title);
+
+            setCurrentOverlayText(firstLine.overlayText || firstLine.text);
+            setActiveIndex(0);
         }
     }, [lines]);
 
@@ -139,7 +143,6 @@ export default function HomeContent({ homeData, dict, locale }) {
             : null;
     };
 
-
     useEffect(() => {
         if (typeof window !== "undefined" && window.AOS) {
             setTimeout(() => {
@@ -152,7 +155,7 @@ export default function HomeContent({ homeData, dict, locale }) {
     if (!homeData) {
         return <HomeHero locale={locale} />;
     }
-
+    console.log("Hero desc:", t.hero?.desc);
     return (
         <>
             {/* Content 1 - Hero Section */}
@@ -168,7 +171,7 @@ export default function HomeContent({ homeData, dict, locale }) {
 
                         </h1>
                         <div className={styles.description}>
-                            <PortableText value={t.hero?.desc} components={portableTextHero} />
+                            <PortableText value={t.hero?.desc} components={portableTextUniversal} />
                         </div>
                         <div className={styles.buttons}>
                             <Link href={t.hero?.readMore?.link || "#"}>
@@ -230,6 +233,9 @@ export default function HomeContent({ homeData, dict, locale }) {
                                 className={styles.startupImage}
                                 loading="lazy"
                             />
+                            <div className={styles.imageOverlay}>
+                                <p>{currentOverlayText}</p>
+                            </div>
                         </div>
                     ) : (
                         <img
@@ -252,11 +258,12 @@ export default function HomeContent({ homeData, dict, locale }) {
                                 onClick={() => {
                                     const img = line.image && line.image.asset
                                         ? urlFor(line.image).url()
-                                        : "/images/home/services_img.png"; // ảnh fallback
+                                        : "/images/home/services_img.png"; //Img fallback
 
                                     setCurrentImage(img);
                                     setCurrentAlt(line.image?.alt || homeData?.startup?.title);
                                     setActiveIndex(index);
+                                    setCurrentOverlayText(line.overlayText || line.text);
                                 }}
                                 className={`${styles.clickableLine} ${index === activeIndex ? styles.active : ""}`}
                             >
@@ -296,7 +303,9 @@ export default function HomeContent({ homeData, dict, locale }) {
                                 />
                             </div>
                             <h3>{item.title}</h3>
-                            <p>{item.desc}</p>
+                            <div className={styles.itemDesc}>
+                                <PortableText value={item.desc} components={portableTextUniversal} />
+                            </div>
                         </div>
                     ))}
                 </div>

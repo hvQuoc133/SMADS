@@ -34,33 +34,52 @@ async function getHomeData(locale) {
     },
     // SEO IMAGES
     seoImages {
-      ogImage {
-        asset->,
-        alt
-      },
-      twitterImage {
-        asset->,
-        alt
+    ogImage {
+      asset->,
+      alt
+    },
+    twitterImage {
+      asset->,
+      alt
       }
     },
     // 
     hero {
       title1,
       highlight,
-      desc,
-      readMore,
-      image {
-        asset->,
-        alt
-      }
+      highlightFontSize,
+      desc[] {
+      ...,
+      children[] {
+      ...,
+      marks,
+      text
     },
-    startup {
-  title,
-  desc,
-  button,
-  lines[]{
-    text,
-    image {          
+    markDefs[] {
+       ...,
+      _type == "link" => {
+        href,
+        blank
+      }
+    }
+  },
+    readMore {
+      text,
+      link
+  },
+     image {
+      asset->,
+      alt
+  }
+},
+   startup {
+      title,
+      desc,
+      button,
+      lines[]{
+      text,
+      overlayText,
+      image {          
       asset->,
       alt
     }
@@ -68,18 +87,36 @@ async function getHomeData(locale) {
 }
 ,
     features {
-      subtitle,
-      title,
-      desc,
-      items[] {
-        title,
-        desc,
-        icon {
-          asset->,
-          alt
+       subtitle,
+       title,
+       "desc": desc[] {
+       ...,
+    markDefs[] {
+      ...,
+      _type == "link" => {
+        href,
+        blank
+      }
+    }
+  },
+  items[] {
+    title,
+    "desc": desc[] {
+      ...,
+      markDefs[] {
+        ...,
+        _type == "link" => {
+          href,
+          blank
         }
       }
     },
+    icon {
+      asset->,
+      alt
+    }
+  }
+},
     stats {
       happyCustomer,
       awardWin,

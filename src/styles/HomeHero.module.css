@@ -155,6 +155,36 @@
   border-radius: 10px;
 }
 
+.imageOverlay {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* căn giữa X + Y */
+  background: rgba(239, 87, 58, 0.6);
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 18px;
+  max-width: 80%;
+  text-align: center;
+  backdrop-filter: blur(1px);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .startupImage {
   width: 100%;
   height: 100%;
@@ -458,7 +488,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   z-index: 2;
 }
 
