@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
         {/* Favicon */}
         <link rel="icon" href="/images/logo/logo-favicon.png" />
         <meta name="description" content={metadata.description} />
+        <meta name="google-site-verification" content="ZeuzJPcQphj85hJFvAg_qJmQXJWSAmEvXArcf7i4uOo" />
         <title>{metadata.title}</title>
       </head>
       <body suppressHydrationWarning={true}>
